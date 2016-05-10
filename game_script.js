@@ -1,8 +1,6 @@
 /**
  * Created by Zac on 2016-05-09.
  */
-    var myTimer = null;
-    var bucket = document.getElementById('bucket');
 
     function bucketControls() {
         var bucketLeft = document.createElement("IMG");
@@ -10,36 +8,34 @@
         var bucketMid = document.createElement("IMG");
 
         bucketLeft.setAttribute("src", "graphics/invisible_bucket.png");
-        bucketLeft.setAttribute("width", "20%");
-        bucketLeft.setAttribute("height", "20%");
+        /*bucketLeft.setAttribute("width", "20%");
+        bucketLeft.setAttribute("height", "20%");*/
         bucketLeft.setAttribute("alt", "Transparent button-left");
         bucketLeft.setAttribute("id", "LeftPlace");
-        /*bucketLeft.style.position = "absolute";*/
-        bucketLeft.style.position = "2%"
-        bucketLeft.style.marginTop = "50%";
+        bucketLeft.style.position = "absolute";
+        bucketLeft.style.position = "15%"
+        bucketLeft.style.marginTop = "80%";
         document.body.appendChild(bucketLeft);
 
-        /*bucketLeft.src = "graphics/Bucket.png";
-        document.body.appendChild(bucketLeft);*/
 
         bucketRight.setAttribute("src", "graphics/invisible_bucket.png");
-        bucketRight.setAttribute("width", "20%");
-        bucketRight.setAttribute("height", "20%");
+        /*bucketRight.setAttribute("width", "20%");
+        bucketRight.setAttribute("height", "20%");*/
         bucketRight.setAttribute("alt", "Transparent button-right");
         bucketRight.setAttribute("id", "RightPlace");
-        /*bucketRight.style.position = "absolute";*/
-        bucketRight.style.marginLeft = "2%";
-        bucketRight.style.marginTop = "50%";
+        bucketRight.style.position = "absolute";
+        bucketRight.style.marginLeft = "60%";
+        bucketRight.style.marginTop = "80%";
         document.body.appendChild(bucketRight);
 
         bucketMid.setAttribute("src", "graphics/Bucket.png");
-        bucketMid.setAttribute("width", "20%");
-        bucketMid.setAttribute("height", "20%");
+        /*bucketMid.setAttribute("width", "20%");
+        bucketMid.setAttribute("height", "20%");*/
         bucketMid.setAttribute("alt", "Transparent button-mid");
         bucketMid.setAttribute("id", "MidPlace");
-        /*bucketMid.style.position = "absolute";*/
-        bucketMid.style.marginLeft = "2%";
-        bucketMid.style.marginTop = "50%";
+        bucketMid.style.position = "absolute";
+        bucketMid.style.marginLeft = "30%";
+        bucketMid.style.marginTop = "80%";
         document.body.appendChild(bucketMid);
 
         bucketLeft.onclick=function() {
@@ -60,6 +56,7 @@
             bucketRight.src="graphics/invisible_bucket.png";
         }
     }
+
 
 
 
