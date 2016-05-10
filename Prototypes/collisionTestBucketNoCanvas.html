@@ -17,7 +17,7 @@
 		// if you wish to change the max and min for the random generator
 		// change the 8 for max and the 0 for min.
 		var randomNum = Math.floor((Math.random() * 8) + 0);
-		return scrNames[randomNum];
+		return scrNames[1];
 	}
 	
 	function randomLane(){
@@ -30,6 +30,52 @@
 		var element = document.createElement("img")
 		element.style = "left:" + randomLane() + "; position:absolute; top:1px";
 		element.src = imgSrc;
+		
+		// Depending on which image is chosen determines the type of the object.
+		
+		switch(imgSrc) {
+		
+			case "Shapes/blueCircle.png":
+				element.shape = 0;
+				break;
+				
+			case "Shapes/blueSquare.png":
+				element.shape = 1;
+				break;
+				
+			case "Shapes/blueTriangle.png":
+				element.shape = 2;
+				break;			
+			
+			case "Shapes/redCircle.png":
+				element.shape = 3;
+				break;
+				
+			case "Shapes/redSquare.png":
+				element.shape = 4;
+				break;
+				
+			case "Shapes/redTriangle.png":
+				element.shape = 5;
+				break;	
+			
+			case "Shapes/yellowCircle.png":
+				element.shape = 6;
+				break;
+				
+			case "Shapes/yellowSquare.png":
+				element.shape = 7;
+				break;
+				
+			case "Shapes/yellowTriangle.png":
+				element.shape = 8;
+				break;				
+			
+			default:
+				break;
+		
+		}
+		
 		element.className = "fallingObject";
 		var coolObject = new Object(imgSrc, element, null);
 		document.body.appendChild(coolObject.element);
@@ -65,11 +111,15 @@
 	function checkHit(){
 		var objectArray = document.querySelectorAll(".fallingObject");
 		var bucket = document.querySelector(".bucket");
+		
 		for(var i = 0; i < objectArray.length; i++){
 			if(parseInt(objectArray[i].style.top) > 500 || 
 				(parseInt(objectArray[i].style.top) == 400 &&
 				parseInt(objectArray[i].style.left) == parseInt(bucket.style.left) &&
-				((objectArray[i].src.localeCompare("Shapes/blueCircle.png"))) == 0))
+				
+				// This is hard-coded at the moment to only accept blue squares. The number code determines
+				// what to accept.
+				((objectArray[i].shape == 1))))
 				{objectArray[i].parentNode.removeChild(objectArray[i]);
 			}
 		}
@@ -87,7 +137,6 @@
 		
 		var bucketCheck = setInterval('checkHit();', 1);
 		
-
 		//object instead of window will require you to click on the circle itself
 		window.onclick=function(){
 			if(timer == null){
