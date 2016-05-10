@@ -69,9 +69,7 @@
 			if(parseInt(objectArray[i].style.top) > 500 || 
 				(parseInt(objectArray[i].style.top) == 400 &&
 				parseInt(objectArray[i].style.left) == parseInt(bucket.style.left) &&
-				((objectArray[i].src == "Shapes/blueCircle.png") ||
-				(objectArray[i].src =="Shapes/blueSquare.png") ||
-				(objectArray[i].src =="Shapes/blueTriangle.png"))))
+				((objectArray[i].src.localeCompare("Shapes/blueCircle.png"))) == 0))
 				{objectArray[i].parentNode.removeChild(objectArray[i]);
 			}
 		}
