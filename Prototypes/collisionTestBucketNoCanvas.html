@@ -1,0 +1,121 @@
+<html>
+<head>
+
+<script>
+	
+	function Object(imgSrc, element, timer){
+		this.imgSrc =imgSrc;
+		this.element= element;		
+		this.myTimer = timer;
+	}
+	
+	//returns a random src name
+	function randomObject(){
+		var scrNames = new Array("Shapes/blueCircle.png", "Shapes/blueSquare.png", 
+			"Shapes/blueTriangle.png", "Shapes/redCircle.png", "Shapes/redSquare.png", "Shapes/redTriangle.png", 
+			"Shapes/yellowCircle.png", "Shapes/yellowSquare.png", "Shapes/yellowTriangle.png");
+		// if you wish to change the max and min for the random generator
+		// change the 8 for max and the 0 for min.
+		var randomNum = Math.floor((Math.random() * 8) + 0);
+		return scrNames[randomNum];
+	}
+	
+	function randomLane(){
+		var lanes = ["15%", "30%", "45%"];
+		return lanes[Math.floor(Math.random() * 3)];
+	}
+	
+	function createObject(){
+		var imgSrc = randomObject();
+		var element = document.createElement("img")
+		element.style = "left:" + randomLane() + "; position:absolute; top:1px";
+		element.src = imgSrc;
+		element.className = "fallingObject";
+		var coolObject = new Object(imgSrc, element, null);
+		document.body.appendChild(coolObject.element);
+		return coolObject;
+	}
+	
+	function createBucket(){
+		var imgSrc = "bucket.jpg";
+		var element = document.createElement("img");
+		element.style = "left: 30%; position: absolute; top: 400px; width: 175px; height:200;";
+		element.src = imgSrc;
+		element.className = "bucket";
+		var bucketObject = new Object(imgSrc, element, null);
+		document.body.appendChild(bucketObject.element);
+		return bucketObject;
+	}
+	
+	function move(){
+	
+		var objectArray = document.querySelectorAll(".fallingObject");
+		for(var i = 0; i < objectArray.length; i++){
+			objectArray[i].style.top = parseInt(objectArray[i].style.top) + 1 + "px";
+		}			
+	}
+	function checkLimits(){
+		var objectArray = document.querySelectorAll(".fallingObject");
+		for(var i = 0; i < objectArray.length; i++){
+			if(parseInt(objectArray[i].style.top) > 500)
+				{objectArray[i].parentNode.removeChild(objectArray[i]);
+			}
+		}
+	}
+	function checkHit(){
+		var objectArray = document.querySelectorAll(".fallingObject");
+		var bucket = document.querySelector(".bucket");
+		for(var i = 0; i < objectArray.length; i++){
+			if(parseInt(objectArray[i].style.top) > 500 || 
+				(parseInt(objectArray[i].style.top) == 400 &&
+				parseInt(objectArray[i].style.left) == parseInt(bucket.style.left) &&
+				((objectArray[i].src == "Shapes/blueCircle.png") ||
+				(objectArray[i].src =="Shapes/blueSquare.png") ||
+				(objectArray[i].src =="Shapes/blueTriangle.png"))))
+				{objectArray[i].parentNode.removeChild(objectArray[i]);
+			}
+		}
+	}
+	
+	window.onload=function(){
+		var objectTimer = setInterval('createObject();', 1500);
+		//var randomObject = createObject();
+	//	var object = document.querySelector('.fallingObject');
+		var timer = setInterval('move();', 2);
+		
+		createBucket();
+		
+		var limitTimer = setInterval('checkLimits();', 1);
+		
+		var bucketCheck = setInterval('checkHit();', 1);
+		
+
+		//object instead of window will require you to click on the circle itself
+		window.onclick=function(){
+			if(timer == null){
+				timer = setInterval('move();', 2);
+				objectTimer = setInterval('createObject();', 1000);
+			}
+			else{
+				clearInterval(timer);
+				timer = null;
+				clearInterval(objectTimer);
+				objectTimer = null;
+			}	
+			
+		};
+		
+		
+		
+	}
+</script>
+
+</head>
+<body id="frame">
+
+<!--<img class="fallingObject" src="redCircle.png" id="redCircle" style="left:8px; position:absolute; top:1px">
+	-->
+	
+	
+</body>
+</html>
