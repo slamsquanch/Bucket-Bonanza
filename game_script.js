@@ -66,12 +66,3 @@
 
 
 
-    function moveBucket() {
-            bucket.style.right = parseInt(bucket.style.right) + 50 + px;
-            bucket.style.left = parseInt(bucket.style.left) + 50 + px;
-        }
-
-
-
-
-
