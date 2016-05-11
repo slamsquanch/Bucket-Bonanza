@@ -1,0 +1,14 @@
+#bucket {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50%;
+    width: 20%;
+    height: 20%;
+}
+
+#gameOver {
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
