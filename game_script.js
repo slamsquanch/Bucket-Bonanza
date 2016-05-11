@@ -253,9 +253,7 @@ function incrementLives() {
 }
 	
 function displayLives() {
-		var lifeImg = ["1lifeB.png", "2lifeB.png", "3lifeB.png", "4lifeB.png", "5life.png"];
-		
-		document.getElementById("life").src = "graphics/Lives/" + lifeImg[lives - 1];
+		document.getElementById("life").src = "Lives/" + lives + "lifeB.png";
 }
 
 function gameOver() {
