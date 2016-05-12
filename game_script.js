@@ -109,7 +109,7 @@ function createObject(){
     var element = document.createElement("img")
     /*element.setAttribute("width", "8%");
      element.setAttribute("height", "8%");*/
-    element.style = "position:absolute; top:1px";
+    element.style = "position:absolute; top:140px";
     element.style.marginLeft = randomLane();
     element.src = imgSrc;
 	
@@ -270,13 +270,49 @@ function background() {
     sky.setAttribute("alt", "Game Background");
     sky.setAttribute("id", "sky");
 	sky.setAttribute("class", "background");
-    sky.setAttribute("width", "36.5%");
-    sky.setAttribute("height", "70%");
+    sky.setAttribute("width", "37%");
+    sky.setAttribute("height", "95%");
 	sky.setAttribute("location", 0);
     sky.style.position = "absolute";
     sky.style.marginLeft = "15%"
     sky.style.marginTop = "1px";
     document.body.appendChild(sky);
+}
+
+function mittins(){
+	var mittins = document.createElement("img");
+	mittins.setAttribute("src", "graphics/MiddleCat.png");
+	mittins.style = "position:absolute; top:1px";
+	mittins.setAttribute ("width", "15%");
+	mittins.setAttribute ("height", "30%");
+	mittins.style.marginLeft = "27%";	
+	document.body.appendChild(mittins);
+}
+
+function sideClouds(){
+	/***************/
+	/**Left cloud***/
+	/***************/
+	var leftCloud = document.createElement("img");
+	leftCloud.setAttribute("src", "graphics/leftCloud.png");
+	leftCloud.style = "position:absolute; top:1px";
+	leftCloud.setAttribute ("width", "15%");
+	leftCloud.setAttribute ("height", "30%");
+	leftCloud.style.marginLeft = "15%";
+	/***************/
+	/**Right cloud**/
+	/***************/
+	var rightCloud = document.createElement("img");
+	rightCloud.setAttribute("src", "graphics/rightCloud.png");
+	rightCloud.style = "position:absolute; top:35px";
+	rightCloud.setAttribute ("width", "15%");
+	rightCloud.setAttribute ("height", "28%");
+	rightCloud.style.marginLeft = "37%";
+	/*****************************/
+	/*Adds the images to the body*/
+	/*****************************/
+	document.body.appendChild(rightCloud);
+	document.body.appendChild(leftCloud);
 }
 
 
@@ -288,12 +324,14 @@ function background() {
 onload= function(){
 	lives = 3;
     background();  //for the game sky
+	mittins();	//adds mittins
+	sideClouds(); //adds clouds
     bucketControls();
     var objectTimer = setInterval('createObject();', 1500);
     var timer = setInterval('move();', 2);
     var limitTimer = setInterval('checkLimits();', 1);
 	var bucketCheck = setInterval('checkHit();', 1);
-	var lifeCheck = setInterval('checkLives();', 1);
+	
 	
 	
     //object instead of window will require you to click on the circle itself
