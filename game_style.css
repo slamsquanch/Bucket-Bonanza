@@ -1,3 +1,7 @@
+img {
+	position: absolute;
+}
+
 #bucket {
     display: block;
     margin-left: auto;
@@ -11,4 +15,50 @@
 	display: block;
     margin-left: auto;
     margin-right: auto;
+}
+
+#gameOverExit {
+	position: relative; 
+	left: 65px; 
+	top: 415px;
+}
+
+#gameOverRestart {
+	position: relative; 
+	left: 65px;
+	top: 425px;
+}
+
+#titleSettings {
+	position: relative; 
+	left: 435px;
+	top: 5px;
+	height: 4%;
+	width: 4%;
+}
+
+#titlePlay {
+	position: relative;
+	left: 68px;
+	top: 250px;
+}
+
+#titleHowTo {
+	position: relative;
+	left: 68px;
+	top: 253px;
+}
+
+#titleLeaderboard {
+	position: relative;
+	left: 68px;
+	top: 250px;
+}
+
+#leaderExit {
+	position: relative;
+	left: 420px;
+	top: 5px;
+	height: 4%;
+	width: 4%;
 }
