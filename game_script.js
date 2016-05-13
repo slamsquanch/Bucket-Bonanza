@@ -179,6 +179,14 @@ function checkLimits(){
 }
 
 /*****************************/
+/*********** AUDIO ***********/
+/*****************************/
+
+var shapeCorrect = new Audio("sounds/Correct.mp3");
+var shapeWrong = new Audio("sounds/Wrong.mp3");
+var pressButton = new Audio("sounds/Button");
+
+/*****************************/
 /*** HIT REGISTRATION HERE ***/
 /*****************************/
 
@@ -210,6 +218,7 @@ function checkHit(){
 			// what to accept.
 			((objectArray[i].shape == 1))))
 			{objectArray[i].parentNode.removeChild(objectArray[i]);
+			shapeCorrect.play();
 			
 			// If a shape is caught that is NOT a blue square, decrement a life
 		} else if (parseInt(objectArray[i].style.top) > 500 || 
@@ -219,6 +228,7 @@ function checkHit(){
 			((objectArray[i].shape != 1)))) {
 				decrementLives();
 				objectArray[i].parentNode.removeChild(objectArray[i]);
+				shapeWrong.play();
 			}
 			
 			// If the shape reaches 500 (the bottom), do nothing
