@@ -282,12 +282,12 @@ function background() {
 function mittins(){
 	var mittins = document.createElement("img");
 	mittins.setAttribute("src", "graphics/MiddleCat.png");
-	mittins.style = "position:absolute; top:50px";
+	mittins.style = "position:absolute; top:10%";
 	mittins.setAttribute ("width", "15%");
 	mittins.setAttribute ("height", "30%");
 	mittins.setAttribute ("class", "middleCloud");
 	mittins.id = "mittins";
-	mittins.style.marginLeft = "27%";	
+	mittins.style.marginLeft = "26%";	
 	document.body.appendChild(mittins);
 	
 	var mittins = document.getElementById("mittins")
@@ -297,11 +297,11 @@ function mittins(){
 			
 			if(mittins.getAttribute("src") == "graphics/MiddleCat.png"){
 				mittins.src = "graphics/originalCat.png";
-				mittins.style = "margin-left: 27%; 	position:absolute; top:30px";
+				mittins.style = "margin-left: 26%; 	position:absolute; top:7%";
 			}
 			else{
 				mittins.src = "graphics/MiddleCat.png";
-				mittins.style = "margin-left: 27%; 	position:absolute; top:50px";
+				mittins.style = "margin-left: 26%; 	position:absolute; top:10%";
 			}
 		};
 	
@@ -314,7 +314,7 @@ function sideClouds(){
 	/***************/
 	var leftCloud = document.createElement("img");
 	leftCloud.setAttribute("src", "graphics/leftCloud.png");
-	leftCloud.style = "position:absolute; top:50px";
+	leftCloud.style = "position:absolute; top:10%";
 	leftCloud.setAttribute ("width", "15%");
 	leftCloud.setAttribute ("height", "30%");
 	leftCloud.style.marginLeft = "15%";
@@ -323,7 +323,7 @@ function sideClouds(){
 	/***************/
 	var rightCloud = document.createElement("img");
 	rightCloud.setAttribute("src", "graphics/rightCloud.png");
-	rightCloud.style = "position:absolute; top:65px";
+	rightCloud.style = "position:absolute; top:10%";
 	rightCloud.setAttribute ("width", "15%");
 	rightCloud.setAttribute ("height", "28%");
 	rightCloud.style.marginLeft = "37%";
