@@ -109,7 +109,7 @@ function createObject(){
     var element = document.createElement("img")
     /*element.setAttribute("width", "8%");
      element.setAttribute("height", "8%");*/
-    element.style = "position:absolute; top:140px";
+    element.style = "position:absolute; top:150%";
     element.style.marginLeft = randomLane();
     element.src = imgSrc;
 	
