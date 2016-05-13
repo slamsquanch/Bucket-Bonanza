@@ -79,3 +79,8 @@ img {
     height: 4%;
     width: 4%;
 }
+
+#life {
+	margin-left: 43%;
+	z-index: 1;
+}
