@@ -297,7 +297,7 @@ function mittins(){
 			
 			if(mittins.getAttribute("src") == "graphics/MiddleCat.png"){
 				mittins.src = "graphics/originalCat.png";
-				mittins.style = "margin-left: 26%; 	position:absolute; top:7%";
+				mittins.style = "margin-left: 26%; 	position:absolute; top:7 %";
 			}
 			else{
 				mittins.src = "graphics/MiddleCat.png";
