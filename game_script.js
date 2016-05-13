@@ -17,7 +17,7 @@ function bucketControls() {
 	bucketLeft.setAttribute("location", 0);
     bucketLeft.style.position = "absolute";
     bucketLeft.style.marginLeft = "15%"
-    bucketLeft.style.marginTop = "500px";
+    bucketLeft.style.marginTop = "750px";
     document.body.appendChild(bucketLeft);
 
     /* Makes the right lane button/bucket placeholder*/
@@ -30,7 +30,7 @@ function bucketControls() {
 	bucketRight.setAttribute("location", 0);
     bucketRight.style.position = "absolute";
     bucketRight.style.marginLeft = "45%";
-    bucketRight.style.marginTop = "500px";
+    bucketRight.style.marginTop = "750px";
     document.body.appendChild(bucketRight);
 
     /* Makes the Middle lane button/bucket placeholder*/
@@ -43,7 +43,7 @@ function bucketControls() {
 	bucketMid.setAttribute("location", 0);
     bucketMid.style.position = "absolute";
     bucketMid.style.marginLeft = "30%";
-    bucketMid.style.marginTop = "500px";
+    bucketMid.style.marginTop = "750px";
     document.body.appendChild(bucketMid);
 	bucketMid.location = 1;
 
@@ -172,7 +172,7 @@ function move(){
 function checkLimits(){
     var objectArray = document.querySelectorAll(".fallingObject");
     for(var i = 0; i < objectArray.length; i++){
-        if(parseInt(objectArray[i].style.top) > 500){
+        if(parseInt(objectArray[i].style.top) > 750){
             objectArray[i].parentNode.removeChild(objectArray[i]);
         }
     }
@@ -210,8 +210,8 @@ function checkHit(){
 	
 	
 	for(var i = 0; i < objectArray.length; i++){
-		if(parseInt(objectArray[i].style.top) > 500 || 
-			((parseInt(objectArray[i].style.top) == 425) &&
+		if(parseInt(objectArray[i].style.top) > 750 || 
+			((parseInt(objectArray[i].style.top) == 675) &&
 			(parseInt(objectArray[i].style.marginLeft) == bucketLane()) &&
 			
 			// This is hard-coded at the moment to only accept blue squares. The number code determines
@@ -221,8 +221,8 @@ function checkHit(){
 			shapeCorrect.play();
 			
 			// If a shape is caught that is NOT a blue square, decrement a life
-		} else if (parseInt(objectArray[i].style.top) > 500 || 
-			((parseInt(objectArray[i].style.top) == 425) &&
+		} else if (parseInt(objectArray[i].style.top) > 750 || 
+			((parseInt(objectArray[i].style.top) == 675) &&
 			(parseInt(objectArray[i].style.marginLeft) == bucketLane()) &&
 			
 			((objectArray[i].shape != 1)))) {
@@ -231,8 +231,8 @@ function checkHit(){
 				shapeWrong.play();
 			}
 			
-			// If the shape reaches 500 (the bottom), do nothing
-		else if (parseInt(objectArray[i].style.top) == 500) {
+			// If the shape reaches 850 (the bottom), do nothing
+		else if (parseInt(objectArray[i].style.top) == 750) {
 			objectArray[i].parentNode.removeChild(objectArray[i])
 		}
 	}
