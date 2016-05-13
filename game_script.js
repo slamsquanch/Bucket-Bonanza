@@ -184,7 +184,9 @@ function checkLimits(){
 
 var shapeCorrect = new Audio("sounds/Correct.mp3");
 var shapeWrong = new Audio("sounds/Wrong.mp3");
-var pressButton = new Audio("sounds/Button");
+var pressButton = new Audio("sounds/Button.mp3");
+var meowKitty = new Audio("sounds/Meow.mp3");
+var meowKitty2 = new Audio("sounds/Meow2.mp3");
 
 /*****************************/
 /*** HIT REGISTRATION HERE ***/
@@ -308,10 +310,12 @@ function mittins(){
 			if(mittins.getAttribute("src") == "graphics/MiddleCat.png"){
 				mittins.src = "graphics/originalCat.png";
 				mittins.style = "margin-left: 26%; 	position:absolute; top:7 %";
+				meowKitty.play();
 			}
 			else{
 				mittins.src = "graphics/MiddleCat.png";
 				mittins.style = "margin-left: 26%; 	position:absolute; top:10%";
+				meowKitty2.play();
 			}
 		};
 	
