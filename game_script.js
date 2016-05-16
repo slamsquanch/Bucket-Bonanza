@@ -93,10 +93,25 @@ function randomObject(){
     var scrNames = new Array("graphics/blueCircle.png", "graphics/blueSquare.png",
         "graphics/blueTriangle.png", "graphics/redCircle.png", "graphics/redSquare.png", "graphics/redTriangle.png",
         "graphics/yellowCircle.png", "graphics/yellowSquare.png", "graphics/yellowTriangle.png");
+	// Added three new graphics to fall
+	var boot = "graphics/boot.png";
+	var fish = "graphics/fish.png";
+	var star = "graphics/star.png";
     // if you wish to change the max and min for the random generator
     // change the 8 for max and the 0 for min.
     var randomNum = Math.floor((Math.random() * 8) + 0);
-    return scrNames[randomNum];
+	
+	// Weight system for falling objects
+	var chance = Math.floor((Math.random() * 100) + 1);
+    if (chance < 70) {
+		return scrNames[randomNum];
+	} else if (chance < 90) {
+		return boot;
+	} else if (chance < 99) {
+		return fish;
+	} else {
+		return star;
+	}
 }
 
 function randomLane(){
@@ -149,7 +164,16 @@ function createObject(){
 				
 		case "graphics/yellowTriangle.png":
 			element.shape = 8;
-			break;				
+			break;
+		case "graphics/boot.png":
+			element.shape = 9;
+			break;
+		case "graphics/fish.png":
+			element.shape = 10;
+			break;
+		case "graphics/star.png":
+			element.shape = 11;
+			break;
 			
 		default:
 			break;
