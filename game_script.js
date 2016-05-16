@@ -383,7 +383,6 @@ function sideClouds(){
 
 
 
-
 /*******************************/
 /****** ONLOAD FUNCTION  *******/
 /*******************************/
@@ -402,6 +401,7 @@ onload= function(){
 	
     //object instead of window will require you to click on the circle itself
     /*window.onclick=function(){
+    pause.onclick=function(){
      if(timer == null){
      timer = setInterval('move();', 2);
      objectTimer = setInterval('createObject();', 1000);
