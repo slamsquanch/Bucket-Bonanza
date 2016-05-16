@@ -381,7 +381,18 @@ function sideClouds(){
 	document.body.appendChild(leftCloud);
 }
 
-
+//creates pause icon in the top right corner
+function pauseIcon(){
+	var pauseIcon = document.createElement("img");
+	pauseIcon.setAttribute("src", "buttons/pauseIcon.png");
+	pauseIcon.style = "position:absolute; top:1%";
+	pauseIcon.setAttribute ("width", "5%");
+	pauseIcon.setAttribute ("height", "10%");
+	pauseIcon.setAttribute("class", "pauseIcon");
+	pauseIcon.style.marginLeft = "47%"
+	document.body.appendChild(pauseIcon);
+	
+}
 
 
 /*******************************/
@@ -392,16 +403,18 @@ onload= function(){
     background();  //for the game sky
 	mittins();	//adds mittins
 	sideClouds(); //adds clouds
+	pauseIcon() // adds the pause icon
     bucketControls();
     var objectTimer = setInterval('createObject();', 1500);
     var timer = setInterval('move();', 2);
     var limitTimer = setInterval('checkLimits();', 1);
 	var bucketCheck = setInterval('checkHit();', 1);
+	var pause = document.querySelector(".pauseIcon");
 	
 	
 	
     //object instead of window will require you to click on the circle itself
-    /*window.onclick=function(){
+    pause.onclick=function(){
      if(timer == null){
      timer = setInterval('move();', 2);
      objectTimer = setInterval('createObject();', 1000);
@@ -413,7 +426,7 @@ onload= function(){
      objectTimer = null;
      }
 
-     };*/
+     };
 }
 
 
