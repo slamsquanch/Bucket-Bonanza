@@ -247,7 +247,15 @@ function checkHit(){
 			shapeCorrect.play();
 			
 			// If a shape is caught that is NOT a blue square, decrement a life
-		} else if (parseInt(objectArray[i].style.top) > 750 || 
+		}  else if (parseInt(objectArray[i].style.top) > 750 || 
+			((parseInt(objectArray[i].style.top) == 675) &&
+			(parseInt(objectArray[i].style.marginLeft) == bucketLane()) &&
+			
+			((objectArray[i].shape == 10)))) {
+				incrementLives();
+				objectArray[i].parentNode.removeChild(objectArray[i]);
+				shapeCorrect.play();
+		}  else if (parseInt(objectArray[i].style.top) > 750 || 
 			((parseInt(objectArray[i].style.top) == 675) &&
 			(parseInt(objectArray[i].style.marginLeft) == bucketLane()) &&
 			
@@ -255,8 +263,9 @@ function checkHit(){
 				decrementLives();
 				objectArray[i].parentNode.removeChild(objectArray[i]);
 				shapeWrong.play();
-			}
-			
+                
+		}
+           
 			// If the shape reaches 850 (the bottom), do nothing
 		else if (parseInt(objectArray[i].style.top) == 750) {
 			objectArray[i].parentNode.removeChild(objectArray[i])
