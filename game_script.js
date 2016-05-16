@@ -391,7 +391,7 @@ function pauseIcon(){
 	pauseIcon.setAttribute("class", "pauseIcon");
 	pauseIcon.style.marginLeft = "47%"
 	document.body.appendChild(pauseIcon);
-	
+	//test comment
 }
 
 
