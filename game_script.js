@@ -139,9 +139,9 @@ function randomObject(){
 	
 	// Weight system for falling objects
 	var chance = Math.floor((Math.random() * 100) + 1);
-    if (chance < 70) {
+    if (chance < 79) {
 		return scrNames[randomNum];
-	} else if (chance < 90) {
+	} else if (chance < 94) {
 		return boot;
 	} else if (chance < 99) {
 		return fish;
@@ -619,6 +619,7 @@ function checkHit(){
 			((objectArray[i].shape == myBucket.shape))))
 			{objectArray[i].parentNode.removeChild(objectArray[i]);
 			shapeCorrect.play();
+			updateScore();
 			
 			//If it is a fish then increment life
 		}  else if (parseInt(objectArray[i].style.top) > 750 || 
@@ -652,6 +653,15 @@ function checkHit(){
 			objectArray[i].parentNode.removeChild(objectArray[i])
 		}
 	}
+}
+
+/*****************************/
+/****** SCORING **************/
+/*****************************/
+
+function updateScore() {
+	score++;
+	document.getElementById("score").innerHTML = score;
 }
 
 /*****************************/
@@ -798,6 +808,7 @@ function displayTargetText(){
 /*******************************/
 onload= function(){
 	lives = 3;
+	score = 0;
     background();  //for the game sky
 	mittins();	//adds mittins
 	sideClouds(); //adds clouds
