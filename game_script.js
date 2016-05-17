@@ -244,7 +244,7 @@ function move(){
 }
 function checkLimits(){
     var objectArray = document.querySelectorAll(".fallingObject");
-    for(var i = 0; i < objectArray.length; i++){
+	for(var i = 0; i < objectArray.length; i++){
         if(parseInt(objectArray[i].style.top) > 750){
             objectArray[i].parentNode.removeChild(objectArray[i]);
         }
