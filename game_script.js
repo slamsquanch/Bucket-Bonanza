@@ -2,6 +2,16 @@
  * Created by Zac on 2016-05-09.
  */
 
+
+ function randomBucketReq(){
+	 var myBucket = document.querySelectorAll(".bucket");
+	 var randomNum = Math.floor((Math.random() * 8) + 0);
+	 for(i = 0; i < 3; i++){
+		myBucket[i].shape = randomNum;
+	 }
+ }
+ 
+ 
 function bucketControls() {
     var bucketLeft = document.createElement("IMG");
     var bucketRight = document.createElement("IMG");
@@ -233,20 +243,18 @@ function bucketLane() {
 
 function checkHit(){
 	var objectArray = document.querySelectorAll(".fallingObject");
-	
+	var myBucket = document.querySelector(".bucket");
 	
 	for(var i = 0; i < objectArray.length; i++){
+		//accepts the corret target shape
 		if(parseInt(objectArray[i].style.top) > 750 || 
 			((parseInt(objectArray[i].style.top) == 675) &&
 			(parseInt(objectArray[i].style.marginLeft) == bucketLane()) &&
-			
-			// This is hard-coded at the moment to only accept blue squares. The number code determines
-			// what to accept.
-			((objectArray[i].shape == 1))))
+			((objectArray[i].shape == myBucket.shape))))
 			{objectArray[i].parentNode.removeChild(objectArray[i]);
 			shapeCorrect.play();
 			
-			// If a shape is caught that is NOT a blue square, decrement a life
+			//If it is a fish then increment life
 		}  else if (parseInt(objectArray[i].style.top) > 750 || 
 			((parseInt(objectArray[i].style.top) == 675) &&
 			(parseInt(objectArray[i].style.marginLeft) == bucketLane()) &&
@@ -255,11 +263,12 @@ function checkHit(){
 				incrementLives();
 				objectArray[i].parentNode.removeChild(objectArray[i]);
 				shapeCorrect.play();
+			//If a shape is caught that is NOT the target shape, decrement a life
 		}  else if (parseInt(objectArray[i].style.top) > 750 || 
 			((parseInt(objectArray[i].style.top) == 675) &&
 			(parseInt(objectArray[i].style.marginLeft) == bucketLane()) &&
 			
-			((objectArray[i].shape != 1)))) {
+			((objectArray[i].shape != myBucket.shape)))) {
 				decrementLives();
 				objectArray[i].parentNode.removeChild(objectArray[i]);
 				shapeWrong.play();
@@ -381,7 +390,9 @@ function sideClouds(){
 	document.body.appendChild(leftCloud);
 }
 
-//creates pause icon in the top right corner
+/********************************************/
+/*creates pause icon in the top right corner*/
+/********************************************/
 function pauseIcon(){
 	var pauseIcon = document.createElement("img");
 	pauseIcon.setAttribute("src", "buttons/pauseIcon.png");
@@ -394,6 +405,28 @@ function pauseIcon(){
 	
 }
 
+/********************************************/
+/*			Mittens displays target			*/
+/********************************************/
+function displayTarget(){
+	var scrNames = new Array("graphics/blueCircle.png", "graphics/blueSquare.png",
+        "graphics/blueTriangle.png", "graphics/redCircle.png", "graphics/redSquare.png", "graphics/redTriangle.png",
+        "graphics/yellowCircle.png", "graphics/yellowSquare.png", "graphics/yellowTriangle.png");
+	var theBucket = document.querySelector(".bucket");
+	var targetShape = document.createElement("img");
+	targetShape.src = scrNames[theBucket.shape];
+	targetShape.style = "position:absolute; top:26%";
+	targetShape.style.marginLeft = "31%";
+	targetShape.setAttribute ("width", "5%");
+	targetShape.setAttribute ("height", "10%");
+	document.body.appendChild(targetShape);
+	
+	
+}
+
+
+
+
 
 /*******************************/
 /****** ONLOAD FUNCTION  *******/
@@ -404,26 +437,28 @@ onload= function(){
 	mittins();	//adds mittins
 	sideClouds(); //adds clouds
 	pauseIcon() // adds the pause icon
-    bucketControls();
+    bucketControls();	
     var objectTimer = setInterval('createObject();', 1500);
     var timer = setInterval('move();', 2);
     var limitTimer = setInterval('checkLimits();', 1);
 	var bucketCheck = setInterval('checkHit();', 1);
-	var pause = document.querySelector(".pauseIcon");
+	randomBucketReq();
+	var pause = document.querySelector(".pauseIcon");	
+	displayTarget() // displays target
 	
 	
 	
     //object instead of window will require you to click on the circle itself
     pause.onclick=function(){
-     if(timer == null){
-     timer = setInterval('move();', 2);
-     objectTimer = setInterval('createObject();', 1000);
+		if(timer == null){
+		timer = setInterval('move();', 2);
+		objectTimer = setInterval('createObject();', 1000);
      }
      else{
-     clearInterval(timer);
-     timer = null;
-     clearInterval(objectTimer);
-     objectTimer = null;
+		clearInterval(timer);
+		timer = null;
+		clearInterval(objectTimer);
+		objectTimer = null;
      }
 
      };
