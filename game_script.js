@@ -8,8 +8,8 @@
 /************************************/
  function randomBucketReq(){
 	 var myBucket = document.querySelectorAll(".bucket");
-	 //var randomNum = Math.floor((Math.random() * 17) + 0);
-	 var randomNum = 9; //for testing purposes
+	 var randomNum = Math.floor((Math.random() * 17) + 0);
+	 //var randomNum = 9; //for testing purposes
 	 for(i = 0; i < 3; i++){
 		myBucket[i].shape = randomNum;
 	 }
@@ -363,7 +363,7 @@ function checkMixedShapes(value1, value2, fallingObject){
 		// not yet implemented
 	}
 		
- }
+
 
 function checkHit(){
 	var objectArray = document.querySelectorAll(".fallingObject");
@@ -376,18 +376,16 @@ function checkHit(){
 	
 	for(var i = 0; i < objectArray.length; i++){
 		//accepts the corret target shape
-		if(parseInt(objectArray[i].style.top) > 750 || 
-			((parseInt(objectArray[i].style.top) == 675) &&
+		if((parseInt(objectArray[i].style.top) > 675) &&
 			(parseInt(objectArray[i].style.marginLeft) == bucketLane()) &&
-			((objectArray[i].shape == myBucket.shape))))
+			(objectArray[i].shape == myBucket.shape))
 			{
 			objectArray[i].parentNode.removeChild(objectArray[i]);
 			shapeCorrect.play();
 			randomBucketReq();
 			displayTarget();
 			//If it is a fish then increment life
-		}  else if (parseInt(objectArray[i].style.top) > 750 || 
-			((parseInt(objectArray[i].style.top) > 675) &&
+		}  else if (((parseInt(objectArray[i].style.top) > 675) &&
 			(parseInt(objectArray[i].style.marginLeft) == bucketLane()) &&
 			((objectArray[i].shape == 22)))) {
 				incrementLives();
@@ -395,16 +393,23 @@ function checkHit(){
 				shapeCorrect.play();
 			
 		}
-		//checks if target is a mixed color
-		else if(parseInt(objectArray[i].style.top) > 750 || 
-			((parseInt(objectArray[i].style.top) > 675) &&
+		//if it is a boot decrement a life
+		else if(((parseInt(objectArray[i].style.top) > 675) &&
 			(parseInt(objectArray[i].style.marginLeft) == bucketLane()) &&
-			((myBucket.shape > 8)))){
-			acceptMixedShapes(objectArray[i], myBucket);
+			((objectArray[i].shape == 21)))){
+				decrementLives();
+				objectArray[i].parentNode.removeChild(objectArray[i]);
+				shapeWrong.play();
+			} 
+		
+		//checks if target is a mixed color
+		else if(((parseInt(objectArray[i].style.top) > 675) &&
+			(parseInt(objectArray[i].style.marginLeft) == bucketLane()) &&
+			((myBucket.shape > 8 && myBucket.shape < 18)))){
+				acceptMixedShapes(objectArray[i], myBucket);
 		}
 		//If a shape is caught that is NOT the target shape, decrement a life
-		else if (parseInt(objectArray[i].style.top) > 750 || 
-			((parseInt(objectArray[i].style.top) > 675) &&
+		else if (((parseInt(objectArray[i].style.top) > 675) &&
 			(parseInt(objectArray[i].style.marginLeft) == bucketLane()) &&		
 			((objectArray[i].shape != myBucket.shape)))) {
 				decrementLives();
@@ -412,10 +417,6 @@ function checkHit(){
 				shapeWrong.play();
 			       
 		}         
-			// If the shape reaches 850 (the bottom), do nothing
-		else if (parseInt(objectArray[i].style.top) == 750) {
-			objectArray[i].parentNode.removeChild(objectArray[i])
-		}
 	}
 }
 
@@ -576,6 +577,7 @@ onload= function(){
 	randomBucketReq(); // randomizes buckets initial requirement
 	displayTarget() // displays target
 	var pause = document.querySelector(".pauseIcon");	
+
 	
 	
     //object instead of window will require you to click on the circle itself
