@@ -84,3 +84,13 @@ img {
 	margin-left: 38%;
 	z-index: 1;
 }
+
+#score {
+	position: absolute;
+	margin-left: 48%;
+	margin-top: 11%;
+	font-family: "Comic Sans MS";
+	font-style: bold;
+	font-size: 24px;
+	z-index: 1;
+}
