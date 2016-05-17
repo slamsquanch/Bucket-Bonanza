@@ -206,6 +206,7 @@ function createObject(){
 			element.shape = 8;
 			break;
 		case "graphics/boot.png":
+			element.shape = 21;
 			break;
 		case "graphics/fish.png":
 			element.shape = 22;
