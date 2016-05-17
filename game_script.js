@@ -25,7 +25,7 @@ function displayTarget(){
         "graphics/yellowCircle.png", "graphics/yellowSquare.png", "graphics/yellowTriangle.png", "graphics/greenCircle.png",
 		"graphics/greenSquare.png", "graphics/greenTriangle.png", "graphics/orangeCircle.png", "graphics/orangeSquare.png",
 		"graphics/orangeTriangle.png", "graphics/purpleCircle.png", "graphics/purpleSquare.png","graphics/purpleTriangle.png");
-	
+		
 	var check = document.querySelector(".targetShape");
 	if(check != null){
 		check.parentNode.removeChild(check);
@@ -40,7 +40,6 @@ function displayTarget(){
 	targetShape.setAttribute ("height", "10%");
 	document.body.appendChild(targetShape);	
 }
- 
  
 function bucketControls() {
     var bucketLeft = document.createElement("IMG");
@@ -161,9 +160,7 @@ function randomLane(){
 
 function createObject(){
     var imgSrc = randomObject();
-    var element = document.createElement("img")
-    /*element.setAttribute("width", "8%");
-     element.setAttribute("height", "8%");*/
+    var element = document.createElement("img");
     element.style = "position:absolute; top:150%";
     element.style.marginLeft = randomLane();
     element.src = imgSrc;
