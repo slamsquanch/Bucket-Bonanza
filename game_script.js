@@ -135,7 +135,7 @@ function randomObject(){
 	var star = "graphics/star.png";
     // if you wish to change the max and min for the random generator
     // change the 8 for max and the 0 for min.
-    var randomNum = Math.floor((Math.random() * 8) + 0);
+    var randomNum = Math.floor((Math.random() * 9) + 0);
 	
 	// Weight system for falling objects
 	var chance = Math.floor((Math.random() * 100) + 1);
@@ -613,16 +613,16 @@ function checkHit(){
 	
 	for(var i = 0; i < objectArray.length; i++){
 		//accepts the corret target shape
-		if(parseInt(objectArray[i].style.top) > 750 || 
+		if(
 			((parseInt(objectArray[i].style.top) > 675) &&
 			(parseInt(objectArray[i].style.marginLeft) == bucketLane()) &&
-			((objectArray[i].shape == myBucket.shape))))
-			{objectArray[i].parentNode.removeChild(objectArray[i]);
-			shapeCorrect.play();
-			updateScore();
+			((objectArray[i].shape == myBucket.shape)))) {
+				objectArray[i].parentNode.removeChild(objectArray[i]);
+				shapeCorrect.play();
+				updateScore();
 			
 			//If it is a fish then increment life
-		}  else if (parseInt(objectArray[i].style.top) > 750 || 
+		}  else if (
 			((parseInt(objectArray[i].style.top) > 675) &&
 			(parseInt(objectArray[i].style.marginLeft) == bucketLane()) &&
 			((objectArray[i].shape == 22)))) {
@@ -632,14 +632,14 @@ function checkHit(){
 			
 		}
 		//checks if target is a mixed color
-		else if(parseInt(objectArray[i].style.top) > 750 || 
+		else if(
 			((parseInt(objectArray[i].style.top) > 675) &&
 			(parseInt(objectArray[i].style.marginLeft) == bucketLane()) &&
 			((myBucket.shape > 8)))){
 			acceptMixedShapes(objectArray[i]);
 		}
 		//If a shape is caught that is NOT the target shape, decrement a life
-		else if (parseInt(objectArray[i].style.top) > 750 || 
+		else if (
 			((parseInt(objectArray[i].style.top) > 675) &&
 			(parseInt(objectArray[i].style.marginLeft) == bucketLane()) &&		
 			((objectArray[i].shape != myBucket.shape)))) {
