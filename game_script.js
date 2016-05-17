@@ -37,6 +37,33 @@ function displayTarget(){
 	document.body.appendChild(targetShape);	
 }
  
+
+/********************************************/
+/*			Mittens teaches mixing			*/
+/********************************************/
+// only at the top for testing purposes will be moved with background stuff later
+function speechBubble(){
+	// array will be 9 elements later
+	var teach = new Array("Mixing Colours/MixGreenCircle.png", "Mixing Colours/MixGreenSquare.png",
+        "Mixing Colours/MixGreenTriangle.png", "Mixing Colours/MixOrangeCircle.png", "Mixing Colours/MixOrangeSquare.png",
+        "Mixing Colours/MixOrangeTriangle.png", "Mixing Colours/MixPurpleCircle.png", "Mixing Colours/MixPurpleSquare.png",
+        "Mixing Colours/MixPurpleTriangle.png");
+		
+	var theBucket = document.querySelector(".bucket");
+	var mixColours = document.createElement("img");
+
+	if (theBucket.shape <= 8) {
+
+	} else if (theBucket.shape > 8) {
+		mixColours.src = teach[theBucket.shape - 9];
+		mixColours.style = "position:absolute; top:05%";
+		mixColours.style.marginLeft = "16%";
+		//mixColours.setAttribute ("width", "5%");
+		//mixColours.setAttribute ("height", "10%");
+		document.body.appendChild(mixColours);
+	}
+
+}
  
 function bucketControls() {
     var bucketLeft = document.createElement("IMG");
@@ -157,7 +184,7 @@ function randomLane(){
 
 function createObject(){
     var imgSrc = randomObject();
-    var element = document.createElement("img")
+    var element = document.createElement("img");
     /*element.setAttribute("width", "8%");
      element.setAttribute("height", "8%");*/
     element.style = "position:absolute; top:150%";
@@ -266,6 +293,11 @@ function bucketLane() {
 	
 }
 
+
+
+/*******************************/
+/****  Accept Mixed Colours ****/
+/*******************************/
 			
  function acceptMixedShapes(fallingObject){
 	var myBucket = document.querySelector(".bucket");
@@ -284,6 +316,7 @@ function bucketLane() {
 					myBucket.shape = 6;
 					fallingObject.parentNode.removeChild(fallingObject);
 					displayTarget();
+                    speechBubble();
 				}
 			// if you accept a yellow circle
 			else if((parseInt(fallingObject.style.top) > 750 || 
@@ -294,6 +327,7 @@ function bucketLane() {
 				myBucket.shape = 0;	
 				fallingObject.parentNode.removeChild(fallingObject);
 				displayTarget();
+                speechBubble();
 			}
 			else if((parseInt(fallingObject.style.top) > 750 || 
 			((parseInt(fallingObject.style.top) > 675) &&
@@ -320,6 +354,7 @@ function bucketLane() {
 					myBucket.shape = 7;
 					fallingObject.parentNode.removeChild(fallingObject);
 					displayTarget(); // only for testing purposes
+                    speechBubble();
 				}
 			// if you accept a yellow square
 			else if((parseInt(fallingObject.style.top) > 750 || 
@@ -330,6 +365,7 @@ function bucketLane() {
 				myBucket.shape = 1;	
 				fallingObject.parentNode.removeChild(fallingObject);
 				displayTarget(); // only for testing purposes
+                speechBubble();
 			}
 			else if((parseInt(fallingObject.style.top) > 750 || 
 			((parseInt(fallingObject.style.top) > 675) &&
@@ -356,6 +392,7 @@ function bucketLane() {
 					myBucket.shape = 8;
 					fallingObject.parentNode.removeChild(fallingObject);
 					displayTarget(); // only for testing purposes
+                    speechBubble();
 				}
 			// if you accept a yellow square
 			else if((parseInt(fallingObject.style.top) > 750 || 
@@ -366,6 +403,7 @@ function bucketLane() {
 				myBucket.shape = 2;	
 				fallingObject.parentNode.removeChild(fallingObject);
 				displayTarget(); // only for testing purposes
+                speechBubble();
 			}
 			else if((parseInt(fallingObject.style.top) > 750 || 
 			((parseInt(fallingObject.style.top) > 675) &&
@@ -392,6 +430,7 @@ function bucketLane() {
 					myBucket.shape = 6;
 					fallingObject.parentNode.removeChild(fallingObject);
 					displayTarget(); // only for testing purposes
+                    speechBubble();
 				}
 			// if you accept a yellow circle
 			else if((parseInt(fallingObject.style.top) > 750 || 
@@ -402,6 +441,7 @@ function bucketLane() {
 				myBucket.shape = 3;	
 				fallingObject.parentNode.removeChild(fallingObject);
 				displayTarget(); // only for testing purposes
+                speechBubble();
 			}
 			else if((parseInt(fallingObject.style.top) > 750 || 
 			((parseInt(fallingObject.style.top) > 675) &&
@@ -428,6 +468,7 @@ function bucketLane() {
 					myBucket.shape = 7;
 					fallingObject.parentNode.removeChild(fallingObject);
 					displayTarget(); // only for testing purposes
+                    speechBubble();
 				}
 			// if you accept a yellow square
 			else if((parseInt(fallingObject.style.top) > 750 || 
@@ -438,6 +479,7 @@ function bucketLane() {
 				myBucket.shape = 4;	
 				fallingObject.parentNode.removeChild(fallingObject);
 				displayTarget(); // only for testing purposes
+                speechBubble();
 			}
 			else if((parseInt(fallingObject.style.top) > 750 || 
 			((parseInt(fallingObject.style.top) > 675) &&
@@ -465,6 +507,7 @@ function bucketLane() {
 					myBucket.shape = 8;
 					fallingObject.parentNode.removeChild(fallingObject);
 					displayTarget(); // only for testing purposes
+                    speechBubble();
 				}
 			// if you accept a yellow triangle
 			else if((parseInt(fallingObject.style.top) > 750 || 
@@ -475,6 +518,7 @@ function bucketLane() {
 				myBucket.shape = 5;	
 				fallingObject.parentNode.removeChild(fallingObject);
 				displayTarget(); // only for testing purposes
+                speechBubble();
 			}
 			else if((parseInt(fallingObject.style.top) > 750 || 
 			((parseInt(fallingObject.style.top) > 675) &&
@@ -502,6 +546,7 @@ function bucketLane() {
 					myBucket.shape = 3;
 					fallingObject.parentNode.removeChild(fallingObject);
 					displayTarget(); // only for testing purposes
+                    speechBubble();
 				}
 			// if you accept a red circle
 			else if((parseInt(fallingObject.style.top) > 750 || 
@@ -512,6 +557,7 @@ function bucketLane() {
 				myBucket.shape = 0;	
 				fallingObject.parentNode.removeChild(fallingObject);
 				displayTarget(); // only for testing purposes
+                speechBubble();
 			}
 			else if((parseInt(fallingObject.style.top) > 750 || 
 			((parseInt(fallingObject.style.top) > 675) &&
@@ -539,6 +585,7 @@ function bucketLane() {
 					myBucket.shape = 4;
 					fallingObject.parentNode.removeChild(fallingObject);
 					displayTarget(); // only for testing purposes
+                    speechBubble();
 				}
 			// if you accept a red square
 			else if((parseInt(fallingObject.style.top) > 750 || 
@@ -549,6 +596,7 @@ function bucketLane() {
 				myBucket.shape = 1;	
 				fallingObject.parentNode.removeChild(fallingObject);
 				displayTarget(); // only for testing purposes
+                speechBubble();
 			}
 			else if((parseInt(fallingObject.style.top) > 750 || 
 			((parseInt(fallingObject.style.top) > 675) &&
@@ -576,6 +624,7 @@ function bucketLane() {
 					myBucket.shape = 5;
 					fallingObject.parentNode.removeChild(fallingObject);
 					displayTarget(); // only for testing purposes
+                    speechBubble();
 				}
 			// if you accept a red triangle
 			else if((parseInt(fallingObject.style.top) > 750 || 
@@ -586,6 +635,7 @@ function bucketLane() {
 				myBucket.shape = 2;	
 				fallingObject.parentNode.removeChild(fallingObject);
 				displayTarget(); // only for testing purposes
+                speechBubble();
 			}
 			else if((parseInt(fallingObject.style.top) > 750 || 
 			((parseInt(fallingObject.style.top) > 675) &&
@@ -700,7 +750,7 @@ function background() {
     sky.setAttribute("height", "95%");
 	sky.setAttribute("location", 0);
     sky.style.position = "absolute";
-    sky.style.marginLeft = "15%"
+    sky.style.marginLeft = "15%";
     sky.style.marginTop = "1px";
     document.body.appendChild(sky);
 }
@@ -716,7 +766,7 @@ function mittins(){
 	mittins.style.marginLeft = "26%";	
 	document.body.appendChild(mittins);
 	
-	var mittins = document.getElementById("mittins")
+	var mittins = document.getElementById("mittins");
 	
 	/*When you click on the middle cat it will change the cat to the other cat*/
 	mittins.onclick = function(){
@@ -772,7 +822,7 @@ function pauseIcon(){
 	pauseIcon.setAttribute ("width", "5%");
 	pauseIcon.setAttribute ("height", "10%");
 	pauseIcon.setAttribute("class", "pauseIcon");
-	pauseIcon.style.marginLeft = "47%"
+	pauseIcon.style.marginLeft = "47%";
 	document.body.appendChild(pauseIcon);
 	
 }
@@ -809,7 +859,8 @@ onload= function(){
     var limitTimer = setInterval('checkLimits();', 1);
 	var bucketCheck = setInterval('checkHit();', 1);
 	randomBucketReq(); // randomizes buckets initial requirement
-	displayTarget() // displays target
+	displayTarget() ;// displays target
+    speechBubble();
 	var pause = document.querySelector(".pauseIcon");	
 	
 	
