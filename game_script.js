@@ -277,7 +277,7 @@ function bucketLane() {
 	if(targetNum == 9) {
 			// if you accept a blue circle 
 			if((parseInt(fallingObject.style.top) > 750 || 
-				((parseInt(fallingObject.style.top) == 675) &&
+				((parseInt(fallingObject.style.top) > 675) &&
 				(parseInt(fallingObject.style.marginLeft) == bucketLane()) &&
 				((fallingObject.shape == 0))))){
 					shapeCorrect.play();
@@ -287,7 +287,7 @@ function bucketLane() {
 				}
 			// if you accept a yellow circle
 			else if((parseInt(fallingObject.style.top) > 750 || 
-			((parseInt(fallingObject.style.top) == 675) &&
+			((parseInt(fallingObject.style.top) > 675) &&
 			(parseInt(fallingObject.style.marginLeft) == bucketLane()) &&
 			((fallingObject.shape == 6))))){
 				shapeCorrect.play();
@@ -296,7 +296,7 @@ function bucketLane() {
 				displayTarget();
 			}
 			else if((parseInt(fallingObject.style.top) > 750 || 
-			((parseInt(fallingObject.style.top) == 675) &&
+			((parseInt(fallingObject.style.top) > 675) &&
 			(parseInt(fallingObject.style.marginLeft) == bucketLane()) &&
 			((fallingObject.shape != 6 || fallingObject.shape != 0))))){
 				decrementLives();
@@ -313,7 +313,7 @@ function bucketLane() {
 	else if(targetNum == 10){
 		// if you accept a blue square 
 			if((parseInt(fallingObject.style.top) > 750 || 
-				((parseInt(fallingObject.style.top) == 675) &&
+				((parseInt(fallingObject.style.top) > 675) &&
 				(parseInt(fallingObject.style.marginLeft) == bucketLane()) &&
 				((fallingObject.shape == 1))))){
 					shapeCorrect.play();
@@ -323,7 +323,7 @@ function bucketLane() {
 				}
 			// if you accept a yellow square
 			else if((parseInt(fallingObject.style.top) > 750 || 
-			((parseInt(fallingObject.style.top) == 675) &&
+			((parseInt(fallingObject.style.top) > 675) &&
 			(parseInt(fallingObject.style.marginLeft) == bucketLane()) &&
 			((fallingObject.shape == 7))))){
 				shapeCorrect.play();
@@ -332,7 +332,7 @@ function bucketLane() {
 				displayTarget(); // only for testing purposes
 			}
 			else if((parseInt(fallingObject.style.top) > 750 || 
-			((parseInt(fallingObject.style.top) == 675) &&
+			((parseInt(fallingObject.style.top) > 675) &&
 			(parseInt(fallingObject.style.marginLeft) == bucketLane()) &&
 			((fallingObject.shape != 7 || fallingObject.shape != 1))))){
 				decrementLives();
@@ -349,7 +349,7 @@ function bucketLane() {
 	else if(targetNum == 11){
 		// if you accept a blue triangle
 			if((parseInt(fallingObject.style.top) > 750 || 
-				((parseInt(fallingObject.style.top) == 675) &&
+				((parseInt(fallingObject.style.top) > 675) &&
 				(parseInt(fallingObject.style.marginLeft) == bucketLane()) &&
 				((fallingObject.shape == 2))))){
 					shapeCorrect.play();
@@ -359,7 +359,7 @@ function bucketLane() {
 				}
 			// if you accept a yellow square
 			else if((parseInt(fallingObject.style.top) > 750 || 
-			((parseInt(fallingObject.style.top) == 675) &&
+			((parseInt(fallingObject.style.top) > 675) &&
 			(parseInt(fallingObject.style.marginLeft) == bucketLane()) &&
 			((fallingObject.shape == 8))))){
 				shapeCorrect.play();
@@ -368,7 +368,7 @@ function bucketLane() {
 				displayTarget(); // only for testing purposes
 			}
 			else if((parseInt(fallingObject.style.top) > 750 || 
-			((parseInt(fallingObject.style.top) == 675) &&
+			((parseInt(fallingObject.style.top) > 675) &&
 			(parseInt(fallingObject.style.marginLeft) == bucketLane()) &&
 			((fallingObject.shape != 8 || fallingObject.shape != 2))))){
 				decrementLives();
@@ -385,7 +385,7 @@ function bucketLane() {
 	else if(targetNum == 12){
 		// if you accept a red circle
 			if((parseInt(fallingObject.style.top) > 750 || 
-				((parseInt(fallingObject.style.top) == 675) &&
+				((parseInt(fallingObject.style.top) > 675) &&
 				(parseInt(fallingObject.style.marginLeft) == bucketLane()) &&
 				((fallingObject.shape == 3))))){
 					shapeCorrect.play();
@@ -395,7 +395,7 @@ function bucketLane() {
 				}
 			// if you accept a yellow circle
 			else if((parseInt(fallingObject.style.top) > 750 || 
-			((parseInt(fallingObject.style.top) == 675) &&
+			((parseInt(fallingObject.style.top) >675) &&
 			(parseInt(fallingObject.style.marginLeft) == bucketLane()) &&
 			((fallingObject.shape == 6))))){
 				shapeCorrect.play();
@@ -404,7 +404,7 @@ function bucketLane() {
 				displayTarget(); // only for testing purposes
 			}
 			else if((parseInt(fallingObject.style.top) > 750 || 
-			((parseInt(fallingObject.style.top) == 675) &&
+			((parseInt(fallingObject.style.top) > 675) &&
 			(parseInt(fallingObject.style.marginLeft) == bucketLane()) &&
 			((fallingObject.shape != 6 || fallingObject.shape != 3))))){
 				decrementLives();
@@ -421,7 +421,7 @@ function bucketLane() {
 	else if(targetNum == 13){
 		// if you accept a red square
 			if((parseInt(fallingObject.style.top) > 750 || 
-				((parseInt(fallingObject.style.top) == 675) &&
+				((parseInt(fallingObject.style.top) > 675) &&
 				(parseInt(fallingObject.style.marginLeft) == bucketLane()) &&
 				((fallingObject.shape == 4))))){
 					shapeCorrect.play();
@@ -431,7 +431,7 @@ function bucketLane() {
 				}
 			// if you accept a yellow square
 			else if((parseInt(fallingObject.style.top) > 750 || 
-			((parseInt(fallingObject.style.top) == 675) &&
+			((parseInt(fallingObject.style.top) > 675) &&
 			(parseInt(fallingObject.style.marginLeft) == bucketLane()) &&
 			((fallingObject.shape == 7))))){
 				shapeCorrect.play();
@@ -440,7 +440,7 @@ function bucketLane() {
 				displayTarget(); // only for testing purposes
 			}
 			else if((parseInt(fallingObject.style.top) > 750 || 
-			((parseInt(fallingObject.style.top) == 675) &&
+			((parseInt(fallingObject.style.top) > 675) &&
 			(parseInt(fallingObject.style.marginLeft) == bucketLane()) &&
 			((fallingObject.shape != 7 || fallingObject.shape != 4))))){
 				decrementLives();
@@ -458,7 +458,7 @@ function bucketLane() {
 	else if(targetNum == 14){
 		// if you accept a red triangle
 			if((parseInt(fallingObject.style.top) > 750 || 
-				((parseInt(fallingObject.style.top) == 675) &&
+				((parseInt(fallingObject.style.top) > 675) &&
 				(parseInt(fallingObject.style.marginLeft) == bucketLane()) &&
 				((fallingObject.shape == 5))))){
 					shapeCorrect.play();
@@ -468,7 +468,7 @@ function bucketLane() {
 				}
 			// if you accept a yellow triangle
 			else if((parseInt(fallingObject.style.top) > 750 || 
-			((parseInt(fallingObject.style.top) == 675) &&
+			((parseInt(fallingObject.style.top) > 675) &&
 			(parseInt(fallingObject.style.marginLeft) == bucketLane()) &&
 			((fallingObject.shape == 8))))){
 				shapeCorrect.play();
@@ -477,7 +477,7 @@ function bucketLane() {
 				displayTarget(); // only for testing purposes
 			}
 			else if((parseInt(fallingObject.style.top) > 750 || 
-			((parseInt(fallingObject.style.top) == 675) &&
+			((parseInt(fallingObject.style.top) > 675) &&
 			(parseInt(fallingObject.style.marginLeft) == bucketLane()) &&
 			((fallingObject.shape != 8 || fallingObject.shape != 5))))){
 				decrementLives();
@@ -495,7 +495,7 @@ function bucketLane() {
 	else if(targetNum == 15){
 		// if you accept a blue circle
 			if((parseInt(fallingObject.style.top) > 750 || 
-				((parseInt(fallingObject.style.top) == 675) &&
+				((parseInt(fallingObject.style.top) > 675) &&
 				(parseInt(fallingObject.style.marginLeft) == bucketLane()) &&
 				((fallingObject.shape == 0))))){
 					shapeCorrect.play();
@@ -505,7 +505,7 @@ function bucketLane() {
 				}
 			// if you accept a red circle
 			else if((parseInt(fallingObject.style.top) > 750 || 
-			((parseInt(fallingObject.style.top) == 675) &&
+			((parseInt(fallingObject.style.top) >675) &&
 			(parseInt(fallingObject.style.marginLeft) == bucketLane()) &&
 			((fallingObject.shape == 3))))){
 				shapeCorrect.play();
@@ -514,7 +514,7 @@ function bucketLane() {
 				displayTarget(); // only for testing purposes
 			}
 			else if((parseInt(fallingObject.style.top) > 750 || 
-			((parseInt(fallingObject.style.top) == 675) &&
+			((parseInt(fallingObject.style.top) > 675) &&
 			(parseInt(fallingObject.style.marginLeft) == bucketLane()) &&
 			((fallingObject.shape != 3 || fallingObject.shape != 0))))){
 				decrementLives();
@@ -532,7 +532,7 @@ function bucketLane() {
 	else if(targetNum == 16){
 		// if you accept a blue square
 			if((parseInt(fallingObject.style.top) > 750 || 
-				((parseInt(fallingObject.style.top) == 675) &&
+				((parseInt(fallingObject.style.top) > 675) &&
 				(parseInt(fallingObject.style.marginLeft) == bucketLane()) &&
 				((fallingObject.shape == 1))))){
 					shapeCorrect.play();
@@ -542,7 +542,7 @@ function bucketLane() {
 				}
 			// if you accept a red square
 			else if((parseInt(fallingObject.style.top) > 750 || 
-			((parseInt(fallingObject.style.top) == 675) &&
+			((parseInt(fallingObject.style.top) > 675) &&
 			(parseInt(fallingObject.style.marginLeft) == bucketLane()) &&
 			((fallingObject.shape == 4))))){
 				shapeCorrect.play();
@@ -551,7 +551,7 @@ function bucketLane() {
 				displayTarget(); // only for testing purposes
 			}
 			else if((parseInt(fallingObject.style.top) > 750 || 
-			((parseInt(fallingObject.style.top) == 675) &&
+			((parseInt(fallingObject.style.top) > 675) &&
 			(parseInt(fallingObject.style.marginLeft) == bucketLane()) &&
 			((fallingObject.shape != 4 || fallingObject.shape != 1))))){
 				decrementLives();
@@ -569,7 +569,7 @@ function bucketLane() {
 	else if(targetNum == 17){
 		// if you accept a blue triangle
 			if((parseInt(fallingObject.style.top) > 750 || 
-				((parseInt(fallingObject.style.top) == 675) &&
+				((parseInt(fallingObject.style.top) > 675) &&
 				(parseInt(fallingObject.style.marginLeft) == bucketLane()) &&
 				((fallingObject.shape == 2))))){
 					shapeCorrect.play();
@@ -579,7 +579,7 @@ function bucketLane() {
 				}
 			// if you accept a red triangle
 			else if((parseInt(fallingObject.style.top) > 750 || 
-			((parseInt(fallingObject.style.top) == 675) &&
+			((parseInt(fallingObject.style.top) > 675) &&
 			(parseInt(fallingObject.style.marginLeft) == bucketLane()) &&
 			((fallingObject.shape == 5))))){
 				shapeCorrect.play();
@@ -588,7 +588,7 @@ function bucketLane() {
 				displayTarget(); // only for testing purposes
 			}
 			else if((parseInt(fallingObject.style.top) > 750 || 
-			((parseInt(fallingObject.style.top) == 675) &&
+			((parseInt(fallingObject.style.top) > 675) &&
 			(parseInt(fallingObject.style.marginLeft) == bucketLane()) &&
 			((fallingObject.shape != 5 || fallingObject.shape != 2))))){
 				decrementLives();
@@ -614,7 +614,7 @@ function checkHit(){
 	for(var i = 0; i < objectArray.length; i++){
 		//accepts the corret target shape
 		if(parseInt(objectArray[i].style.top) > 750 || 
-			((parseInt(objectArray[i].style.top) == 675) &&
+			((parseInt(objectArray[i].style.top) > 675) &&
 			(parseInt(objectArray[i].style.marginLeft) == bucketLane()) &&
 			((objectArray[i].shape == myBucket.shape))))
 			{objectArray[i].parentNode.removeChild(objectArray[i]);
@@ -623,7 +623,7 @@ function checkHit(){
 			
 			//If it is a fish then increment life
 		}  else if (parseInt(objectArray[i].style.top) > 750 || 
-			((parseInt(objectArray[i].style.top) == 675) &&
+			((parseInt(objectArray[i].style.top) > 675) &&
 			(parseInt(objectArray[i].style.marginLeft) == bucketLane()) &&
 			((objectArray[i].shape == 22)))) {
 				incrementLives();
@@ -633,14 +633,14 @@ function checkHit(){
 		}
 		//checks if target is a mixed color
 		else if(parseInt(objectArray[i].style.top) > 750 || 
-			((parseInt(objectArray[i].style.top) == 675) &&
+			((parseInt(objectArray[i].style.top) > 675) &&
 			(parseInt(objectArray[i].style.marginLeft) == bucketLane()) &&
 			((myBucket.shape > 8)))){
 			acceptMixedShapes(objectArray[i]);
 		}
 		//If a shape is caught that is NOT the target shape, decrement a life
 		else if (parseInt(objectArray[i].style.top) > 750 || 
-			((parseInt(objectArray[i].style.top) == 675) &&
+			((parseInt(objectArray[i].style.top) > 675) &&
 			(parseInt(objectArray[i].style.marginLeft) == bucketLane()) &&		
 			((objectArray[i].shape != myBucket.shape)))) {
 				decrementLives();
