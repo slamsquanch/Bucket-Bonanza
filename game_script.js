@@ -14,6 +14,18 @@
 		myBucket[i].shape = randomNum;
 	 }
  }
+/*********************************************/
+/*Set all buckets' shape value to param value*/
+/*********************************************/
+function setBucketShapeValue(value){
+	var thoseBuckets = document.querySelectorAll(".bucket");
+	for(i = 0; i < 3; i++){
+		thoseBuckets[i].shape = value;
+	 }
+}
+
+
+
 
 /********************************************/
 /*			Mittens displays target			*/
@@ -285,7 +297,7 @@ function bucketLane() {
 				(parseInt(fallingObject.style.marginLeft) == bucketLane()) &&
 				((fallingObject.shape == 0))))){
 					shapeCorrect.play();
-					myBucket.shape = 6;
+					setBucketShapeValue(6);
 					fallingObject.parentNode.removeChild(fallingObject);
 					
 				}
@@ -295,7 +307,7 @@ function bucketLane() {
 			(parseInt(fallingObject.style.marginLeft) == bucketLane()) &&
 			((fallingObject.shape == 6))))){
 				shapeCorrect.play();
-				myBucket.shape = 0;	
+				setBucketShapeValue(0);
 				fallingObject.parentNode.removeChild(fallingObject);
 		
 			}
@@ -321,7 +333,7 @@ function bucketLane() {
 				(parseInt(fallingObject.style.marginLeft) == bucketLane()) &&
 				((fallingObject.shape == 1))))){
 					shapeCorrect.play();
-					myBucket.shape = 7;
+					setBucketShapeValue(7);
 					fallingObject.parentNode.removeChild(fallingObject);
 		
 				}
@@ -331,7 +343,7 @@ function bucketLane() {
 			(parseInt(fallingObject.style.marginLeft) == bucketLane()) &&
 			((fallingObject.shape == 7))))){
 				shapeCorrect.play();
-				myBucket.shape = 1;	
+				setBucketShapeValue(1);
 				fallingObject.parentNode.removeChild(fallingObject);
 		
 			}
@@ -357,7 +369,7 @@ function bucketLane() {
 				(parseInt(fallingObject.style.marginLeft) == bucketLane()) &&
 				((fallingObject.shape == 2))))){
 					shapeCorrect.play();
-					myBucket.shape = 8;
+					setBucketShapeValue(8);
 					fallingObject.parentNode.removeChild(fallingObject);
 					
 				}
@@ -367,7 +379,7 @@ function bucketLane() {
 			(parseInt(fallingObject.style.marginLeft) == bucketLane()) &&
 			((fallingObject.shape == 8))))){
 				shapeCorrect.play();
-				myBucket.shape = 2;	
+				setBucketShapeValue(2);
 				fallingObject.parentNode.removeChild(fallingObject);
 				
 			}
@@ -393,7 +405,7 @@ function bucketLane() {
 				(parseInt(fallingObject.style.marginLeft) == bucketLane()) &&
 				((fallingObject.shape == 3))))){
 					shapeCorrect.play();
-					myBucket.shape = 6;
+					setBucketShapeValue(6);
 					fallingObject.parentNode.removeChild(fallingObject);
 					
 				}
@@ -403,7 +415,7 @@ function bucketLane() {
 			(parseInt(fallingObject.style.marginLeft) == bucketLane()) &&
 			((fallingObject.shape == 6))))){
 				shapeCorrect.play();
-				myBucket.shape = 3;	
+				setBucketShapeValue(3);
 				fallingObject.parentNode.removeChild(fallingObject);
 			
 			}
@@ -429,7 +441,7 @@ function bucketLane() {
 				(parseInt(fallingObject.style.marginLeft) == bucketLane()) &&
 				((fallingObject.shape == 4))))){
 					shapeCorrect.play();
-					myBucket.shape = 7;
+					setBucketShapeValue(7);
 					fallingObject.parentNode.removeChild(fallingObject);
 					
 				}
@@ -439,7 +451,7 @@ function bucketLane() {
 			(parseInt(fallingObject.style.marginLeft) == bucketLane()) &&
 			((fallingObject.shape == 7))))){
 				shapeCorrect.play();
-				myBucket.shape = 4;	
+				setBucketShapeValue(4);
 				fallingObject.parentNode.removeChild(fallingObject);
 				
 			}
@@ -466,7 +478,7 @@ function bucketLane() {
 				(parseInt(fallingObject.style.marginLeft) == bucketLane()) &&
 				((fallingObject.shape == 5))))){
 					shapeCorrect.play();
-					myBucket.shape = 8;
+					setBucketShapeValue(8);
 					fallingObject.parentNode.removeChild(fallingObject);
 					
 				}
@@ -476,7 +488,7 @@ function bucketLane() {
 			(parseInt(fallingObject.style.marginLeft) == bucketLane()) &&
 			((fallingObject.shape == 8))))){
 				shapeCorrect.play();
-				myBucket.shape = 5;	
+				setBucketShapeValue(5);
 				fallingObject.parentNode.removeChild(fallingObject);
 				
 			}
@@ -503,7 +515,7 @@ function bucketLane() {
 				(parseInt(fallingObject.style.marginLeft) == bucketLane()) &&
 				((fallingObject.shape == 0))))){
 					shapeCorrect.play();
-					myBucket.shape = 3;
+					setBucketShapeValue(3);
 					fallingObject.parentNode.removeChild(fallingObject);
 		
 				}
@@ -513,7 +525,7 @@ function bucketLane() {
 			(parseInt(fallingObject.style.marginLeft) == bucketLane()) &&
 			((fallingObject.shape == 3))))){
 				shapeCorrect.play();
-				myBucket.shape = 0;	
+				setBucketShapeValue(0);
 				fallingObject.parentNode.removeChild(fallingObject);
 			
 			}
@@ -540,7 +552,7 @@ function bucketLane() {
 				(parseInt(fallingObject.style.marginLeft) == bucketLane()) &&
 				((fallingObject.shape == 1))))){
 					shapeCorrect.play();
-					myBucket.shape = 4;
+					setBucketShapeValue(4);
 					fallingObject.parentNode.removeChild(fallingObject);
 				
 				}
@@ -550,7 +562,7 @@ function bucketLane() {
 			(parseInt(fallingObject.style.marginLeft) == bucketLane()) &&
 			((fallingObject.shape == 4))))){
 				shapeCorrect.play();
-				myBucket.shape = 1;	
+				setBucketShapeValue(1);
 				fallingObject.parentNode.removeChild(fallingObject);
 				
 			}
@@ -577,7 +589,7 @@ function bucketLane() {
 				(parseInt(fallingObject.style.marginLeft) == bucketLane()) &&
 				((fallingObject.shape == 2))))){
 					shapeCorrect.play();
-					myBucket.shape = 5;
+					setBucketShapeValue(5);
 					fallingObject.parentNode.removeChild(fallingObject);
 				
 				}
@@ -587,7 +599,7 @@ function bucketLane() {
 			(parseInt(fallingObject.style.marginLeft) == bucketLane()) &&
 			((fallingObject.shape == 5))))){
 				shapeCorrect.play();
-				myBucket.shape = 2;	
+				setBucketShapeValue(2);
 				fallingObject.parentNode.removeChild(fallingObject);
 				
 			}
@@ -631,8 +643,6 @@ function checkHit(){
 			shapeCorrect.play();
 			randomBucketReq();
 			displayTarget();
-			
-			
 			//If it is a fish then increment life
 		}  else if (parseInt(objectArray[i].style.top) > 750 || 
 			((parseInt(objectArray[i].style.top) > 675) &&
