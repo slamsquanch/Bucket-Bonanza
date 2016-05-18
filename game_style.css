@@ -85,7 +85,6 @@ img {
 	z-index: 1;
 }
 
-
 #button {
     background-image: url('buttons/settingsIcon3.png');
     position: absolute;
@@ -95,3 +94,18 @@ img {
     width: 47px;
 }
 
+
+<<<<<<< HEAD
+
+
+=======
+#score {
+	position: absolute;
+	margin-left: 48%;
+	margin-top: 11%;
+	font-family: "Comic Sans MS";
+	font-style: bold;
+	font-size: 24px;
+	z-index: 1;
+}
+>>>>>>> master

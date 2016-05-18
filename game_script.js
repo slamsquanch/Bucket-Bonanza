@@ -14,29 +14,44 @@
 		myBucket[i].shape = randomNum;
 	 }
  }
+/*********************************************/
+/*Set all buckets' shape value to param value*/
+/*********************************************/
+function setBucketShapeValue(value){
+	var thoseBuckets = document.querySelectorAll(".bucket");
+	for(i = 0; i < 3; i++){
+		thoseBuckets[i].shape = value;
+	 }
+}
+
+
+
 
 /********************************************/
 /*			Mittens displays target			*/
 /********************************************/
-// only at the top for testing purposes will be moved with background stuff later
+// Needs to be placed above the checkbox hit function because it is being called by it
 function displayTarget(){
-	// array will be 20 elements later
 	var scrNames = new Array("graphics/blueCircle.png", "graphics/blueSquare.png",
         "graphics/blueTriangle.png", "graphics/redCircle.png", "graphics/redSquare.png", "graphics/redTriangle.png",
         "graphics/yellowCircle.png", "graphics/yellowSquare.png", "graphics/yellowTriangle.png", "graphics/greenCircle.png",
 		"graphics/greenSquare.png", "graphics/greenTriangle.png", "graphics/orangeCircle.png", "graphics/orangeSquare.png",
 		"graphics/orangeTriangle.png", "graphics/purpleCircle.png", "graphics/purpleSquare.png","graphics/purpleTriangle.png");
 		
+	var check = document.querySelector(".targetShape");
+	if(check != null){
+		check.parentNode.removeChild(check);
+	}
 	var theBucket = document.querySelector(".bucket");
 	var targetShape = document.createElement("img");
 	targetShape.src = scrNames[theBucket.shape];
 	targetShape.style = "position:absolute; top:26%";
 	targetShape.style.marginLeft = "31%";
+	targetShape.setAttribute ("class", "targetShape");
 	targetShape.setAttribute ("width", "5%");
 	targetShape.setAttribute ("height", "10%");
 	document.body.appendChild(targetShape);	
 }
- 
  
 function bucketControls() {
     var bucketLeft = document.createElement("IMG");
@@ -157,9 +172,7 @@ function randomLane(){
 
 function createObject(){
     var imgSrc = randomObject();
-    var element = document.createElement("img")
-    /*element.setAttribute("width", "8%");
-     element.setAttribute("height", "8%");*/
+    var element = document.createElement("img");
     element.style = "position:absolute; top:150%";
     element.style.marginLeft = randomLane();
     element.src = imgSrc;
@@ -231,7 +244,7 @@ function move(){
 }
 function checkLimits(){
     var objectArray = document.querySelectorAll(".fallingObject");
-    for(var i = 0; i < objectArray.length; i++){
+	for(var i = 0; i < objectArray.length; i++){
         if(parseInt(objectArray[i].style.top) > 750){
             objectArray[i].parentNode.removeChild(objectArray[i]);
         }
@@ -265,364 +278,114 @@ function bucketLane() {
 		return 30;
 	
 }
-
-			
- function acceptMixedShapes(fallingObject){
-	var myBucket = document.querySelector(".bucket");
-	var targetNum = myBucket.shape;
+//Checks if object caught is acceptable or not
+//if correct changes what the bucket accepts
+//if incorrect decrements life
+function checkMixedShapes(value1, value2, fallingObject){
 	
+	if(fallingObject.shape == value1){
+		shapeCorrect.play();
+		setBucketShapeValue(value2);
+		fallingObject.parentNode.removeChild(fallingObject);				
+	}
+	else if(fallingObject.shape == value2){
+		shapeCorrect.play();
+		setBucketShapeValue(value1);
+		fallingObject.parentNode.removeChild(fallingObject);		
+	}
+	else if(fallingObject.shape != value1 || fallingObject.shape != value2){
+		decrementLives();
+		fallingObject.parentNode.removeChild(fallingObject);
+		shapeWrong.play();
+	}
+}
+			
+ function acceptMixedShapes(fallingObject, myBucket){
+	var targetNum = myBucket.shape;
+
 	/**************/
 	/*Green circle*/
 	/**************/
 	if(targetNum == 9) {
-			// if you accept a blue circle 
-			if((parseInt(fallingObject.style.top) > 750 || 
-				((parseInt(fallingObject.style.top) == 675) &&
-				(parseInt(fallingObject.style.marginLeft) == bucketLane()) &&
-				((fallingObject.shape == 0))))){
-					shapeCorrect.play();
-					myBucket.shape = 6;
-					fallingObject.parentNode.removeChild(fallingObject);
-					displayTarget();
-				}
-			// if you accept a yellow circle
-			else if((parseInt(fallingObject.style.top) > 750 || 
-			((parseInt(fallingObject.style.top) == 675) &&
-			(parseInt(fallingObject.style.marginLeft) == bucketLane()) &&
-			((fallingObject.shape == 6))))){
-				shapeCorrect.play();
-				myBucket.shape = 0;	
-				fallingObject.parentNode.removeChild(fallingObject);
-				displayTarget();
-			}
-			else if((parseInt(fallingObject.style.top) > 750 || 
-			((parseInt(fallingObject.style.top) == 675) &&
-			(parseInt(fallingObject.style.marginLeft) == bucketLane()) &&
-			((fallingObject.shape != 6 || fallingObject.shape != 0))))){
-				decrementLives();
-				fallingObject.parentNode.removeChild(fallingObject);
-				shapeWrong.play();
-			}
-			else{
-				fallingObject.parentNode.removeChild(fallingObject);
-			}
+		checkMixedShapes(0,6, fallingObject);		
 	}
 	/**************/
 	/*Green square*/
 	/**************/
 	else if(targetNum == 10){
-		// if you accept a blue square 
-			if((parseInt(fallingObject.style.top) > 750 || 
-				((parseInt(fallingObject.style.top) == 675) &&
-				(parseInt(fallingObject.style.marginLeft) == bucketLane()) &&
-				((fallingObject.shape == 1))))){
-					shapeCorrect.play();
-					myBucket.shape = 7;
-					fallingObject.parentNode.removeChild(fallingObject);
-					displayTarget(); // only for testing purposes
-				}
-			// if you accept a yellow square
-			else if((parseInt(fallingObject.style.top) > 750 || 
-			((parseInt(fallingObject.style.top) == 675) &&
-			(parseInt(fallingObject.style.marginLeft) == bucketLane()) &&
-			((fallingObject.shape == 7))))){
-				shapeCorrect.play();
-				myBucket.shape = 1;	
-				fallingObject.parentNode.removeChild(fallingObject);
-				displayTarget(); // only for testing purposes
-			}
-			else if((parseInt(fallingObject.style.top) > 750 || 
-			((parseInt(fallingObject.style.top) == 675) &&
-			(parseInt(fallingObject.style.marginLeft) == bucketLane()) &&
-			((fallingObject.shape != 7 || fallingObject.shape != 1))))){
-				decrementLives();
-				fallingObject.parentNode.removeChild(fallingObject);
-				shapeWrong.play();
-			}
-			else{
-				fallingObject.parentNode.removeChild(fallingObject);
-			}
+		checkMixedShapes(1,7, fallingObject);
 	}
 	/****************/
 	/*Green triangle*/
 	/****************/
 	else if(targetNum == 11){
-		// if you accept a blue triangle
-			if((parseInt(fallingObject.style.top) > 750 || 
-				((parseInt(fallingObject.style.top) == 675) &&
-				(parseInt(fallingObject.style.marginLeft) == bucketLane()) &&
-				((fallingObject.shape == 2))))){
-					shapeCorrect.play();
-					myBucket.shape = 8;
-					fallingObject.parentNode.removeChild(fallingObject);
-					displayTarget(); // only for testing purposes
-				}
-			// if you accept a yellow square
-			else if((parseInt(fallingObject.style.top) > 750 || 
-			((parseInt(fallingObject.style.top) == 675) &&
-			(parseInt(fallingObject.style.marginLeft) == bucketLane()) &&
-			((fallingObject.shape == 8))))){
-				shapeCorrect.play();
-				myBucket.shape = 2;	
-				fallingObject.parentNode.removeChild(fallingObject);
-				displayTarget(); // only for testing purposes
-			}
-			else if((parseInt(fallingObject.style.top) > 750 || 
-			((parseInt(fallingObject.style.top) == 675) &&
-			(parseInt(fallingObject.style.marginLeft) == bucketLane()) &&
-			((fallingObject.shape != 8 || fallingObject.shape != 2))))){
-				decrementLives();
-				fallingObject.parentNode.removeChild(fallingObject);
-				shapeWrong.play();
-			}
-			else{
-				fallingObject.parentNode.removeChild(fallingObject);
-			}
+		checkMixedShapes(2,8, fallingObject);
 	}
 	/****************/
 	/*Orange circle**/
 	/****************/
 	else if(targetNum == 12){
-		// if you accept a red circle
-			if((parseInt(fallingObject.style.top) > 750 || 
-				((parseInt(fallingObject.style.top) == 675) &&
-				(parseInt(fallingObject.style.marginLeft) == bucketLane()) &&
-				((fallingObject.shape == 3))))){
-					shapeCorrect.play();
-					myBucket.shape = 6;
-					fallingObject.parentNode.removeChild(fallingObject);
-					displayTarget(); // only for testing purposes
-				}
-			// if you accept a yellow circle
-			else if((parseInt(fallingObject.style.top) > 750 || 
-			((parseInt(fallingObject.style.top) == 675) &&
-			(parseInt(fallingObject.style.marginLeft) == bucketLane()) &&
-			((fallingObject.shape == 6))))){
-				shapeCorrect.play();
-				myBucket.shape = 3;	
-				fallingObject.parentNode.removeChild(fallingObject);
-				displayTarget(); // only for testing purposes
-			}
-			else if((parseInt(fallingObject.style.top) > 750 || 
-			((parseInt(fallingObject.style.top) == 675) &&
-			(parseInt(fallingObject.style.marginLeft) == bucketLane()) &&
-			((fallingObject.shape != 6 || fallingObject.shape != 3))))){
-				decrementLives();
-				fallingObject.parentNode.removeChild(fallingObject);
-				shapeWrong.play();
-			}
-			else{
-				fallingObject.parentNode.removeChild(fallingObject);
-			}
+		checkMixedShapes(3,6, fallingObject);
 	}
 	/****************/
 	/*Orange square**/
 	/****************/
 	else if(targetNum == 13){
-		// if you accept a red square
-			if((parseInt(fallingObject.style.top) > 750 || 
-				((parseInt(fallingObject.style.top) == 675) &&
-				(parseInt(fallingObject.style.marginLeft) == bucketLane()) &&
-				((fallingObject.shape == 4))))){
-					shapeCorrect.play();
-					myBucket.shape = 7;
-					fallingObject.parentNode.removeChild(fallingObject);
-					displayTarget(); // only for testing purposes
-				}
-			// if you accept a yellow square
-			else if((parseInt(fallingObject.style.top) > 750 || 
-			((parseInt(fallingObject.style.top) == 675) &&
-			(parseInt(fallingObject.style.marginLeft) == bucketLane()) &&
-			((fallingObject.shape == 7))))){
-				shapeCorrect.play();
-				myBucket.shape = 4;	
-				fallingObject.parentNode.removeChild(fallingObject);
-				displayTarget(); // only for testing purposes
-			}
-			else if((parseInt(fallingObject.style.top) > 750 || 
-			((parseInt(fallingObject.style.top) == 675) &&
-			(parseInt(fallingObject.style.marginLeft) == bucketLane()) &&
-			((fallingObject.shape != 7 || fallingObject.shape != 4))))){
-				decrementLives();
-				fallingObject.parentNode.removeChild(fallingObject);
-				shapeWrong.play();
-			}
-			else{
-				fallingObject.parentNode.removeChild(fallingObject);
-			}
-		
+		checkMixedShapes(4,7, fallingObject);
 	}
 	/******************/
 	/*Orange triangle**/
 	/******************/
 	else if(targetNum == 14){
-		// if you accept a red triangle
-			if((parseInt(fallingObject.style.top) > 750 || 
-				((parseInt(fallingObject.style.top) == 675) &&
-				(parseInt(fallingObject.style.marginLeft) == bucketLane()) &&
-				((fallingObject.shape == 5))))){
-					shapeCorrect.play();
-					myBucket.shape = 8;
-					fallingObject.parentNode.removeChild(fallingObject);
-					displayTarget(); // only for testing purposes
-				}
-			// if you accept a yellow triangle
-			else if((parseInt(fallingObject.style.top) > 750 || 
-			((parseInt(fallingObject.style.top) == 675) &&
-			(parseInt(fallingObject.style.marginLeft) == bucketLane()) &&
-			((fallingObject.shape == 8))))){
-				shapeCorrect.play();
-				myBucket.shape = 5;	
-				fallingObject.parentNode.removeChild(fallingObject);
-				displayTarget(); // only for testing purposes
-			}
-			else if((parseInt(fallingObject.style.top) > 750 || 
-			((parseInt(fallingObject.style.top) == 675) &&
-			(parseInt(fallingObject.style.marginLeft) == bucketLane()) &&
-			((fallingObject.shape != 8 || fallingObject.shape != 5))))){
-				decrementLives();
-				fallingObject.parentNode.removeChild(fallingObject);
-				shapeWrong.play();
-			}
-			else{
-				fallingObject.parentNode.removeChild(fallingObject);
-			}
-		
+		checkMixedShapes(5,8, fallingObject);
 	}
 	/******************/
 	/***Purple circle**/
 	/******************/
 	else if(targetNum == 15){
-		// if you accept a blue circle
-			if((parseInt(fallingObject.style.top) > 750 || 
-				((parseInt(fallingObject.style.top) == 675) &&
-				(parseInt(fallingObject.style.marginLeft) == bucketLane()) &&
-				((fallingObject.shape == 0))))){
-					shapeCorrect.play();
-					myBucket.shape = 3;
-					fallingObject.parentNode.removeChild(fallingObject);
-					displayTarget(); // only for testing purposes
-				}
-			// if you accept a red circle
-			else if((parseInt(fallingObject.style.top) > 750 || 
-			((parseInt(fallingObject.style.top) == 675) &&
-			(parseInt(fallingObject.style.marginLeft) == bucketLane()) &&
-			((fallingObject.shape == 3))))){
-				shapeCorrect.play();
-				myBucket.shape = 0;	
-				fallingObject.parentNode.removeChild(fallingObject);
-				displayTarget(); // only for testing purposes
-			}
-			else if((parseInt(fallingObject.style.top) > 750 || 
-			((parseInt(fallingObject.style.top) == 675) &&
-			(parseInt(fallingObject.style.marginLeft) == bucketLane()) &&
-			((fallingObject.shape != 3 || fallingObject.shape != 0))))){
-				decrementLives();
-				fallingObject.parentNode.removeChild(fallingObject);
-				shapeWrong.play();
-			}
-			else{
-				fallingObject.parentNode.removeChild(fallingObject);
-			}
-		
+		checkMixedShapes(0,3, fallingObject);
 	}
 	/******************/
 	/***Purple square**/
 	/******************/
 	else if(targetNum == 16){
-		// if you accept a blue square
-			if((parseInt(fallingObject.style.top) > 750 || 
-				((parseInt(fallingObject.style.top) == 675) &&
-				(parseInt(fallingObject.style.marginLeft) == bucketLane()) &&
-				((fallingObject.shape == 1))))){
-					shapeCorrect.play();
-					myBucket.shape = 4;
-					fallingObject.parentNode.removeChild(fallingObject);
-					displayTarget(); // only for testing purposes
-				}
-			// if you accept a red square
-			else if((parseInt(fallingObject.style.top) > 750 || 
-			((parseInt(fallingObject.style.top) == 675) &&
-			(parseInt(fallingObject.style.marginLeft) == bucketLane()) &&
-			((fallingObject.shape == 4))))){
-				shapeCorrect.play();
-				myBucket.shape = 1;	
-				fallingObject.parentNode.removeChild(fallingObject);
-				displayTarget(); // only for testing purposes
-			}
-			else if((parseInt(fallingObject.style.top) > 750 || 
-			((parseInt(fallingObject.style.top) == 675) &&
-			(parseInt(fallingObject.style.marginLeft) == bucketLane()) &&
-			((fallingObject.shape != 4 || fallingObject.shape != 1))))){
-				decrementLives();
-				fallingObject.parentNode.removeChild(fallingObject);
-				shapeWrong.play();
-			}
-			else{
-				fallingObject.parentNode.removeChild(fallingObject);
-			}
-		
+		checkMixedShapes(1,4, fallingObject);
 	}
 	/******************/
 	/**Purple triangle*/
 	/******************/
 	else if(targetNum == 17){
-		// if you accept a blue triangle
-			if((parseInt(fallingObject.style.top) > 750 || 
-				((parseInt(fallingObject.style.top) == 675) &&
-				(parseInt(fallingObject.style.marginLeft) == bucketLane()) &&
-				((fallingObject.shape == 2))))){
-					shapeCorrect.play();
-					myBucket.shape = 5;
-					fallingObject.parentNode.removeChild(fallingObject);
-					displayTarget(); // only for testing purposes
-				}
-			// if you accept a red triangle
-			else if((parseInt(fallingObject.style.top) > 750 || 
-			((parseInt(fallingObject.style.top) == 675) &&
-			(parseInt(fallingObject.style.marginLeft) == bucketLane()) &&
-			((fallingObject.shape == 5))))){
-				shapeCorrect.play();
-				myBucket.shape = 2;	
-				fallingObject.parentNode.removeChild(fallingObject);
-				displayTarget(); // only for testing purposes
-			}
-			else if((parseInt(fallingObject.style.top) > 750 || 
-			((parseInt(fallingObject.style.top) == 675) &&
-			(parseInt(fallingObject.style.marginLeft) == bucketLane()) &&
-			((fallingObject.shape != 5 || fallingObject.shape != 2))))){
-				decrementLives();
-				fallingObject.parentNode.removeChild(fallingObject);
-				shapeWrong.play();
-			}
-			else{
-				fallingObject.parentNode.removeChild(fallingObject);
-			}
-			
+		checkMixedShapes(2,5, fallingObject);
+	}	
 		/***************/
 		/**Black Circle*/
 		/***************/
 		// not yet implemented
 	}
 		
- }
+
 
 function checkHit(){
 	var objectArray = document.querySelectorAll(".fallingObject");
-	var myBucket = document.querySelector(".bucket");
+	var thoseBuckets = document.querySelectorAll(".bucket");
+	for(i = 0; i < 3; i++){
+		if(thoseBuckets[i].location == 1){
+			var myBucket = thoseBuckets[i];
+		}
+	}
 	
 	for(var i = 0; i < objectArray.length; i++){
 		//accepts the corret target shape
-		if(parseInt(objectArray[i].style.top) > 750 || 
-			((parseInt(objectArray[i].style.top) == 675) &&
+		if((parseInt(objectArray[i].style.top) > 675) &&
 			(parseInt(objectArray[i].style.marginLeft) == bucketLane()) &&
-			((objectArray[i].shape == myBucket.shape))))
-			{objectArray[i].parentNode.removeChild(objectArray[i]);
+			(objectArray[i].shape == myBucket.shape))
+			{
+			objectArray[i].parentNode.removeChild(objectArray[i]);
 			shapeCorrect.play();
-			
+			randomBucketReq();
+			displayTarget();
 			//If it is a fish then increment life
-		}  else if (parseInt(objectArray[i].style.top) > 750 || 
-			((parseInt(objectArray[i].style.top) == 675) &&
+		}  else if (((parseInt(objectArray[i].style.top) > 675) &&
 			(parseInt(objectArray[i].style.marginLeft) == bucketLane()) &&
 			((objectArray[i].shape == 22)))) {
 				incrementLives();
@@ -630,16 +393,23 @@ function checkHit(){
 				shapeCorrect.play();
 			
 		}
-		//checks if target is a mixed color
-		else if(parseInt(objectArray[i].style.top) > 750 || 
-			((parseInt(objectArray[i].style.top) == 675) &&
+		//if it is a boot decrement a life
+		else if(((parseInt(objectArray[i].style.top) > 675) &&
 			(parseInt(objectArray[i].style.marginLeft) == bucketLane()) &&
-			((myBucket.shape > 8)))){
-			acceptMixedShapes(objectArray[i]);
+			((objectArray[i].shape == 21)))){
+				decrementLives();
+				objectArray[i].parentNode.removeChild(objectArray[i]);
+				shapeWrong.play();
+			} 
+		
+		//checks if target is a mixed color
+		else if(((parseInt(objectArray[i].style.top) > 675) &&
+			(parseInt(objectArray[i].style.marginLeft) == bucketLane()) &&
+			((myBucket.shape > 8 && myBucket.shape < 18)))){
+				acceptMixedShapes(objectArray[i], myBucket);
 		}
 		//If a shape is caught that is NOT the target shape, decrement a life
-		else if (parseInt(objectArray[i].style.top) > 750 || 
-			((parseInt(objectArray[i].style.top) == 675) &&
+		else if (((parseInt(objectArray[i].style.top) > 675) &&
 			(parseInt(objectArray[i].style.marginLeft) == bucketLane()) &&		
 			((objectArray[i].shape != myBucket.shape)))) {
 				decrementLives();
@@ -647,10 +417,6 @@ function checkHit(){
 				shapeWrong.play();
 			       
 		}         
-			// If the shape reaches 850 (the bottom), do nothing
-		else if (parseInt(objectArray[i].style.top) == 750) {
-			objectArray[i].parentNode.removeChild(objectArray[i])
-		}
 	}
 }
 
@@ -811,6 +577,7 @@ onload= function(){
 	randomBucketReq(); // randomizes buckets initial requirement
 	displayTarget() // displays target
 	var pause = document.querySelector(".pauseIcon");	
+
 	
 	
     //object instead of window will require you to click on the circle itself
