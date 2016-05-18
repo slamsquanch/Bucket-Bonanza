@@ -31,7 +31,10 @@ function displayTarget(){
 	var targetShape = document.createElement("img");
 	targetShape.src = scrNames[theBucket.shape];
 	targetShape.style = "position:absolute; top:26%";
-	targetShape.style.marginLeft = "31%";
+	targetShape.style.marginLeft = "auto";
+	targetShape.style.marginRight = "auto";
+	targetShape.style.left = 0;
+	targetShape.style.right = 0;
 	targetShape.setAttribute ("width", "5%");
 	targetShape.setAttribute ("height", "10%");
 	document.body.appendChild(targetShape);	
@@ -52,8 +55,8 @@ function bucketControls() {
 	bucketLeft.setAttribute("class", "bucket");
 	bucketLeft.setAttribute("location", 0);
     bucketLeft.style.position = "absolute";
-    bucketLeft.style.marginLeft = "15%"
-    bucketLeft.style.marginTop = "750px";
+    bucketLeft.style.marginLeft = "31%"
+    bucketLeft.style.marginTop = "36%";
     document.body.appendChild(bucketLeft);
 
     /* Makes the right lane button/bucket placeholder*/
@@ -65,8 +68,8 @@ function bucketControls() {
 	bucketRight.setAttribute("class", "bucket");
 	bucketRight.setAttribute("location", 0);
     bucketRight.style.position = "absolute";
-    bucketRight.style.marginLeft = "45%";
-    bucketRight.style.marginTop = "750px";
+    bucketRight.style.marginLeft = "59%";
+    bucketRight.style.marginTop = "36%";
     document.body.appendChild(bucketRight);
 
     /* Makes the Middle lane button/bucket placeholder*/
@@ -78,8 +81,8 @@ function bucketControls() {
 	bucketMid.setAttribute("class", "bucket");
 	bucketMid.setAttribute("location", 0);
     bucketMid.style.position = "absolute";
-    bucketMid.style.marginLeft = "30%";
-    bucketMid.style.marginTop = "750px";
+    bucketMid.style.marginLeft = "45%";
+    bucketMid.style.marginTop = "36%";
     document.body.appendChild(bucketMid);
 	bucketMid.location = 1;
 
@@ -151,7 +154,7 @@ function randomObject(){
 }
 
 function randomLane(){
-    var lanes = ["15%", "30%", "45%"];
+    var lanes = ["30%", "45%", "60%"];
     return lanes[Math.floor(Math.random() * 3)];
 }
 
@@ -258,11 +261,11 @@ function bucketLane() {
 	var bucketArray = document.querySelectorAll(".bucket");
 	
 	if (bucketArray[0].location == 1)
-		return 15;
-	if (bucketArray[1].location == 1)
-		return 45;
-	if (bucketArray[2].location == 1)
 		return 30;
+	if (bucketArray[1].location == 1)
+		return 60;
+	if (bucketArray[2].location == 1)
+		return 45;
 	
 }
 
@@ -614,7 +617,7 @@ function checkHit(){
 	for(var i = 0; i < objectArray.length; i++){
 		//accepts the corret target shape
 		if(
-			((parseInt(objectArray[i].style.top) > 675) &&
+			((parseInt(objectArray[i].style.MarginTop) > 675) &&
 			(parseInt(objectArray[i].style.marginLeft) == bucketLane()) &&
 			((objectArray[i].shape == myBucket.shape)))) {
 				objectArray[i].parentNode.removeChild(objectArray[i]);
@@ -641,7 +644,7 @@ function checkHit(){
 		//If a shape is caught that is NOT the target shape, decrement a life
 		else if (
 			((parseInt(objectArray[i].style.top) > 675) &&
-			(parseInt(objectArray[i].style.marginLeft) == bucketLane()) &&		
+			(parseInt(objectArray[i].style.marginLeft) == bucketLane()) &&
 			((objectArray[i].shape != myBucket.shape)))) {
 				decrementLives();
 				objectArray[i].parentNode.removeChild(objectArray[i]);
@@ -701,17 +704,11 @@ function gameOver() {
 /*****************************/
 
 function background() {
-    var sky = document.createElement("IMG");
+    var sky = document.createElement("img");
     sky.setAttribute("src", "graphics/SkyBackground.png");
     sky.setAttribute("alt", "Game Background");
     sky.setAttribute("id", "sky");
 	sky.setAttribute("class", "background");
-    sky.setAttribute("width", "37%");
-    sky.setAttribute("height", "95%");
-	sky.setAttribute("location", 0);
-    sky.style.position = "absolute";
-    sky.style.marginLeft = "15%"
-    sky.style.marginTop = "1px";
     document.body.appendChild(sky);
 }
 
@@ -723,7 +720,10 @@ function mittins(){
 	mittins.setAttribute ("height", "30%");
 	mittins.setAttribute ("class", "middleCloud");
 	mittins.id = "mittins";
-	mittins.style.marginLeft = "26%";	
+	mittins.style.marginLeft = "auto";
+	mittins.style.marginRight = "auto";
+	mittins.style.left = 0;
+	mittins.style.right = 0;
 	document.body.appendChild(mittins);
 	
 	var mittins = document.getElementById("mittins")
@@ -755,7 +755,7 @@ function sideClouds(){
 	leftCloud.style = "position:absolute; top:10%";
 	leftCloud.setAttribute ("width", "15%");
 	leftCloud.setAttribute ("height", "30%");
-	leftCloud.style.marginLeft = "15%";
+	leftCloud.style.marginLeft = "31%";
 	/***************/
 	/**Right cloud**/
 	/***************/
@@ -764,7 +764,7 @@ function sideClouds(){
 	rightCloud.style = "position:absolute; top:10%";
 	rightCloud.setAttribute ("width", "15%");
 	rightCloud.setAttribute ("height", "28%");
-	rightCloud.style.marginLeft = "37%";
+	rightCloud.style.marginLeft = "53%";
 	/*****************************/
 	/*Adds the images to the body*/
 	/*****************************/
@@ -782,7 +782,7 @@ function pauseIcon(){
 	pauseIcon.setAttribute ("width", "5%");
 	pauseIcon.setAttribute ("height", "10%");
 	pauseIcon.setAttribute("class", "pauseIcon");
-	pauseIcon.style.marginLeft = "47%"
+	pauseIcon.style.marginLeft = "63%"
 	document.body.appendChild(pauseIcon);
 	
 }
@@ -795,7 +795,10 @@ function displayTargetText(){
 	var targetText = document.createElement("img");
 	targetText.src = "graphics/target.png";
 	targetText.style = "position:absolute; top:24%";
-	targetText.style.marginLeft = "31%";
+	targetText.style.marginLeft = "auto";
+	targetText.style.marginRight = "auto";
+	targetText.style.left = 0;
+	targetText.style.right = 0;
 	targetText.setAttribute ("width", "5%");
 	targetText.setAttribute ("height", "5%");
 	document.body.appendChild(targetText);
