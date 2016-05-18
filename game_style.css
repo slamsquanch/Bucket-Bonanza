@@ -84,3 +84,14 @@ img {
 	margin-left: 38%;
 	z-index: 1;
 }
+
+
+#button {
+    background-image: url('buttons/settingsIcon3.png');
+    position: absolute;
+    top: 25px;
+    left: 480px;
+    height: 47px;
+    width: 47px;
+}
+
