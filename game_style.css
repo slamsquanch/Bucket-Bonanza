@@ -11,6 +11,15 @@ img {
     height: 20%;
 }
 
+#titleScreen {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+	height: 95%
+}
+
 #gameOver {
 	display: block;
     margin-left: auto;
@@ -29,30 +38,39 @@ img {
 	top: 425px;
 }
 
-#titleSettings {
-	position: relative; 
-	left: 435px;
-	top: 5px;
+#button {
+	display: block;
+	margin-left: 26%;
+	margin-top: 0.5%;
 	height: 3%;
 	width: 3%;
 }
 
 #titlePlay {
-	position: relative;
-	left: 68px;
-	top: 250px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 19%;
+	left: 0;
+	right: 0;
 }
 
 #titleHowTo {
-	position: relative;
-	left: 68px;
-	top: 253px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 27%;
+	left: 0;
+	right: 0;
 }
 
 #titleLeaderboard {
-	position: relative;
-	left: 68px;
-	top: 250px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 35%;
+	left: 0;
+	right: 0;
 }
 
 #leaderExit {
@@ -63,12 +81,19 @@ img {
 	width: 4%;
 }
 
+#howTo {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+	height: 95%
+}
 
 #howToExit {
-    position: relative;
-    left: 370px;
-    top: 36px;
-    height: 4%;
+    margin-left: 55%;
+	margin-top: 3%;
+    height: 9%;
     width: 4%;
 }
 
