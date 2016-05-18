@@ -71,9 +71,9 @@ function speechBubble(){
 
 	} else if (theBucket.shape > 8) {
 		mixColours.src = teach[theBucket.shape - 9];
-		mixColours.style = "position:absolute; top:05%";
-		mixColours.style.marginLeft = "16%";
-		//mixColours.setAttribute ("width", "5%");
+		mixColours.style = "position:absolute; top:0%";
+		mixColours.style.marginLeft = "15%";
+		mixColours.setAttribute ("width", "15%");
 		//mixColours.setAttribute ("height", "10%");
 		document.body.appendChild(mixColours);
 	}
