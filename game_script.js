@@ -52,6 +52,33 @@ function displayTarget(){
 	targetShape.setAttribute ("height", "10%");
 	document.body.appendChild(targetShape);	
 }
+
+/********************************************/
+/*			Mittens teaches mixing			*/
+/********************************************/
+// only at the top for testing purposes will be moved with background stuff later
+function speechBubble(){
+	// array will be 9 elements later
+	var teach = new Array("Mixing Colours/MixGreenCircle.png", "Mixing Colours/MixGreenSquare.png",
+		"Mixing Colours/MixGreenTriangle.png", "Mixing Colours/MixOrangeCircle.png", "Mixing Colours/MixOrangeSquare.png",
+		"Mixing Colours/MixOrangeTriangle.png", "Mixing Colours/MixPurpleCircle.png", "Mixing Colours/MixPurpleSquare.png",
+		"Mixing Colours/MixPurpleTriangle.png");
+
+	var theBucket = document.querySelector(".bucket");
+	var mixColours = document.createElement("img");
+
+	if (theBucket.shape <= 8) {
+
+	} else if (theBucket.shape > 8) {
+		mixColours.src = teach[theBucket.shape - 9];
+		mixColours.style = "position:absolute; top:05%";
+		mixColours.style.marginLeft = "16%";
+		//mixColours.setAttribute ("width", "5%");
+		//mixColours.setAttribute ("height", "10%");
+		document.body.appendChild(mixColours);
+	}
+
+}
  
 function bucketControls() {
     var bucketLeft = document.createElement("IMG");
@@ -307,7 +334,7 @@ function checkMixedShapes(value1, value2, fallingObject){
 	/*Green circle*/
 	/**************/
 	if(targetNum == 9) {
-		checkMixedShapes(0,6, fallingObject);		
+		checkMixedShapes(0,6, fallingObject);
 	}
 	/**************/
 	/*Green square*/
@@ -337,7 +364,7 @@ function checkMixedShapes(value1, value2, fallingObject){
 	/*Orange triangle**/
 	/******************/
 	else if(targetNum == 14){
-		checkMixedShapes(5,8, fallingObject);
+		checkMixedShapes(5,8, fallingObject);;
 	}
 	/******************/
 	/***Purple circle**/
@@ -384,6 +411,7 @@ function checkHit(){
 			shapeCorrect.play();
 			randomBucketReq();
 			displayTarget();
+            speechBubble();
 			//If it is a fish then increment life
 		}  else if (((parseInt(objectArray[i].style.top) > 675) &&
 			(parseInt(objectArray[i].style.marginLeft) == bucketLane()) &&
@@ -576,6 +604,7 @@ onload= function(){
 	var bucketCheck = setInterval('checkHit();', 1);
 	randomBucketReq(); // randomizes buckets initial requirement
 	displayTarget() // displays target
+    speechBubble();
 	var pause = document.querySelector(".pauseIcon");	
 
 	
