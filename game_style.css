@@ -84,3 +84,28 @@ img {
 	margin-left: 38%;
 	z-index: 1;
 }
+
+#button {
+    background-image: url('buttons/settingsIcon3.png');
+    position: absolute;
+    top: 25px;
+    left: 480px;
+    height: 47px;
+    width: 47px;
+}
+
+
+<<<<<<< HEAD
+
+
+=======
+#score {
+	position: absolute;
+	margin-left: 48%;
+	margin-top: 11%;
+	font-family: "Comic Sans MS";
+	font-style: bold;
+	font-size: 24px;
+	z-index: 1;
+}
+>>>>>>> master
