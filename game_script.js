@@ -93,9 +93,10 @@ function bucketControls() {
     bucketLeft.setAttribute("id", "LeftPlace");
 	bucketLeft.setAttribute("class", "bucket");
 	bucketLeft.setAttribute("location", 0);
+	bucketLeft.style = "top: 80%";
     bucketLeft.style.position = "absolute";
     bucketLeft.style.marginLeft = "15%"
-    bucketLeft.style.marginTop = "750px";
+    
     document.body.appendChild(bucketLeft);
 
     /* Makes the right lane button/bucket placeholder*/
@@ -106,9 +107,9 @@ function bucketControls() {
     bucketRight.setAttribute("id", "RightPlace");
 	bucketRight.setAttribute("class", "bucket");
 	bucketRight.setAttribute("location", 0);
+	bucketRight.style = "top: 80%";
     bucketRight.style.position = "absolute";
     bucketRight.style.marginLeft = "45%";
-    bucketRight.style.marginTop = "750px";
     document.body.appendChild(bucketRight);
 
     /* Makes the Middle lane button/bucket placeholder*/
@@ -119,9 +120,9 @@ function bucketControls() {
     bucketMid.setAttribute("id", "MidPlace");
 	bucketMid.setAttribute("class", "bucket");
 	bucketMid.setAttribute("location", 0);
+	bucketMid.style = "top: 80%";
     bucketMid.style.position = "absolute";
-    bucketMid.style.marginLeft = "30%";
-    bucketMid.style.marginTop = "750px";
+    bucketMid.style.marginLeft = "30%";  
     document.body.appendChild(bucketMid);
 	bucketMid.location = 1;
 
@@ -200,7 +201,7 @@ function randomLane(){
 function createObject(){
     var imgSrc = randomObject();
     var element = document.createElement("img");
-    element.style = "position:absolute; top:150%";
+    element.style = "position:absolute; top:20%";
     element.style.marginLeft = randomLane();
     element.src = imgSrc;
 	
@@ -263,16 +264,16 @@ function createObject(){
 }
 
 function move(){
-
     var objectArray = document.querySelectorAll(".fallingObject");
     for(var i = 0; i < objectArray.length; i++){
-        objectArray[i].style.top = parseInt(objectArray[i].style.top) + 1 + "px";
+		//window.alert(objectArray[i].style.top);
+        objectArray[i].style.top = parseInt(objectArray[i].style.top) + 1 + "%";
     }
 }
 function checkLimits(){
     var objectArray = document.querySelectorAll(".fallingObject");
 	for(var i = 0; i < objectArray.length; i++){
-        if(parseInt(objectArray[i].style.top) > 750){
+        if(parseInt(objectArray[i].style.top) > 80){
             objectArray[i].parentNode.removeChild(objectArray[i]);
         }
     }
@@ -403,7 +404,8 @@ function checkHit(){
 	
 	for(var i = 0; i < objectArray.length; i++){
 		//accepts the corret target shape
-		if((parseInt(objectArray[i].style.top) > 675) &&
+		//window.alert(objectArray[i].style.top);	
+		if((parseInt(objectArray[i].style.top) > 65) &&
 			(parseInt(objectArray[i].style.marginLeft) == bucketLane()) &&
 			(objectArray[i].shape == myBucket.shape))
 			{
@@ -413,7 +415,7 @@ function checkHit(){
 			displayTarget();
             speechBubble();
 			//If it is a fish then increment life
-		}  else if (((parseInt(objectArray[i].style.top) > 675) &&
+		}  else if (((parseInt(objectArray[i].style.top) > 65) &&
 			(parseInt(objectArray[i].style.marginLeft) == bucketLane()) &&
 			((objectArray[i].shape == 22)))) {
 				incrementLives();
@@ -422,7 +424,7 @@ function checkHit(){
 			
 		}
 		//if it is a boot decrement a life
-		else if(((parseInt(objectArray[i].style.top) > 675) &&
+		else if(((parseInt(objectArray[i].style.top) > 65) &&
 			(parseInt(objectArray[i].style.marginLeft) == bucketLane()) &&
 			((objectArray[i].shape == 21)))){
 				decrementLives();
@@ -431,13 +433,13 @@ function checkHit(){
 			} 
 		
 		//checks if target is a mixed color
-		else if(((parseInt(objectArray[i].style.top) > 675) &&
+		else if(((parseInt(objectArray[i].style.top) > 65) &&
 			(parseInt(objectArray[i].style.marginLeft) == bucketLane()) &&
 			((myBucket.shape > 8 && myBucket.shape < 18)))){
 				acceptMixedShapes(objectArray[i], myBucket);
 		}
 		//If a shape is caught that is NOT the target shape, decrement a life
-		else if (((parseInt(objectArray[i].style.top) > 675) &&
+		else if (((parseInt(objectArray[i].style.top) > 65) &&
 			(parseInt(objectArray[i].style.marginLeft) == bucketLane()) &&		
 			((objectArray[i].shape != myBucket.shape)))) {
 				decrementLives();
@@ -493,9 +495,10 @@ function background() {
     sky.setAttribute("width", "37%");
     sky.setAttribute("height", "95%");
 	sky.setAttribute("location", 0);
+	sky.style = "top:1%";
     sky.style.position = "absolute";
-    sky.style.marginLeft = "15%"
-    sky.style.marginTop = "1px";
+    sky.style.marginLeft = "15%";
+    
     document.body.appendChild(sky);
 }
 
@@ -599,7 +602,7 @@ onload= function(){
 	displayTargetText()// displays the word target
     bucketControls();	
     var objectTimer = setInterval('createObject();', 1500);
-    var timer = setInterval('move();', 2);
+    var timer = setInterval('move();', 25);
     var limitTimer = setInterval('checkLimits();', 1);
 	var bucketCheck = setInterval('checkHit();', 1);
 	randomBucketReq(); // randomizes buckets initial requirement
