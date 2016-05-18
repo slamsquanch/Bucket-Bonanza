@@ -67,14 +67,16 @@ function speechBubble(){
 		"Mixing Colours/MixPurpleTriangle.png");
 
 	var theBucket = document.querySelector(".bucket");
-	var mixColours = document.createElement("img");
-
-	if (theBucket.shape <= 8) {
-
-	} else if (theBucket.shape > 8) {
+	var checkBubble = document.querySelector(".speechBubble");
+	if(checkBubble != null){
+		checkBubble.parentNode.removeChild(checkBubble);
+	}
+	if (theBucket.shape > 8) {
+		var mixColours = document.createElement("img");
 		mixColours.src = teach[theBucket.shape - 9];
 		mixColours.style = "position:absolute; top:0%";
 		mixColours.style.marginLeft = "15%";
+		mixColours.setAttribute ("class", "speechBubble");
 		mixColours.setAttribute ("width", "15%");
 		//mixColours.setAttribute ("height", "10%");
 		document.body.appendChild(mixColours);
