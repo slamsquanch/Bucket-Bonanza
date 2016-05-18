@@ -38,9 +38,9 @@ function displayTarget(){
 		"graphics/greenSquare.png", "graphics/greenTriangle.png", "graphics/orangeCircle.png", "graphics/orangeSquare.png",
 		"graphics/orangeTriangle.png", "graphics/purpleCircle.png", "graphics/purpleSquare.png","graphics/purpleTriangle.png");
 		
-	var check = document.querySelector(".targetShape");
-	if(check != null){
-		check.parentNode.removeChild(check);
+	var checkTarget = document.querySelector(".targetShape");
+	if(checkTarget != null){
+		checkTarget.parentNode.removeChild(checkTarget);
 	}
 	var theBucket = document.querySelector(".bucket");
 	var targetShape = document.createElement("img");
@@ -48,6 +48,7 @@ function displayTarget(){
 	targetShape.style = "position:absolute; top:26%";
 	targetShape.style.marginLeft = "auto";
 	targetShape.style.marginRight = "auto";
+	targetShape.setAttribute("class", "targetShape");
 	targetShape.style.left = 0;
 	targetShape.style.right = 0;
 	targetShape.setAttribute ("width", "5%");
@@ -76,6 +77,7 @@ function speechBubble(){
 		mixColours.src = teach[theBucket.shape - 9];
 		mixColours.style = "position:absolute; top:0%";
 		mixColours.style.marginLeft = "30%";
+		mixColours.setAttribute("class", "speechBubble");
 		mixColours.setAttribute ("width", "15%");
 		//mixColours.setAttribute ("height", "10%");
 		document.body.appendChild(mixColours);
