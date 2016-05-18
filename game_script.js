@@ -615,7 +615,7 @@ onload= function(){
     //object instead of window will require you to click on the circle itself
     pause.onclick=function(){
 		if(timer == null){
-		timer = setInterval('move();', 2);
+		timer = setInterval('move();', 25);
 		objectTimer = setInterval('createObject();', 1000);
      }
      else{
