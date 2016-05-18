@@ -74,7 +74,7 @@ function speechBubble(){
 	} else if (theBucket.shape > 8) {
 		mixColours.src = teach[theBucket.shape - 9];
 		mixColours.style = "position:absolute; top:0%";
-		mixColours.style.marginLeft = "15%";
+		mixColours.style.marginLeft = "30%";
 		mixColours.setAttribute ("width", "15%");
 		//mixColours.setAttribute ("height", "10%");
 		document.body.appendChild(mixColours);
@@ -95,11 +95,10 @@ function bucketControls() {
     bucketLeft.setAttribute("id", "LeftPlace");
 	bucketLeft.setAttribute("class", "bucket");
 	bucketLeft.setAttribute("location", 0);
-	bucketLeft.style = "top: 80%";
+	//bucketLeft.style = "top: 80%";
     bucketLeft.style.position = "absolute";
     bucketLeft.style.marginLeft = "31%"
     bucketLeft.style.marginTop = "36%";
-    bucketLeft.style.marginLeft = "15%"
     document.body.appendChild(bucketLeft);
 
     /* Makes the right lane button/bucket placeholder*/
@@ -110,11 +109,10 @@ function bucketControls() {
     bucketRight.setAttribute("id", "RightPlace");
 	bucketRight.setAttribute("class", "bucket");
 	bucketRight.setAttribute("location", 0);
-	bucketRight.style = "top: 80%";
+	//bucketRight.style = "top: 80%";
     bucketRight.style.position = "absolute";
     bucketRight.style.marginLeft = "59%";
     bucketRight.style.marginTop = "36%";
-    bucketRight.style.marginLeft = "45%";
     document.body.appendChild(bucketRight);
 
     /* Makes the Middle lane button/bucket placeholder*/
@@ -125,7 +123,7 @@ function bucketControls() {
     bucketMid.setAttribute("id", "MidPlace");
 	bucketMid.setAttribute("class", "bucket");
 	bucketMid.setAttribute("location", 0);
-	bucketMid.style = "top: 80%";
+	//bucketMid.style = "top: 80%";
     bucketMid.style.position = "absolute";
     bucketMid.style.marginLeft = "45%";
     bucketMid.style.marginTop = "36%";
@@ -184,7 +182,7 @@ function randomObject(){
 	var star = "graphics/star.png";
     // if you wish to change the max and min for the random generator
     // change the 8 for max and the 0 for min.
-    var randomNum = Math.floor((Math.random() * 8) + 0);
+    var randomNum = Math.floor(Math.random() * 9);
 	
 	// Weight system for falling objects
 	var chance = Math.floor((Math.random() * 100) + 1);
@@ -420,6 +418,7 @@ function checkHit(){
 			randomBucketReq();
 			displayTarget();
             speechBubble();
+			updateScore();
 			//If it is a fish then increment life
 		}  else if (((parseInt(objectArray[i].style.top) > 65) &&
 			(parseInt(objectArray[i].style.marginLeft) == bucketLane()) &&
@@ -445,7 +444,6 @@ function checkHit(){
 				acceptMixedShapes(objectArray[i], myBucket);
 		}
 		//If a shape is caught that is NOT the target shape, decrement a life
-(parseInt(objectArray[i].style.marginLeft) == bucketLane()) &&
 		else if (((parseInt(objectArray[i].style.top) > 65) &&
 			(parseInt(objectArray[i].style.marginLeft) == bucketLane()) &&	
 			((objectArray[i].shape != myBucket.shape)))) {
@@ -594,6 +592,15 @@ function displayTargetText(){
 	document.body.appendChild(targetText);
 }
 
+/*******************************/
+/******* SCORING ***************/
+/*******************************/
+
+function updateScore() {
+	score++;
+	document.getElementById("score").innerHTML = score;
+}
+
 
 
 /*******************************/
@@ -601,6 +608,7 @@ function displayTargetText(){
 /*******************************/
 onload= function(){
 	lives = 3;
+	score = 0;
     background();  //for the game sky
 	mittins();	//adds mittins
 	sideClouds(); //adds clouds
