@@ -77,6 +77,7 @@ function speechBubble(){
 		mixColours.src = teach[theBucket.shape - 9];
 		mixColours.style = "position:absolute; top:0%";
 		mixColours.style.marginLeft = "30%";
+		mixColours.setAttribute("class", "speechBubble");
 		mixColours.setAttribute ("width", "15%");
 		//mixColours.setAttribute ("height", "10%");
 		document.body.appendChild(mixColours);
