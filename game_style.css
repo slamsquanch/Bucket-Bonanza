@@ -94,6 +94,35 @@ img {
     width: 47px;
 }
 
+#gameOverSubmit{
+	display: block;
+	position: relative;
+	background-image: url("Screens/GameOverSubmit.png");
+	background-repeat: no-repeat;
+	background-position: 370px 5px;
+	left: 370px;
+	top: 5px;
+}
+
+#scoreSubmitBtn{
+	background: none;
+	background-image: url("buttons/enterButton.png");
+	position: relative;
+	padding:0;
+	cursor:pointer;
+	border: none;
+	left: 4%;
+	top: 530px;
+	width: 400px;
+	height: 100px;
+	
+}
+
+#nameField{
+	position: relative;
+	left: 16%;
+	top: 475px;
+}
 
 <<<<<<< HEAD
 
