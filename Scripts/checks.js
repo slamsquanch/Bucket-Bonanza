@@ -10,7 +10,7 @@ function bucketLane() {
 	if (bucketArray[0].location == 1)
 		return 32;
 	if (bucketArray[1].location == 1)
-		return 62;
+		return 60;
 	if (bucketArray[2].location == 1)
 		return 47;
 }
