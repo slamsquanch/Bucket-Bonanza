@@ -7,7 +7,7 @@
 /************************/
 /*Constructor for Object*/
 /************************/
-function Object(imgSrc, element, timer){
+function Object(imgSrc, element, timer) {
     this.imgSrc =imgSrc;
     this.element= element;
     this.myTimer = timer;
@@ -87,7 +87,7 @@ function bias(id) {
 /*Returns a random src    */
 /*name for a falling shape*/
 /**************************/
-function randomObject(){
+function randomObject() {
     var scrNames = new Array("graphics/blueCircle.png", "graphics/blueSquare.png",
         "graphics/blueTriangle.png", "graphics/redCircle.png", "graphics/redSquare.png", "graphics/redTriangle.png",
         "graphics/yellowCircle.png", "graphics/yellowSquare.png", "graphics/yellowTriangle.png");
@@ -126,14 +126,15 @@ function randomObject(){
 /*represents the three */
 /*lanes                */
 /***********************/
-function randomLane(){
+function randomLane() {
     var lanes = ["32%", "47%", "62%"];
     return lanes[Math.floor(Math.random() * 3)];
 }
+
 /*************************/
 /*Creates a falling shape*/
 /*************************/
-function createObject(){
+function createObject() {
     var imgSrc = randomObject();
     var element = document.createElement("img");
     element.style = "position:absolute; top:20%";
@@ -186,22 +187,21 @@ function createObject(){
 		case "graphics/star.png":
 			element.shape = 23;
 			break;
-			
 		default:
 			break;
-		
 		}
     element.className = "fallingObject";
     var coolObject = new Object(imgSrc, element, null);
     document.body.appendChild(coolObject.element);
     return coolObject;
 }
+
 /********************************/
 /*Moves all falling shapes by 1%*/
 /********************************/
-function move(){
+function move() {
     var objectArray = document.querySelectorAll(".fallingObject");
-    for(var i = 0; i < objectArray.length; i++){
+    for (var i = 0; i < objectArray.length; i++) {
 		//window.alert(objectArray[i].style.top);
         objectArray[i].style.top = parseInt(objectArray[i].style.top) + 1 + "%";
     }

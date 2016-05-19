@@ -9,7 +9,7 @@
 /*			Mittens displays target			*/
 /********************************************/
 // Needs to be placed above the checkbox hit function because it is being called by it
-function displayTarget(){
+function displayTarget() {
 	var scrNames = new Array("graphics/blueCircle.png", "graphics/blueSquare.png",
         "graphics/blueTriangle.png", "graphics/redCircle.png", "graphics/redSquare.png", "graphics/redTriangle.png",
         "graphics/yellowCircle.png", "graphics/yellowSquare.png", "graphics/yellowTriangle.png", "graphics/greenCircle.png",
@@ -17,9 +17,11 @@ function displayTarget(){
 		"graphics/orangeTriangle.png", "graphics/purpleCircle.png", "graphics/purpleSquare.png","graphics/purpleTriangle.png");
 		
 	var checkTarget = document.querySelector(".targetShape");
-	if(checkTarget != null){
+	
+	if (checkTarget != null) {
 		checkTarget.parentNode.removeChild(checkTarget);
 	}
+	
 	var theBucket = document.querySelector(".bucket");
 	var targetShape = document.createElement("img");
 	targetShape.src = scrNames[theBucket.shape];
@@ -37,8 +39,7 @@ function displayTarget(){
 /********************************************/
 /*			Mittens teaches mixing			*/
 /********************************************/
-// only at the top for testing purposes will be moved with background stuff later
-function speechBubble(){
+function speechBubble() {
 	// array will be 9 elements later
 	var teach = new Array("Mixing Colours/MixGreenCircle.png", "Mixing Colours/MixGreenSquare.png",
 		"Mixing Colours/MixGreenTriangle.png", "Mixing Colours/MixOrangeCircle.png", "Mixing Colours/MixOrangeSquare.png",
@@ -47,9 +48,11 @@ function speechBubble(){
 
 	var theBucket = document.querySelector(".bucket");
 	var checkBubble = document.querySelector(".speechBubble");
-	if(checkBubble != null){
+	
+	if (checkBubble != null) {
 		checkBubble.parentNode.removeChild(checkBubble);
 	}
+	
 	if (theBucket.shape > 8) {
 		var mixColours = document.createElement("img");
 		mixColours.src = teach[theBucket.shape - 9];
@@ -62,11 +65,12 @@ function speechBubble(){
 	}
 
 }
+
 /****************/
 /*Displays lives*/
 /****************/
 function displayLives() {
-		document.getElementById("life").src = "Lives/" + lives + "lifeB.png";
+	document.getElementById("life").src = "Lives/" + lives + "lifeB.png";
 }
 
 /*****************************/
@@ -85,7 +89,7 @@ function background() {
 /****************/
 /*Creates Mittins*/
 /****************/
-function mittins(){
+function mittins() {
 	var mittins = document.createElement("img");
 	mittins.setAttribute("src", "graphics/MiddleCat.png");
 	mittins.style = "position:absolute; top:10%";
@@ -103,23 +107,21 @@ function mittins(){
 	
 	/*When you click on the middle cat it will change the cat to the other cat*/
 	mittins.onclick = function(){
-			
-			if(mittins.getAttribute("src") == "graphics/MiddleCat.png"){
-				mittins.src = "graphics/originalCat.png";
-				//mittins.style = "margin-left: 26%; 	position:absolute; top:7%";
-				meowKitty.play();
-			}
-			else{
-				mittins.src = "graphics/MiddleCat.png";
-				//mittins.style = "margin-left: 26%; 	position:absolute; top:10%";
-				meowKitty2.play();
-			}
-		};		
+		if(mittins.getAttribute("src") == "graphics/MiddleCat.png"){
+			mittins.src = "graphics/originalCat.png";
+			meowKitty.play();
+		} else {
+			mittins.src = "graphics/MiddleCat.png";
+			meowKitty2.play();
+		}
+	}		
 }
+
 /*******************/
 /*Creates the clouds*/
 /*******************/
-function sideClouds(){
+function sideClouds() {
+	
 	/***************/
 	/**Left cloud***/
 	/***************/
@@ -129,6 +131,7 @@ function sideClouds(){
 	leftCloud.setAttribute ("width", "15%");
 	leftCloud.setAttribute ("height", "30%");
 	leftCloud.style.marginLeft = "31.5%";
+	
 	/***************/
 	/**Right cloud**/
 	/***************/
@@ -138,16 +141,18 @@ function sideClouds(){
 	rightCloud.setAttribute ("width", "15%");
 	rightCloud.setAttribute ("height", "28%");
 	rightCloud.style.marginLeft = "53.5%";
+	
 	/*****************************/
 	/*Adds the images to the body*/
 	/*****************************/
 	document.body.appendChild(rightCloud);
 	document.body.appendChild(leftCloud);
 }
+
 /**************************/
 /*Displays the word Target*/
 /**************************/
-function displayTargetText(){
+function displayTargetText() {
 	var targetText = document.createElement("img");
 	targetText.src = "graphics/target.png";
 	targetText.style = "position:absolute; top:24%";
@@ -159,10 +164,11 @@ function displayTargetText(){
 	targetText.setAttribute ("height", "5%");
 	document.body.appendChild(targetText);
 }
+
 /********************************************/
 /*creates pause icon in the top right corner*/
 /********************************************/
-function pauseIcon(){
+function pauseIcon() {
 	var pauseIcon = document.createElement("img");
 	pauseIcon.setAttribute("src", "buttons/pauseIcon.png");
 	pauseIcon.style = "position:absolute; top:1%";
@@ -171,5 +177,4 @@ function pauseIcon(){
 	pauseIcon.setAttribute("class", "pauseIcon");
 	pauseIcon.style.marginLeft = "63%"
 	document.body.appendChild(pauseIcon);
-	
 }

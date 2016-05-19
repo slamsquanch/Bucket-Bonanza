@@ -9,27 +9,28 @@
 /*Gives a new target         */
 /*and updates the game screen*/
 /*****************************/
-function correctCatch(){
+function correctCatch() {
 	shapeCorrect.play();
 	randomBucketReq();
 	displayTarget();
     speechBubble();
 	updateScore();
 }
+
 /*****************************/
 /*Plays the "correct" sound  */
 /*increments a life          */
 /*****************************/
-function fishCatch(){
+function fishCatch() {
 	incrementLives();
 	shapeCorrect.play();
 }
+
 /*****************************/
 /*Plays the "incorrect" sound*/
 /*decrements a life          */
 /*****************************/
-function incorrectCatch(){
+function incorrectCatch() {
 	decrementLives();
 	shapeWrong.play();
-	
 }
