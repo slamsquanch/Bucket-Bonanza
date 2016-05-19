@@ -79,7 +79,18 @@ function checkHit() {
 			(parseInt(objectArray[i].style.marginLeft) == bucketLane()) &&
 			((objectArray[i].shape == 22)))) {			
 				objectArray[i].parentNode.removeChild(objectArray[i]);
-				fishCatch();	
+				fishCatch();
+
+		//If the bucket catches a rainbow star
+		} else if (((parseInt(objectArray[i].style.top) > 65) &&
+			(parseInt(objectArray[i].style.marginLeft) == bucketLane()) &&
+			((objectArray[i].shape == 23)))) {
+				objectArray[i].parentNode.removeChild(objectArray[i]);
+				if (firstCatch == 1)
+					bonanzaCatch();
+				else {
+					bModeCatch();
+				}
 				
 		//if it is a boot decrement a life
 		} else if (((parseInt(objectArray[i].style.top) > 65) &&
@@ -93,23 +104,16 @@ function checkHit() {
 			(parseInt(objectArray[i].style.marginLeft) == bucketLane()) &&
 			((myBucket.shape > 8 && myBucket.shape < 18)))) {
 				acceptMixedShapes(objectArray[i], myBucket);
-				
+
 		//If a shape is caught that is NOT the target shape, decrement a life
 		} else if (((parseInt(objectArray[i].style.top) > 65) &&
 			(parseInt(objectArray[i].style.marginLeft) == bucketLane()) &&	
-			((objectArray[i].shape != myBucket.shape
-			&& objectArray[i].shape != objectArray[23].shape )))) {
+			((objectArray[i].shape != myBucket.shape)))) {
 				objectArray[i].parentNode.removeChild(objectArray[i]);
 				incorrectCatch();
 			       
 		}
-		//If the bucket catches a rainbow star
-		else if (((parseInt(objectArray[i].style.top) > 65) &&
-			(parseInt(objectArray[i].style.marginLeft) == bucketLane()) &&
-			((objectArray[i].shape == objectArray[23].shape)))) {
-			objectArray[i].parentNode.removeChild(objectArray[i]);
 
-		}
 	}
 }
 

@@ -24,7 +24,13 @@ function displayTarget() {
 	
 	var theBucket = document.querySelector(".bucket");
 	var targetShape = document.createElement("img");
-	targetShape.src = scrNames[theBucket.shape];
+
+	// Choses target image based on bonanza mode activation
+	if (firstCatch == 0) {
+		targetShape.src = "graphics/star.png"
+	} else {
+		targetShape.src = scrNames[theBucket.shape];
+	}
 	targetShape.style = "position:absolute; top:26%";
 	targetShape.style.marginLeft = "auto";
 	targetShape.style.marginRight = "auto";
@@ -33,7 +39,8 @@ function displayTarget() {
 	targetShape.style.right = 0;
 	targetShape.setAttribute ("width", "5%");
 	targetShape.setAttribute ("height", "10%");
-	document.body.appendChild(targetShape);	
+	document.body.appendChild(targetShape);
+
 }
 
 /********************************************/
@@ -70,7 +77,7 @@ function speechBubble() {
 /*Displays lives*/
 /****************/
 function displayLives() {
-	document.getElementById("life").src = "Lives/" + lives + "lifeB.png";
+	document.getElementById("life").src = "Lives/" + lives + "lifeW.png";
 }
 
 /*****************************/

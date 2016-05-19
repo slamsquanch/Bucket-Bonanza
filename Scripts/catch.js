@@ -34,3 +34,24 @@ function incorrectCatch() {
 	decrementLives();
 	shapeWrong.play();
 }
+
+/*****************************/
+/* Plays the horn sound on an*/
+/* initial star catch        */
+/* activating Bonanza Mode   */
+/*****************************/
+function bonanzaCatch() {
+	bonanzaSound.play();
+	updateScore();
+	bonanza();
+}
+
+/*******************************/
+/* Plays the "correct" sound   */
+/* and updates score for each  */
+/* star caught after the first.*/
+/*******************************/
+function bModeCatch() {
+	shapeCorrect.play();
+	updateScore();
+}

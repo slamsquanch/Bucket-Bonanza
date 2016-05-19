@@ -1,9 +1,16 @@
 /*******************************/
 /****** ONLOAD FUNCTION  *******/
 /*******************************/
+var bonanzaBool;
+var lives;
+var score;
+var firstCatch;
+
 onload= function() {
 	lives = 3;	//initial amount of lives
 	score = 0;	//beginning player score
+	bonanzaBool = 0;  //determine if bonanza mode should be on
+	firstCatch = 1;	//determine if a player has caught first star
     background();  //for the game sky
 	mittins();	//adds mittins
 	sideClouds(); //adds clouds
