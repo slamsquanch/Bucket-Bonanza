@@ -77,7 +77,7 @@ function bucketControls() {
 
     /* Left lane click */
     bucketLeft.onclick=function() {
-        this.src="graphics/Bucket.png";
+        this.src="graphics/Bucket_Left.png";
         bucketRight.src="graphics/invisible_bucket.png";
         bucketMid.src="graphics/invisible_bucket.png";
 		bucketLeft.location = 1;
@@ -87,7 +87,7 @@ function bucketControls() {
 
     /* Right lane click */
     bucketRight.onclick=function() {
-        this.src="graphics/Bucket.png";
+        this.src="graphics/Bucket_Right.png";
         bucketLeft.src="graphics/invisible_bucket.png";
         bucketMid.src="graphics/invisible_bucket.png";
 		bucketLeft.location = 0;

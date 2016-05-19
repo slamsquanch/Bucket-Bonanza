@@ -54,9 +54,9 @@ function speechBubble(){
 		var mixColours = document.createElement("img");
 		mixColours.src = teach[theBucket.shape - 9];
 		mixColours.style = "position:absolute; top:0%";
-		mixColours.style.marginLeft = "30%";
+		mixColours.style.marginLeft = "33%";
 		mixColours.setAttribute("class", "speechBubble");
-		mixColours.setAttribute ("width", "15%");
+		mixColours.setAttribute ("width", "12%");
 		//mixColours.setAttribute ("height", "10%");
 		document.body.appendChild(mixColours);
 	}
@@ -83,7 +83,7 @@ function background() {
 }
 
 /****************/
-/*Creats Mittins*/
+/*Creates Mittins*/
 /****************/
 function mittins(){
 	var mittins = document.createElement("img");
@@ -117,7 +117,7 @@ function mittins(){
 		};		
 }
 /*******************/
-/*Creats the clouds*/
+/*Creates the clouds*/
 /*******************/
 function sideClouds(){
 	/***************/

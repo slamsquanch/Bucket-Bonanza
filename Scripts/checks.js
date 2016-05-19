@@ -8,11 +8,11 @@
 function bucketLane() {
 	var bucketArray = document.querySelectorAll(".bucket");	
 	if (bucketArray[0].location == 1)
-		return 30;
+		return 32;
 	if (bucketArray[1].location == 1)
-		return 60;
+		return 62;
 	if (bucketArray[2].location == 1)
-		return 45;
+		return 47;
 }
 /************************/
 /*Checks if the falling */
