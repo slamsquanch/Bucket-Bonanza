@@ -106,12 +106,12 @@ function mittins(){
 			
 			if(mittins.getAttribute("src") == "graphics/MiddleCat.png"){
 				mittins.src = "graphics/originalCat.png";
-				mittins.style = "margin-left: 26%; 	position:absolute; top:7%";
+				//mittins.style = "margin-left: 26%; 	position:absolute; top:7%";
 				meowKitty.play();
 			}
 			else{
 				mittins.src = "graphics/MiddleCat.png";
-				mittins.style = "margin-left: 26%; 	position:absolute; top:10%";
+				//mittins.style = "margin-left: 26%; 	position:absolute; top:10%";
 				meowKitty2.play();
 			}
 		};		
@@ -128,7 +128,7 @@ function sideClouds(){
 	leftCloud.style = "position:absolute; top:10%";
 	leftCloud.setAttribute ("width", "15%");
 	leftCloud.setAttribute ("height", "30%");
-	leftCloud.style.marginLeft = "31%";
+	leftCloud.style.marginLeft = "31.5%";
 	/***************/
 	/**Right cloud**/
 	/***************/
@@ -137,7 +137,7 @@ function sideClouds(){
 	rightCloud.style = "position:absolute; top:10%";
 	rightCloud.setAttribute ("width", "15%");
 	rightCloud.setAttribute ("height", "28%");
-	rightCloud.style.marginLeft = "53%";
+	rightCloud.style.marginLeft = "53.5%";
 	/*****************************/
 	/*Adds the images to the body*/
 	/*****************************/

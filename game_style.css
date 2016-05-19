@@ -17,6 +17,7 @@ img {
 	margin-right: auto;
 	left: 0;
 	right: 0;
+	width: auto;
 	height: 95%
 }
 
@@ -39,11 +40,13 @@ img {
 }
 
 #button {
+	background-image: url('buttons/settingsIcon3.png');
+    position: absolute;
 	display: block;
-	margin-left: 26%;
+	margin-left: 53%;
 	margin-top: 0.5%;
-	height: 3%;
-	width: 3%;
+	width: 46px;
+	height: 46px;
 }
 
 #titlePlay {
@@ -51,6 +54,7 @@ img {
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 19%;
+	width: 30%;
 	left: 0;
 	right: 0;
 }
@@ -60,6 +64,7 @@ img {
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 27%;
+	width: 30%;
 	left: 0;
 	right: 0;
 }
@@ -69,6 +74,7 @@ img {
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 35%;
+	width: 30%;
 	left: 0;
 	right: 0;
 }
@@ -108,15 +114,6 @@ img {
 #life {
 	margin-left: 53%;
 	z-index: 1;
-}
-
-#button {
-    background-image: url('buttons/settingsIcon3.png');
-    position: absolute;
-    top: 25px;
-    left: 480px;
-    height: 47px;
-    width: 47px;
 }
 
 #gameOverSubmit{
