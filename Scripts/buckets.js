@@ -7,25 +7,27 @@
 /************************************/
 /*Randomize what the bucket requires*/
 /************************************/
- function randomBucketReq(){
-	 var myBucket = document.querySelectorAll(".bucket");
-	 var randomNum = Math.floor((Math.random() * 17) + 0);
-	 //var randomNum = 9; //for testing purposes
-	 for(i = 0; i < 3; i++){
+function randomBucketReq() {
+	var myBucket = document.querySelectorAll(".bucket");
+	var randomNum = Math.floor((Math.random() * 17) + 0);
+	//var randomNum = 9; //for testing purposes
+	for (i = 0; i < 3; i++) {
 		myBucket[i].shape = randomNum;
-	 }
- }
+	}
+}
+ 
 /*********************************************/
 /*Set all buckets' shape value to param value*/
 /*********************************************/
-function setBucketShapeValue(value){
+function setBucketShapeValue(value) {
 	var thoseBuckets = document.querySelectorAll(".bucket");
-	for(i = 0; i < 3; i++){
+	for (i = 0; i < 3; i++) {
 		thoseBuckets[i].shape = value;
-	 }
+	}
 }
+
 /*************************/
-/*Creates three buckets  */
+/* Creates three buckets */
 /*************************/
 function bucketControls() {
     var bucketLeft = document.createElement("IMG");
@@ -35,7 +37,7 @@ function bucketControls() {
     /* Makes the left lane button/bucket placeholder*/
     bucketLeft.setAttribute("src", "graphics/invisible_bucket.png");
     /*bucketLeft.setAttribute("width", "20%");
-     bucketLeft.setAttribute("height", "20%");*/
+      bucketLeft.setAttribute("height", "20%");*/
     bucketLeft.setAttribute("alt", "Transparent button-left");
     bucketLeft.setAttribute("id", "LeftPlace");
 	bucketLeft.setAttribute("class", "bucket");
@@ -49,7 +51,7 @@ function bucketControls() {
     /* Makes the right lane button/bucket placeholder*/
     bucketRight.setAttribute("src", "graphics/invisible_bucket.png");
     /*bucketRight.setAttribute("width", "20%");
-     bucketRight.setAttribute("height", "20%");*/
+      bucketRight.setAttribute("height", "20%");*/
     bucketRight.setAttribute("alt", "Transparent button-right");
     bucketRight.setAttribute("id", "RightPlace");
 	bucketRight.setAttribute("class", "bucket");
@@ -63,7 +65,7 @@ function bucketControls() {
     /* Makes the Middle lane button/bucket placeholder*/
     bucketMid.setAttribute("src", "graphics/Bucket.png");
     /*bucketMid.setAttribute("width", "20%");
-     bucketMid.setAttribute("height", "20%");*/
+      bucketMid.setAttribute("height", "20%");*/
     bucketMid.setAttribute("alt", "Transparent button-mid");
     bucketMid.setAttribute("id", "MidPlace");
 	bucketMid.setAttribute("class", "bucket");
@@ -76,7 +78,7 @@ function bucketControls() {
 	bucketMid.location = 1;
 
     /* Left lane click */
-    bucketLeft.onclick=function() {
+    bucketLeft.onclick = function() {
         this.src="graphics/Bucket_Left.png";
         bucketRight.src="graphics/invisible_bucket.png";
         bucketMid.src="graphics/invisible_bucket.png";
@@ -86,7 +88,7 @@ function bucketControls() {
     }
 
     /* Right lane click */
-    bucketRight.onclick=function() {
+    bucketRight.onclick = function() {
         this.src="graphics/Bucket_Right.png";
         bucketLeft.src="graphics/invisible_bucket.png";
         bucketMid.src="graphics/invisible_bucket.png";
@@ -96,7 +98,7 @@ function bucketControls() {
     }
 
     /* Middle lane click */
-    bucketMid.onclick=function() {
+    bucketMid.onclick = function() {
         this.src="graphics/Bucket.png";
         bucketLeft.src="graphics/invisible_bucket.png";
         bucketRight.src="graphics/invisible_bucket.png";
