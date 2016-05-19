@@ -1,0 +1,65 @@
+[1mdiff --git a/GameFrame(BucketBonanza).html b/GameFrame(BucketBonanza).html[m
+[1mindex be972d9..8f47237 100644[m
+[1m--- a/GameFrame(BucketBonanza).html[m
+[1m+++ b/GameFrame(BucketBonanza).html[m
+[36m@@ -14,6 +14,7 @@[m
+ 	<script type="text/javascript" src="Scripts/catch.js"></script>[m
+ 	<script type="text/javascript" src="Scripts/checks.js"></script>[m
+     <script type="text/javascript" src="Scripts/game_script.js"></script>[m
+[32m+[m	[32m<script type="text/javascript" src="Scripts/bonanza.js"></script>[m[41m[m
+ 	[m
+ </head>[m
+ <body id="frame">[m
+[1mdiff --git a/Scripts/audio.js b/Scripts/audio.js[m
+[1mindex e8c70a6..9298c20 100644[m
+[1m--- a/Scripts/audio.js[m
+[1m+++ b/Scripts/audio.js[m
+[36m@@ -7,4 +7,5 @@[m [mvar shapeCorrect = new Audio("sounds/Correct.mp3");[m
+ var shapeWrong = new Audio("sounds/Wrong.mp3");[m
+ var pressButton = new Audio("sounds/Button.mp3");[m
+ var meowKitty = new Audio("sounds/Meow.mp3");[m
+[31m-var meowKitty2 = new Audio("sounds/Meow3.mp3");[m
+\ No newline at end of file[m
+[32m+[m[32mvar meowKitty2 = new Audio("sounds/Meow3.mp3");[m[41m[m
+[32m+[m[32mvar bucketComplete = new Audio("sounds/BucketComplete.mp3");[m
+\ No newline at end of file[m
+[1mdiff --git a/Scripts/catch.js b/Scripts/catch.js[m
+[1mindex 6699348..20fc78b 100644[m
+[1m--- a/Scripts/catch.js[m
+[1m+++ b/Scripts/catch.js[m
+[36m@@ -32,4 +32,6 @@[m [mfunction incorrectCatch(){[m
+ 	decrementLives();[m
+ 	shapeWrong.play();[m
+ 	[m
+[31m-}[m
+\ No newline at end of file[m
+[32m+[m[32m}[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32mfunction[m[41m [m
+\ No newline at end of file[m
+[1mdiff --git a/Scripts/checks.js b/Scripts/checks.js[m
+[1mindex 0a1c245..bd2c6d9 100644[m
+[1m--- a/Scripts/checks.js[m
+[1m+++ b/Scripts/checks.js[m
+[36m@@ -97,11 +97,19 @@[m [mfunction checkHit(){[m
+ 		//If a shape is caught that is NOT the target shape, decrement a life[m
+ 		else if (((parseInt(objectArray[i].style.top) > 65) &&[m
+ 			(parseInt(objectArray[i].style.marginLeft) == bucketLane()) &&	[m
+[31m-			((objectArray[i].shape != myBucket.shape)))) {[m
+[32m+[m			[32m((objectArray[i].shape != myBucket.shape[m[41m[m
+[32m+[m			[32m&& objectArray[i].shape != objectArray[23].shape )))) {[m[41m[m
+ 				objectArray[i].parentNode.removeChild(objectArray[i]);[m
+ 				incorrectCatch();[m
+ 			       [m
+[31m-		}         [m
+[32m+[m		[32m}[m[41m[m
+[32m+[m		[32m//If the bucket catches a rainbow star[m[41m[m
+[32m+[m		[32melse if (((parseInt(objectArray[i].style.top) > 65) &&[m[41m[m
+[32m+[m			[32m(parseInt(objectArray[i].style.marginLeft) == bucketLane()) &&[m[41m[m
+[32m+[m			[32m((objectArray[i].shape == objectArray[23].shape)))) {[m[41m[m
+[32m+[m			[32mobjectArray[i].parentNode.removeChild(objectArray[i]);[m[41m[m
+[32m+[m[41m[m
+[32m+[m		[32m}[m[41m[m
+ 	}[m
+ }[m
+ /**********************************/[m

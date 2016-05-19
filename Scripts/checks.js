@@ -97,11 +97,19 @@ function checkHit(){
 		//If a shape is caught that is NOT the target shape, decrement a life
 		else if (((parseInt(objectArray[i].style.top) > 65) &&
 			(parseInt(objectArray[i].style.marginLeft) == bucketLane()) &&	
-			((objectArray[i].shape != myBucket.shape)))) {
+			((objectArray[i].shape != myBucket.shape
+			&& objectArray[i].shape != objectArray[23].shape )))) {
 				objectArray[i].parentNode.removeChild(objectArray[i]);
 				incorrectCatch();
 			       
-		}         
+		}
+		//If the bucket catches a rainbow star
+		else if (((parseInt(objectArray[i].style.top) > 65) &&
+			(parseInt(objectArray[i].style.marginLeft) == bucketLane()) &&
+			((objectArray[i].shape == objectArray[23].shape)))) {
+			objectArray[i].parentNode.removeChild(objectArray[i]);
+
+		}
 	}
 }
 /**********************************/
