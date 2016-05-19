@@ -127,7 +127,7 @@ function randomObject() {
 /*lanes                */
 /***********************/
 function randomLane() {
-    var lanes = ["32%", "47%", "62%"];
+    var lanes = ["32%", "47%", "60%"];
     return lanes[Math.floor(Math.random() * 3)];
 }
 

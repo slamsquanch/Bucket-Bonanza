@@ -10,7 +10,7 @@ function bucketLane() {
 	if (bucketArray[0].location == 1)
 		return 32;
 	if (bucketArray[1].location == 1)
-		return 62;
+		return 60;
 	if (bucketArray[2].location == 1)
 		return 47;
 }
@@ -97,8 +97,7 @@ function checkHit() {
 		//If a shape is caught that is NOT the target shape, decrement a life
 		} else if (((parseInt(objectArray[i].style.top) > 65) &&
 			(parseInt(objectArray[i].style.marginLeft) == bucketLane()) &&	
-			((objectArray[i].shape != myBucket.shape
-			&& objectArray[i].shape != objectArray[23].shape )))) {
+			((objectArray[i].shape != myBucket.shape)))) {
 				objectArray[i].parentNode.removeChild(objectArray[i]);
 				incorrectCatch();
 			       

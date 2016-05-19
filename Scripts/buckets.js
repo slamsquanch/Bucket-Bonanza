@@ -58,7 +58,7 @@ function bucketControls() {
 	bucketRight.setAttribute("location", 0);
 	//bucketRight.style = "top: 80%";
     bucketRight.style.position = "absolute";
-    bucketRight.style.marginLeft = "56.1%";
+    bucketRight.style.marginLeft = "51%";
     bucketRight.style.marginTop = "36%";
     document.body.appendChild(bucketRight);
 
@@ -72,7 +72,7 @@ function bucketControls() {
 	bucketMid.setAttribute("location", 0);
 	//bucketMid.style = "top: 80%";
     bucketMid.style.position = "absolute";
-    bucketMid.style.marginLeft = "43.9%";
+    bucketMid.style.marginLeft = "43%";
     bucketMid.style.marginTop = "36%";
     document.body.appendChild(bucketMid);
 	bucketMid.location = 1;
