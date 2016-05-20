@@ -185,4 +185,6 @@ function pauseIcon() {
 function largeBackround(){
 	var largeBackground=document.createElement("img");
 	largeBackground.setAttribute("src","graphics/websiteBackground.png");
+	largeBackground.style = "position:absolute;top:0;width:100%;height:100%;";
+	document.body.insertBefore(largeBackground,document.body.firstChild);
 }
