@@ -1,7 +1,7 @@
 /***********************************/
 /*This script contains the creation*/
 /*of falling shapes and functions */
-/*that change thier attributes     */
+/*that change their attributes     */
 /***********************************/
 
 /************************/
@@ -100,19 +100,19 @@ function randomObject() {
     // if you wish to change the max and min for the random generator
     // change the 8 for max and the 0 for min.
     var randomNum = Math.floor(Math.random() * 9);
-	var biasChance = Math.floor(Math.random() * 2);
+	var biasChance = Math.floor(Math.random() * 4);
 	
 	var myBucket = document.querySelector(".bucket");
 	
 	// Weight system for falling objects
 	var chance = Math.floor((Math.random() * 100) + 1);
-    if (chance < 70) {
-		// 50/50 chance the shape you need will drop
+    if (chance < 78) {
+		// 1/4 chance the shape you need will drop
 		if (biasChance == 0)
 			return scrNames[bias(myBucket.shape)];
 		else
 			return scrNames[randomNum];
-	} else if (chance < 90) {
+	} else if (chance < 94) {
 		return boot;
 	} else if (chance < 99) {
 		return fish;
@@ -144,7 +144,13 @@ function randomObject() {
 /*Creates a falling shape*/
 /*************************/
 function createObject() {
-    var imgSrc = randomObject();
+	if (bonanzaBool == 0) {
+		var imgSrc = randomObject();
+	} else {
+		var imgSrc = "graphics/star.png";
+	}
+	
+    
     var element = document.createElement("img");
     element.style = "position:absolute; top:20%";
     element.style.marginLeft = randomLane();

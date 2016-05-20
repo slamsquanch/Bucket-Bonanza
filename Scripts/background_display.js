@@ -25,6 +25,13 @@ function displayTarget() {
 	targetShape.src = scrNames[theBucket.shape];
 	targetShape.setAttribute("class", "targetShape");
 	document.body.appendChild(targetShape);	
+
+	// Choses target image based on bonanza mode activation
+	if (firstCatch == 0) {
+		targetShape.src = "graphics/star.png"
+	} else {
+		targetShape.src = scrNames[theBucket.shape];
+	}
 }
 
 /********************************************/
@@ -58,7 +65,7 @@ function speechBubble() {
 /*Displays lives*/
 /****************/
 function displayLives() {
-	document.getElementById("life").src = "Lives/" + lives + "lifeB.png";
+	document.getElementById("life").src = "Lives/" + lives + "lifeW.png";
 }
 
 /*****************************/
