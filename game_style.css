@@ -32,16 +32,38 @@ img {
     margin-right: auto;
 }
 
+#gameOverScreen{
+	display: block;
+	width: 37%;
+	height: 95%;
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+	top:0;
+}
+
 #gameOverExit {
-	position: relative; 
-	left: 65px; 
-	top: 415px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	top: 50%;
+	width: 30%;
+	height:15%;
+	left: 0;
+	right: 0;
 }
 
 #gameOverRestart {
-	position: relative; 
-	left: 65px;
-	top: 425px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	top: 70%;
+	width: 30%;
+	height:15%;
+	left: 0;
+	right: 0;
 }
 
 #button {
@@ -281,7 +303,39 @@ img {
 		float:right;
 		right:5%;
 	}
-	
+	#gameOverScreen{
+		display: block;
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		margin-left: 0;
+		margin-right: 0;
+		left: 0;
+		right: 0;
+		top:0;
+	}
+
+	#gameOverExit {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		top: 50%;
+		width: 75%;
+		height:20%;
+		left: 0;
+		right: 0;
+	}
+
+	#gameOverRestart {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		top: 70%;
+		width: 75%;
+		height:20%;
+		left: 0;
+		right: 0;
+	}
 }
 
 

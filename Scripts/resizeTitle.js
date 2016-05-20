@@ -20,7 +20,7 @@ function checkTitle(){
 			largeBackround();
 			howToBut.style.cssText="display:block;margin-left:auto;margin-right:auto;top:55%;width:30%;height:12%;left:0;right0;";
 			playButton.style.cssText="display:block;margin-left:auto;margin-right:auto;top:40%;width:30%;height:12%;left:0;right0;";
-			leaderboardBut.style.cssText="display:block;margin-left:auto;margin-right:auto;top:70%;width:30%;left:0;right0;"
+			leaderboardBut.style.cssText="display:block;margin-left:auto;margin-right:auto;top:70%;width:30%;height:12%;left:0;right0;"
 			titlePicture.style.cssText = "position:absolute;width:37%;height:95%;margin-left:auto;margin-right:auto;left: 0;right: 0;top:0;";	
 		}
 	}
