@@ -33,53 +33,54 @@ function bucketControls() {
     var bucketLeft = document.createElement("IMG");
     var bucketRight = document.createElement("IMG");
     var bucketMid = document.createElement("IMG");
+	var windowHeight = window.innerHeight;
+	var windowWidth=window.innerWidth;
+	var bucketHeight = windowHeight * 0.75;
 
     /* Makes the left lane button/bucket placeholder*/
+
     bucketLeft.setAttribute("src", "graphics/invisible_bucket.png");
-    /*bucketLeft.setAttribute("width", "20%");
-      bucketLeft.setAttribute("height", "20%");*/
     bucketLeft.setAttribute("alt", "Transparent button-left");
     bucketLeft.setAttribute("id", "LeftPlace");
 	bucketLeft.setAttribute("class", "bucket");
 	bucketLeft.setAttribute("location", 0);
+	bucketLeft.lane = 0;
 	//bucketLeft.style = "top: 80%";
-    bucketLeft.style.position = "absolute";
-    bucketLeft.style.marginLeft = "31.6%"
-    bucketLeft.style.marginTop = "36%";
+	bucketLeft.style.marginTop = bucketHeight + "px";
+    //bucketLeft.style.marginTop = "36%";
     document.body.appendChild(bucketLeft);
 
     /* Makes the right lane button/bucket placeholder*/
     bucketRight.setAttribute("src", "graphics/invisible_bucket.png");
-    /*bucketRight.setAttribute("width", "20%");
-      bucketRight.setAttribute("height", "20%");*/
     bucketRight.setAttribute("alt", "Transparent button-right");
     bucketRight.setAttribute("id", "RightPlace");
 	bucketRight.setAttribute("class", "bucket");
 	bucketRight.setAttribute("location", 0);
+	bucketRight.lane = 2;
 	//bucketRight.style = "top: 80%";
-    bucketRight.style.position = "absolute";
-    bucketRight.style.marginLeft = "51%";
-    bucketRight.style.marginTop = "36%";
+	bucketRight.style.marginTop = bucketHeight + "px";
+  //  bucketRight.style.marginTop = "36%";
     document.body.appendChild(bucketRight);
 
     /* Makes the Middle lane button/bucket placeholder*/
     bucketMid.setAttribute("src", "graphics/Bucket.png");
-    /*bucketMid.setAttribute("width", "20%");
-      bucketMid.setAttribute("height", "20%");*/
     bucketMid.setAttribute("alt", "Transparent button-mid");
     bucketMid.setAttribute("id", "MidPlace");
 	bucketMid.setAttribute("class", "bucket");
 	bucketMid.setAttribute("location", 0);
+	bucketMid.lane = 1;
 	//bucketMid.style = "top: 80%";
-    bucketMid.style.position = "absolute";
-    bucketMid.style.marginLeft = "43%";
-    bucketMid.style.marginTop = "36%";
+	bucketMid.style.marginTop = bucketHeight + "px";
+   // bucketMid.style.marginTop = "36%";
     document.body.appendChild(bucketMid);
 	bucketMid.location = 1;
 
     /* Left lane click */
     bucketLeft.onclick = function() {
         this.src="graphics/Bucket_Left.png";
+		if(windowWidth<800){
+			this.src="graphics/Bucket.png";
+		}
         bucketRight.src="graphics/invisible_bucket.png";
         bucketMid.src="graphics/invisible_bucket.png";
 		bucketLeft.location = 1;

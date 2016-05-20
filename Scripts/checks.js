@@ -7,12 +7,23 @@
 // Function to determine which lane the bucket is currently in, returns the marginLeft percentage.
 function bucketLane() {
 	var bucketArray = document.querySelectorAll(".bucket");	
-	if (bucketArray[0].location == 1)
-		return 32;
-	if (bucketArray[1].location == 1)
-		return 60;
-	if (bucketArray[2].location == 1)
-		return 47;
+	var currentWidth=window.innerWidth;
+		if(currentWidth>800){
+			if (bucketArray[0].location == 1)
+				return 32;
+			if (bucketArray[1].location == 1)
+				return 60;
+			if (bucketArray[2].location == 1)
+				return 47;
+		}
+		else{
+			if (bucketArray[0].location == 1)
+				return 5;
+			if (bucketArray[1].location == 1)
+				return 78;
+			if (bucketArray[2].location == 1)
+				return 40;
+		}
 }
 
 /************************/
@@ -69,21 +80,21 @@ function checkHit() {
 		//accepts the corret target shape
 		//window.alert(objectArray[i].style.top);	
 		if ((parseInt(objectArray[i].style.top) > 65) &&
-			(parseInt(objectArray[i].style.marginLeft) == bucketLane()) &&
+			(parseInt(objectArray[i].style.marginLeft)== bucketLane()) &&
 			(objectArray[i].shape == myBucket.shape)) {
 				objectArray[i].parentNode.removeChild(objectArray[i]);
 				correctCatch();
 				
 		//If it is a fish then increment life
 		} else if (((parseInt(objectArray[i].style.top) > 65) &&
-			(parseInt(objectArray[i].style.marginLeft) == bucketLane()) &&
+			(parseInt(objectArray[i].style.marginLeft)== bucketLane()) &&
 			((objectArray[i].shape == 22)))) {			
 				objectArray[i].parentNode.removeChild(objectArray[i]);
 				fishCatch();	
 				
 		//if it is a boot decrement a life
 		} else if (((parseInt(objectArray[i].style.top) > 65) &&
-			(parseInt(objectArray[i].style.marginLeft) == bucketLane()) &&
+			(parseInt(objectArray[i].style.marginLeft)== bucketLane()) &&
 			((objectArray[i].shape == 21)))){
 				objectArray[i].parentNode.removeChild(objectArray[i]);
 				incorrectCatch();

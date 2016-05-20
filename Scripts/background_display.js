@@ -17,22 +17,13 @@ function displayTarget() {
 		"graphics/orangeTriangle.png", "graphics/purpleCircle.png", "graphics/purpleSquare.png","graphics/purpleTriangle.png");
 		
 	var checkTarget = document.querySelector(".targetShape");
-	
 	if (checkTarget != null) {
 		checkTarget.parentNode.removeChild(checkTarget);
 	}
-	
 	var theBucket = document.querySelector(".bucket");
 	var targetShape = document.createElement("img");
 	targetShape.src = scrNames[theBucket.shape];
-	targetShape.style = "position:absolute; top:26%";
-	targetShape.style.marginLeft = "auto";
-	targetShape.style.marginRight = "auto";
 	targetShape.setAttribute("class", "targetShape");
-	targetShape.style.left = 0;
-	targetShape.style.right = 0;
-	targetShape.setAttribute ("width", "5%");
-	targetShape.setAttribute ("height", "10%");
 	document.body.appendChild(targetShape);	
 }
 
@@ -56,10 +47,7 @@ function speechBubble() {
 	if (theBucket.shape > 8) {
 		var mixColours = document.createElement("img");
 		mixColours.src = teach[theBucket.shape - 9];
-		mixColours.style = "position:absolute; top:0%";
-		mixColours.style.marginLeft = "33%";
 		mixColours.setAttribute("class", "speechBubble");
-		mixColours.setAttribute ("width", "12%");
 		//mixColours.setAttribute ("height", "10%");
 		document.body.appendChild(mixColours);
 	}
@@ -92,7 +80,7 @@ function background() {
 function mittins() {
 	var mittins = document.createElement("img");
 	mittins.setAttribute("src", "graphics/MiddleCat.png");
-	mittins.style = "position:absolute; top:10%";
+	mittins.style = "position:absolute; top:10%;width:15%;height:30%;";
 	mittins.setAttribute ("width", "15%");
 	mittins.setAttribute ("height", "30%");
 	mittins.setAttribute ("class", "middleCloud");
@@ -128,6 +116,7 @@ function sideClouds() {
 	var leftCloud = document.createElement("img");
 	leftCloud.setAttribute("src", "graphics/leftCloud.png");
 	leftCloud.style = "position:absolute; top:10%";
+	leftCloud.id = "leftCloud";
 	leftCloud.setAttribute ("width", "15%");
 	leftCloud.setAttribute ("height", "30%");
 	leftCloud.style.marginLeft = "31.5%";
@@ -138,6 +127,7 @@ function sideClouds() {
 	var rightCloud = document.createElement("img");
 	rightCloud.setAttribute("src", "graphics/rightCloud.png");
 	rightCloud.style = "position:absolute; top:10%";
+	rightCloud.id = "rightCloud";
 	rightCloud.setAttribute ("width", "15%");
 	rightCloud.setAttribute ("height", "28%");
 	rightCloud.style.marginLeft = "53.5%";
@@ -156,6 +146,7 @@ function displayTargetText() {
 	var targetText = document.createElement("img");
 	targetText.src = "graphics/target.png";
 	targetText.style = "position:absolute; top:24%";
+	targetText.id="targetText";
 	targetText.style.marginLeft = "auto";
 	targetText.style.marginRight = "auto";
 	targetText.style.left = 0;
@@ -172,6 +163,7 @@ function pauseIcon() {
 	var pauseIcon = document.createElement("img");
 	pauseIcon.setAttribute("src", "buttons/pauseIcon.png");
 	pauseIcon.style = "position:absolute; top:1%";
+	pauseIcon.id="pauseIcon";
 	pauseIcon.setAttribute ("width", "5%");
 	pauseIcon.setAttribute ("height", "10%");
 	pauseIcon.setAttribute("class", "pauseIcon");

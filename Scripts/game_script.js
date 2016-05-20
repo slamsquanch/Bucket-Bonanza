@@ -17,9 +17,8 @@ onload= function() {
 	randomBucketReq(); // randomizes buckets initial requirement
 	displayTarget() // displays target
     speechBubble();	// displays speech bubble hint
-	var pause = document.querySelector(".pauseIcon");	
-
-	
+	var pause = document.querySelector(".pauseIcon");
+	sizeCheck();//adjusts everything to the size of the screen 
 	
     // Pauses and plays the game when the pause icon is clicked
     pause.onclick=function() {

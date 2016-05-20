@@ -13,6 +13,7 @@ function Object(imgSrc, element, timer) {
     this.myTimer = timer;
 }
 
+
 /******************************************/
 /* Returns the ID of the target shape.
    In case of a mixed target, will return
@@ -88,6 +89,7 @@ function bias(id) {
 /*name for a falling shape*/
 /**************************/
 function randomObject() {
+	          
     var scrNames = new Array("graphics/blueCircle.png", "graphics/blueSquare.png",
         "graphics/blueTriangle.png", "graphics/redCircle.png", "graphics/redSquare.png", "graphics/redTriangle.png",
         "graphics/yellowCircle.png", "graphics/yellowSquare.png", "graphics/yellowTriangle.png");
@@ -121,15 +123,22 @@ function randomObject() {
 
 
 
-/***********************/
-/*returns a number that*/
-/*represents the three */
-/*lanes                */
-/***********************/
-function randomLane() {
-    var lanes = ["32%", "47%", "60%"];
-    return lanes[Math.floor(Math.random() * 3)];
-}
+	/***********************/
+	/*returns a number that*/
+	/*represents the three */
+	/*lanes                */
+	/***********************/
+	function randomLane() {
+		var currentWidth=window.innerWidth;
+		if(currentWidth>800){
+			var lanes = ["32%", "47%", "60%"];
+			return lanes[Math.floor(Math.random() * 3)];
+		}
+		else{
+			var lanes = ["5%", "40%", "78%"];
+			return lanes[Math.floor(Math.random() * 3)];
+		}
+	}
 
 /*************************/
 /*Creates a falling shape*/
