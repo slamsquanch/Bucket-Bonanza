@@ -47,7 +47,7 @@ function sizeCheck(){
 		
 
 		
-		
+		largeBackround();
 		var background = document.getElementById("sky");
 		var mittins = document.getElementById("mittins");
 		var leftCloud = document.getElementById("leftCloud");

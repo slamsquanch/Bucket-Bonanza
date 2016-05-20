@@ -7,6 +7,10 @@ var score;
 var firstCatch;
 
 onload= function() {
+	var windowWidth = window.innerWidth;
+	if(windowWidth > 800){
+		largeBackround();
+	}
 	lives = 3;	//initial amount of lives
 	score = 0;	//beginning player score
 	bonanzaBool = 0;  //determine if bonanza mode should be on
@@ -26,6 +30,8 @@ onload= function() {
     speechBubble();	// displays speech bubble hint
 	var pause = document.querySelector(".pauseIcon");
 	sizeCheck();//adjusts everything to the size of the screen 
+	
+	
 	
     // Pauses and plays the game when the pause icon is clicked
     pause.onclick=function() {

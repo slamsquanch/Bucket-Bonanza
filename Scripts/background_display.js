@@ -177,3 +177,12 @@ function pauseIcon() {
 	pauseIcon.style.marginLeft = "63%"
 	document.body.appendChild(pauseIcon);
 }
+
+/********************************************/
+/*Creates the filler background for larger  */
+/*devices									*/
+/********************************************/
+function largeBackround(){
+	var largeBackground=document.createElement("img");
+	largeBackground.setAttribute("src","graphics/websiteBackground.png");
+}
