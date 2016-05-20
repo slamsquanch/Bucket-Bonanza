@@ -7,6 +7,7 @@ function checkHowTo(){
 		var windowWidth = window.innerWidth;	
 		var bigBackground = document.getElementById("largeBackround");
 		var howTo = document.getElementById("howTo");
+
 		if(bigBackground!=null){
 			bigBackground.parentNode.removeChild(bigBackground);	
 		}
