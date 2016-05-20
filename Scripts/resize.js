@@ -32,6 +32,10 @@ function sizeCheck(){
 		if(speechBubble!=null){
 			speechBubble.style.cssText="position:absolute;top:4%;margin-left:0%;width:40%;";
 		}
+		var bigBackground = document.getElementById("largeBackround");
+		if(bigBackground!=null){
+			bigBackground.parentNode.removeChild(bigBackground);
+		}	
 		scoreText.style.cssText="position:absolute;margin-right:5%;float:right;right:0;top:23%;font-family:Comic Sans MS;font-size:24px;font-style:bold;";
 		checkTarget.style.cssText="position:absolute; top:26%;margin-left:auto;margin-right:auto;left:0;right:0;width:15%;height:10%;";
 		lifeDisplay.style.cssText="margin-right:10%;float:right;right:10%;"
@@ -43,7 +47,10 @@ function sizeCheck(){
 		background.style.cssText ="width:100%;height:100%;margin-left:0px;margin-right:0px;";	
 	}
 	if(windowWidth > 800){
-		
+		var bigBackground = document.getElementById("largeBackround");
+		if(bigBackground==null){
+			largeBackround();
+		}
 		
 
 		
