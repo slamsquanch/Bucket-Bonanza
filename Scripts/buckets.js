@@ -36,6 +36,9 @@ function bucketControls() {
 	var windowHeight = window.innerHeight;
 	var windowWidth=window.innerWidth;
 	var bucketHeight = windowHeight * 0.75;
+	
+	//Key conrtols for the bucket
+	keyControls();
 
     /* Makes the left lane button/bucket placeholder*/
 
@@ -77,34 +80,110 @@ function bucketControls() {
 
     /* Left lane click */
     bucketLeft.onclick = function() {
-        this.src="graphics/Bucket_Left.png";
-		if(windowWidth<800){
-			this.src="graphics/Bucket.png";
-		}
-        bucketRight.src="graphics/invisible_bucket.png";
-        bucketMid.src="graphics/invisible_bucket.png";
-		bucketLeft.location = 1;
-		bucketRight.location = 0;
-		bucketMid.location = 0;
+        setLeftBucket();
     }
 
     /* Right lane click */
     bucketRight.onclick = function() {
-        this.src="graphics/Bucket_Right.png";
-        bucketLeft.src="graphics/invisible_bucket.png";
-        bucketMid.src="graphics/invisible_bucket.png";
-		bucketLeft.location = 0;
-		bucketRight.location = 1;
-		bucketMid.location = 0;
+       setRightBucket();
     }
 
     /* Middle lane click */
     bucketMid.onclick = function() {
-        this.src="graphics/Bucket.png";
-        bucketLeft.src="graphics/invisible_bucket.png";
-        bucketRight.src="graphics/invisible_bucket.png";
-		bucketLeft.location = 0;
-		bucketRight.location = 0;
-		bucketMid.location = 1;
+		setMidBucket();
+        
     }
+}
+/***************************/
+/*Changes the middle bucket  */
+/*to the be the currently  */
+/*active bucket            */
+/***************************/
+function setMidBucket(){
+	var mid = document.getElementById("MidPlace");
+	var left = document.getElementById("LeftPlace");
+	var right = document.getElementById("RightPlace");
+	mid.src="graphics/Bucket.png";
+    left.src="graphics/invisible_bucket.png";
+    right.src="graphics/invisible_bucket.png";
+	left.location = 0;
+	right.location = 0;
+	mid.location = 1;
+}
+/***************************/
+/*Changes the left bucket  */
+/*to the be the currently  */
+/*active bucket            */
+/***************************/
+function setLeftBucket(){
+	var windowWidth=window.innerWidth;
+	var mid = document.getElementById("MidPlace");
+	var left = document.getElementById("LeftPlace");
+	var right = document.getElementById("RightPlace");
+	left.src="graphics/Bucket_Left.png";
+	if(windowWidth<800){
+		left.src="graphics/Bucket.png";
+	}
+    right.src="graphics/invisible_bucket.png";
+    mid.src="graphics/invisible_bucket.png";
+	left.location = 1;
+	right.location = 0;
+	mid.location = 0;
+}
+/***************************/
+/*Changes the right bucket */
+/*to the be the currently  */
+/*active bucket            */
+/***************************/
+function setRightBucket(){
+	var mid = document.getElementById("MidPlace");
+	var left = document.getElementById("LeftPlace");
+	var right = document.getElementById("RightPlace");
+	right.src="graphics/Bucket_Right.png";
+    left.src="graphics/invisible_bucket.png";
+    mid.src="graphics/invisible_bucket.png";
+	left.location = 0;
+	right.location = 1;
+	mid.location = 0;
+}
+
+/***************************/
+/*Returns the currently    */
+/*visible bucket's location*/
+/***************************/
+function activeBucket(){
+	var buckets = document.querySelectorAll(".bucket");
+	for(i = 0; i < 3; i++){
+		if(buckets[i].location == 1){
+			return buckets[i].lane;
+		}
+	}
+}
+
+function keyControls(){
+	window.onkeydown = function(e){
+		// code source: Jason's lecture
+		if(e.event){
+			pressed = e.keyCode;
+		}else if(e.which){
+			pressed = e.which;
+		}
+		/******************************/
+		//window.alert(pressed);
+		var curBucket = activeBucket();
+		
+		if((pressed == 37 || pressed == 65) && curBucket == 1){
+			setLeftBucket();
+		}
+		else if((pressed == 37 || pressed == 65) && curBucket == 2){
+			setMidBucket();
+		}
+		else if((pressed == 39 || pressed == 68) && curBucket == 0){
+			setMidBucket();
+		}
+		else if((pressed == 39 || pressed == 68) && curBucket == 1){
+			setRightBucket();
+		}
+			
+	}
 }
