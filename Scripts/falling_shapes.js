@@ -4,6 +4,7 @@
 /*that change their attributes     */
 /***********************************/
 
+
 /************************/
 /*Constructor for Object*/
 /************************/
@@ -152,9 +153,11 @@ function createObject() {
 	
     
     var element = document.createElement("img");
-    element.style = "position:absolute; top:20%";
+    //element.style = "position:absolute; top:20%";
+	element.style.top = "20%";
     element.style.marginLeft = randomLane();
     element.src = imgSrc;
+	element.myHeight = 20//(window.innerHeight * 0.2);
 	
 	switch(imgSrc) {
 		
@@ -217,7 +220,10 @@ function createObject() {
 function move() {
     var objectArray = document.querySelectorAll(".fallingObject");
     for (var i = 0; i < objectArray.length; i++) {
-		//window.alert(objectArray[i].style.top);
-        objectArray[i].style.top = parseInt(objectArray[i].style.top) + 1 + "%";
+		//window.alert("init:" + parseInt(objectArray[i].style.top));
+		objectArray[i].style.top = parseInt(objectArray[i].style.top) + 1 + "%";
+	   //objectArray[i].style.top = objectArray[i].myHeight++ + "%";
+	   //window.alert("after:" +parseInt(objectArray[i].style.top));
+	   //objectArray[i].style.margin-top = "600px";
     }
 }

@@ -11,7 +11,7 @@ function checkGameOver(){
 			bigBackground.parentNode.removeChild(bigBackground);	
 		}
 		if(windowWidth >800){
-			gameOverScreen.style.cssText = "position:absolute;width:100%;height:100%;margin-left:0px;margin-right:0px;left:0;right:0;top:0;";
+			gameOverScreen.style.cssText = "position:absolute;width:37%;height:95%;margin-left:auto;margin-right:auto;left:0;right:0;top:0;";
 			largeBackround();
 		}
 		if(windowWidth < 800){

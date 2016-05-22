@@ -12,11 +12,7 @@ function sizeCheck(){
 	var windowHeight = window.innerHeight;
 	var windowWidth = window.innerWidth;
 	if(windowWidth < 800){
-		
-		
-			
-		
-		
+	
 		var background = document.getElementById("sky");
 		var mittins = document.getElementById("mittins");
 		var leftCloud = document.getElementById("leftCloud");

@@ -187,6 +187,6 @@ function largeBackround(){
 	largeBackground.id = "largeBackground";
 	largeBackground.setAttribute("class", "bigBackground");
 	largeBackground.setAttribute("src","graphics/websiteBackground.png");
-	largeBackground.style = "position:absolute;top:0;width:100%;height:100%;";
+	largeBackground.style = "position:absolute;top:0;width:100%;height:100%;display:block;padding:0px;margin:0px;";
 	document.body.insertBefore(largeBackground,document.body.firstChild);
 }
