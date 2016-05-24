@@ -77,6 +77,17 @@ img {
 	margin-left:61.5%;
 }
 
+#button2 {
+	background-image: url('buttons/settingsIcon3.png');
+    position: absolute;
+	display: block;
+	/*margin-left: 53%;*/
+	width: 46px;
+	height: 46px;
+	top:1%;
+	margin-left:0%;
+}
+
 #titlePlay {
 	display: block;
 	margin-left: auto;

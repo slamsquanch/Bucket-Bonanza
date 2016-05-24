@@ -10,3 +10,5 @@ var meowKitty = new Audio("sounds/Meow.mp3");
 var meowKitty2 = new Audio("sounds/Meow3.mp3");
 var bonanzaSound = new Audio("sounds/BucketComplete.mp3");
 var bonanzaMusic = new Audio("sounds/Bonanza.mp3");
+var titleBGM = new Audio("sounds/titleScreenBGM.mp3");
+var gameBGM = new Audio("sounds/BGM.mp3");
