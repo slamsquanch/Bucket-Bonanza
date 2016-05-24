@@ -286,6 +286,7 @@ body{
 	border:0;
 }
 
+
 /* #myModal .modal-dialog  {
 	width:37%;
 	height:95%;
@@ -338,7 +339,36 @@ body{
 	left: 0;
 	right: 0;
 }
-
+#mainMenuButton{
+	display: none;
+	z-index:2;
+	top:45%;
+	width:67%;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+}
+#restartButton{
+	display: none;
+	z-index:2;
+	top:60%;
+	width:67%;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+}
+#settingsButton{
+	display: none;
+	z-index:2;
+	top:75%;
+	width:67%;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+}
 
 @media(max-width:800px){
 	.targetShape{
