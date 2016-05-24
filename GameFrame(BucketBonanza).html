@@ -32,6 +32,7 @@
 	<script type="text/javascript" src="Scripts/bonanza.js"></script>
 	<script type="text/javascript" src="Scripts/resize.js"></script>
 	<script type="text/javascript" src="Scripts/falling_shapes.js"></script>
+	<script type="text/javascript" src="Scripts/disable.js"></script>
 	<script>
 		$(document).ready(function(){
 			$("button").click(function(){
@@ -42,11 +43,15 @@
 				var mainMenu = $('<img src="buttons/mainMenuButton.png" id="mainMenuButton">');
 				var restart = $('<img src="buttons/restartButton.png" id="restartButton">');
 				var setting = $('<img src="buttons/settingsButton.png" id="settingsButton">');
+				var linkMain = $('<a href="index.html">');
+				var linkRestart = $('<a href="GameFrame(BucketBonanza).html">');
 				$(menuDiv).appendTo("body");
+				$(linkMain).appendTo(menuDiv);
+				$(linkRestart).appendTo(menuDiv);
 				$(pauseMenu).appendTo(menuDiv);
 				$(resume).appendTo(menuDiv);
-				$(mainMenu).appendTo(menuDiv);
-				$(restart).appendTo(menuDiv);
+				$(mainMenu).appendTo(linkMain);
+				$(restart).appendTo(linkRestart);
 				$(setting).appendTo(menuDiv);
 				$("#menu").fadeToggle('slow','swing');
 				$("#pauseBackground").fadeToggle('slow','swing');
@@ -69,7 +74,7 @@
 			});
 			
 		});
-
+		
 		
 	</script>
 	

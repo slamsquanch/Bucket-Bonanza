@@ -7,6 +7,7 @@ var score;
 var firstCatch;
 
 onload= function() {
+	var elm = document.body; 
 	var windowWidth = window.innerWidth;
 	if(windowWidth > 800){
 		largeBackround();
@@ -50,6 +51,13 @@ onload= function() {
 			objectTimer = null;
 		}
     }
+	var bucketDisable = document.querySelectorAll(".bucket");
+	elm.addEventListener('touchstart', catcher, true);
+	for(i = 0 ; i < 3; i++){
+		if(bucketDisable[i] != null){
+			bucketDisable[i].addEventListener('touchstart', catcher, true);
+		}
+	}
 }
 
 
