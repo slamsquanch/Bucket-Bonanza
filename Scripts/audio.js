@@ -32,7 +32,7 @@ var bonanzaMusic = new Howl({
 });
 
 var titleBGM = new Howl({
-    urls: ["sounds/titleScreenBGM.mp3"],
+    urls: ["sounds/titlescreenBGM.mp3"],
     loop: true,
 });
 
