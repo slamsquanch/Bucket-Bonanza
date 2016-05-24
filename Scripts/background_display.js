@@ -167,10 +167,9 @@ function displayTargetText() {
 /*creates pause icon in the top right corner*/
 /********************************************/
 function pauseIcon() {
-	var pauseIcon = document.createElement("img");
-	pauseIcon.setAttribute("src", "buttons/pauseIcon.png");
+	var pauseIcon = document.getElementById("pauseIcon");
+	//pauseIcon.setAttribute("src", "buttons/pauseIcon.png");
 	pauseIcon.style = "position:absolute; top:1%";
-	pauseIcon.id="pauseIcon";
 	pauseIcon.setAttribute ("width", "5%");
 	pauseIcon.setAttribute ("height", "10%");
 	pauseIcon.setAttribute("class", "pauseIcon");

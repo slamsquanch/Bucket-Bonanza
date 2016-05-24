@@ -6,10 +6,14 @@
     <title>Bucket Bonanza: CLOSED ALPHA</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="game_style.css">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	
+	<!--Source code: http://www.w3schools.com/bootstrap/bootstrap_modal.asp -->
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<script type="text/javascript" src="jquery.min.js"></script>
+	<script type="text/javascript" src="bootstrap.min.js"></script>
+		
 	<script type="text/javascript" src="Scripts/audio.js"></script>
 	<script type="text/javascript" src="Scripts/buckets.js"></script>
-	
 	<script type="text/javascript" src="Scripts/background_display.js"></script>
 	<script type="text/javascript" src="Scripts/life_system.js"></script>
 	<script type="text/javascript" src="Scripts/catch.js"></script>
@@ -18,22 +22,48 @@
 	<script type="text/javascript" src="Scripts/bonanza.js"></script>
 	<script type="text/javascript" src="Scripts/resize.js"></script>
 	<script type="text/javascript" src="Scripts/falling_shapes.js"></script>
+	<script>
+		$(document).ready(function(){
+			$("button").click(function(){
+				
+				var menuDiv = $('<div id="menu">');
+				var pauseMenu = $('<img src="Screens/paused.png" id="pauseBackground">');
+				var resume = $('<img src="buttons/resumeButton.png" id="resumeButton">');
+				$(menuDiv).appendTo("body");
+				$(pauseMenu).appendTo(menuDiv);
+				$(resume).appendTo(menuDiv);
+				$("#menu").fadeToggle('slow','swing');
+				$("#pauseBackground").fadeToggle('slow','swing');
+				$("#resumeButton").fadeToggle('slow','swing');
+				$(this).hide();
+				$("#resumeButton").on('click',function(){
+					$("#pauseBackground").fadeToggle('slow','swing');
+					$("#resumeButton").fadeToggle('slow','swing');
+					$("#pauseBackground").remove();
+					$("#resumeButton").remove();
+					$("#menu").remove();
+					$("#pauseIcon").show();
+				});
+			});
+			
+		});
+
+		
+	</script>
 	
 </head>
 	<body id="frame">
-
+	<img id="life" src="Lives/3lifeW.png"/>
+	<button type="button" id="pauseIcon"></button>
+	
 	
 	<audio loop id="bgm" autoplay> 
 		<source src="sounds/BGM.mp3" type ="audio/mpeg" >
 	</audio>
-	<img id="life" src="Lives/3lifeW.png"/>
+	
 	
 	<div>
 		<p id="score">0</p>
-	</div>
-	</div>
-	<div class="container-fluid">
-	<div class="laneContainer">
 	</div>
 	
 </body>
