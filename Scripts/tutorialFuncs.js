@@ -153,6 +153,11 @@ function instruction(stage) {
 			prompt("Avoid the boot, you'll lose a life!");
 		}
 		setTimeout('resume();', 3000);
+	} else {
+		prompt("Tutorial finished! </br>Click anywhere to start a real game.");
+		window.onclick = function() {
+			location.href="GameFrame(BucketBonanza).html";
+		}
 	}
 }
 
