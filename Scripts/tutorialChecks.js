@@ -2,6 +2,8 @@
 /*This script contains*/
 /*all functions that  */
 /*do a "check"        */
+/* Altered to work    */
+/* with the tutorial  */
 /**********************/
 
 // Function to determine which lane the bucket is currently in, returns the marginLeft percentage.

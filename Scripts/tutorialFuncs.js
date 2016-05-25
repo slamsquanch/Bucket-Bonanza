@@ -1,3 +1,7 @@
+/****************************/
+/* Ensures the objects fall */
+/* in a pre-determined lane.*/
+/****************************/
 function setLane(num) {
 	var currentWidth=window.innerWidth;
 	if(currentWidth>800){
@@ -10,6 +14,11 @@ function setLane(num) {
 	}
 }
 
+/******************************/
+/* Drops an object from the   */
+/* sky.  objectNum determines */
+/* which object will fall.    */
+/******************************/
 function tutorialDrop(objectNum) {
 	var shapes = ["blueCircle", "yellowSquare", "blueTriangle", "yellowTriangle", "redTriangle", "fish", "boot"];
 	var imgSrc = "graphics/" + shapes[objectNum] + ".png";
@@ -64,6 +73,9 @@ function tutorialDrop(objectNum) {
     return element;
 }
 
+/*******************************/
+/* Drops objects in order.     */
+/*******************************/
 function sequenceDrop() {
 	if (num < 7) {
 		tutorialDrop(num);
@@ -71,6 +83,10 @@ function sequenceDrop() {
 	}
 }
 
+/*******************************/
+/* Sets what the next target   */
+/* should be.                  */
+/*******************************/
 function setTarget(target) {
 	var myBucket = document.querySelectorAll(".bucket");
 	for (i = 0; i < 3; i++) {
@@ -78,6 +94,11 @@ function setTarget(target) {
 	}
 }
 
+/********************************/
+/* When a shape is caught, the  */
+/* correct sound is played and  */
+/* a new target is set up.      */
+/********************************/
 function tutorialCatch(newTarget) {
 	shapeCorrect.play();
 	setTarget(newTarget);
@@ -85,6 +106,13 @@ function tutorialCatch(newTarget) {
     speechBubble();
 }
 
+/***********************************/
+/* Pauses the game and sets up an  */
+/* instruction depending on the    */
+/* stage of the tutorial.  Enables */
+/* both keyboard keys and mouse    */
+/* clicks/taps.                    */
+/***********************************/
 function instruction(stage) {
 	clearInterval(timer);
 	timer = null;
@@ -128,6 +156,10 @@ function instruction(stage) {
 	}
 }
 
+/*************************/
+/* Resumes the game from */
+/* being paused.         */
+/*************************/
 function resume() {
 	destroyText();
 	timer = setInterval('move();', 25);
@@ -136,6 +168,11 @@ function resume() {
 	stage++;
 }
 
+/*****************************/
+/* Key controls for moving   */
+/* the bucket.  Ensures only */
+/* the proper key will work  */
+/*****************************/
 function keyControls(){
 	window.onkeydown = function(e){
 		// code source: Jason's lecture
@@ -174,6 +211,9 @@ function keyControls(){
 	}
 }
 
+/******************************/
+/* Creates the left hand icon.*/
+/******************************/
 function createLeftHand() {
 	var handLeft = document.createElement("IMG");
 	var windowHeight = window.innerHeight;
@@ -192,6 +232,9 @@ function createLeftHand() {
     document.body.appendChild(handLeft);
 }
 
+/*******************************/
+/* Creates the right hand icon.*/
+/*******************************/
 function createRightHand() {
 	var handRight = document.createElement("IMG");
 	var windowHeight = window.innerHeight;
@@ -210,15 +253,28 @@ function createRightHand() {
     document.body.appendChild(handRight);
 }
 
+/********************************/
+/* Removes the hand from the    */
+/* screen. Side should be "left"*/
+/* or "right".                  */
+/********************************/
 function destroyHand(side) {
 	var hand = document.getElementById("" + side + "Hand");
 	document.body.removeChild(hand);
 }
 
+/*************************************/
+/* Removes the text from the screen. */
+/*************************************/
 function destroyText() {
 	document.getElementById("prompt").innerHTML = "";
 }
 
+/*************************************/
+/* Adds an instruction prompt to the */
+/* screen, the prompt is defined by  */
+/* message.                          */
+/*************************************/
 function prompt(message) {
 	document.getElementById("prompt").innerHTML = message;
 }

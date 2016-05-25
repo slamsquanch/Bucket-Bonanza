@@ -1,6 +1,7 @@
 /**************************************/
 /*This script contains bucket creation*/
 /*and functions that change the bucket*/
+/*Altered to work with the tutorial   */
 /**************************************/
 
 
