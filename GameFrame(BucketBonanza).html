@@ -5,6 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Bucket Bonanza: CLOSED ALPHA</title>
     <link rel="stylesheet" type="text/css" href="game_style.css">
+    <link rel="stylesheet" type="text/css" href="http://w2ui.com/src/w2ui-1.4.2.min.css" />
 	
 	<!--Source code: http://www.w3schools.com/bootstrap/bootstrap_modal.asp -->
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
@@ -57,6 +58,9 @@
 				$("#restartButton").fadeToggle('slow','swing');
 				$("#mainMenuButton").fadeToggle('slow','swing');
 				$("#settingsButton").fadeToggle('slow','swing');
+                $("#settingsButton").on('click',function(){
+                popupGame();
+                });
 				$(this).hide();
 				$("#resumeButton").on('click',function(){
 					$("#pauseBackground").fadeToggle('slow','swing');
@@ -70,7 +74,7 @@
 					$("#pauseIcon").show();
 				});
 			});
-			
+            
 		});
 		
 		
@@ -88,8 +92,11 @@
 	<div>
 		<p id="score">0</p>
 	</div>
-	
+
 	</div>
+
+
+</div> 
 
 </body>
 </html>
