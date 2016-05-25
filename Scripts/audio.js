@@ -30,8 +30,12 @@ var meowKitty = new Howl({
 });
 
 var meowKitty2 = new Howl({
-    urls: ["sounds/Meow3.mp3"]
+    urls: ["sounds/Meow2.mp3"]
 });
+
+var meowKitty3 = new Howl({
+    urls: ["sounds/Meow3.mp3"]
+})
 
 var bonanzaSound = new Howl({
     urls: ["sounds/BucketComplete.mp3"]
