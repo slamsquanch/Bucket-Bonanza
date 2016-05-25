@@ -367,13 +367,47 @@ body{
 #returnAchive{
 	display: none;
 	z-index:2;
-	top:75%;
+	top:80%;
 	width:67%;
 	margin-left: auto;
 	margin-right: auto;
 	left: 0;
 	right: 0;
 }
+#firstAchive{
+	display: none;
+	z-index:2;
+	top:61%;
+	width:35%;
+	height:20%;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+}
+#secondAchive{
+	display: none;
+	z-index:2;
+	top:40%;
+	width:35%;
+	height:20%;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+}
+#thirdAchive{
+	display: none;
+	z-index:2;
+	top:19%;
+	width:35%;
+	height:20%;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+}
+
 
 @media(max-width:800px){
 	.targetShape{
