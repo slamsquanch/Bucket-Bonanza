@@ -84,6 +84,7 @@ function checkHit() {
 			(objectArray[i].shape == myBucket.shape)) {
 				objectArray[i].parentNode.removeChild(objectArray[i]);
 				correctCatch();
+                meowKitty3.play();
 				
 		//If it is a fish then increment life
 		} else if (((parseInt(objectArray[i].style.top) > 65) &&

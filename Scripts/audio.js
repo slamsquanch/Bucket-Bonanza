@@ -5,12 +5,12 @@
 
 var titleBGM = new Howl({
     urls: ["sounds/titlescreenBGM.mp3"],
-    loop: true,
+    loop: true
 });
 
 var gameBGM = new Howl({
     urls: ["sounds/BGM.mp3"],
-    loop: true,
+    loop: true
 });
 
 var shapeCorrect = new Howl({
@@ -30,8 +30,12 @@ var meowKitty = new Howl({
 });
 
 var meowKitty2 = new Howl({
-    urls: ["sounds/Meow3.mp3"]
+    urls: ["sounds/Meow2.mp3"]
 });
+
+var meowKitty3 = new Howl({
+    urls: ["sounds/Meow3.mp3"]
+})
 
 var bonanzaSound = new Howl({
     urls: ["sounds/BucketComplete.mp3"]
@@ -43,4 +47,4 @@ var bonanzaMusic = new Howl({
 
 var fishSound = new Howl({
     urls: ["sounds/lifeup.mp3"]
-})
+});
