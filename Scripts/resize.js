@@ -12,7 +12,7 @@ function sizeCheck(){
 	var windowHeight = window.innerHeight;
 	var windowWidth = window.innerWidth;
 	if(windowWidth < 800){
-	
+		var menu = document.getElementById("menu");
 		var background = document.getElementById("sky");
 		var mittins = document.getElementById("mittins");
 		var leftCloud = document.getElementById("leftCloud");
@@ -25,8 +25,11 @@ function sizeCheck(){
 		var scoreText= document.getElementById("score");
 		var thoseBuckets = document.querySelectorAll(".bucket");
 		scoreText.style.cssText="position:absolute;margin-left:0%;top:25%;font-family:Comic Sans MS;font-size:24px;font-style:bold;";
+		if(menu!=null){
+			menu.style.cssText="display:none;width:100%;height:100%;position:absolute;left:0;right:0;overflow:hidden;";
+		}
 		if(speechBubble!=null){
-			speechBubble.style.cssText="position:absolute;top:4%;margin-left:0%;width:40%;";
+			speechBubble.style.cssText="position:absolute;top:4%;margin-left:0%;width:40%;right:0;left:0;";
 		}
 		var bigBackground = document.getElementById("largeBackround");
 		if(bigBackground!=null){
