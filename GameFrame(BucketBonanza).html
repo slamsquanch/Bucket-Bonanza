@@ -5,10 +5,19 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Bucket Bonanza: CLOSED ALPHA</title>
     <link rel="stylesheet" type="text/css" href="game_style.css">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-	<link rel="stylesheet" type="text/css" href="http://w2ui.com/src/w2ui-1.4.2.min.css" />
+    <link rel="stylesheet" type="text/css" href="http://w2ui.com/src/w2ui-1.4.2.min.css" />
+	
+	<!--Source code: http://www.w3schools.com/bootstrap/bootstrap_modal.asp -->
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<script type="text/javascript" src="jquery.min.js"></script>
+	<script type="text/javascript" src="bootstrap.min.js"></script>
+	
+	<script type="text/javascript" src="Scripts/audio.js"></script>
+	<script type="text/javascript" src="Scripts/buckets.js"></script>
+
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <script type="text/javascript" src="settings.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/howler/1.1.29/howler.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script type="text/javascript" src="http://w2ui.com/src/w2ui-1.4.3.min.js"></script>    
     <script type="text/javascript" src="Scripts/audio.js"></script>
@@ -19,9 +28,64 @@
 	<script type="text/javascript" src="Scripts/catch.js"></script>
 	<script type="text/javascript" src="Scripts/checks.js"></script>
     <script type="text/javascript" src="Scripts/game_script.js"></script>
+	<script type="text/javascript" src="Scripts/bonanza.js"></script>
+	<script type="text/javascript" src="Scripts/resize.js"></script>
+	<script type="text/javascript" src="Scripts/falling_shapes.js"></script>
+	<script type="text/javascript" src="Scripts/disable.js"></script>
+	<script>
+		$(document).ready(function(){
+			$("button").click(function(){
+				gameBGM.pause();
+                bonanzaMusic.pause();
+                pressButton.play();
+				var menuDiv = $('<div id="menu">');
+				var pauseMenu = $('<img src="Screens/paused.png" id="pauseBackground">');
+				var resume = $('<img src="buttons/resumeButton.png" id="resumeButton">');
+				var mainMenu = $('<img src="buttons/mainMenuButton.png" id="mainMenuButton">');
+				var restart = $('<img src="buttons/restartButton.png" id="restartButton">');
+				var setting = $('<img src="buttons/settingsButton.png" id="settingsButton">');
+				var linkMain = $('<a href="index.html">');
+				var linkRestart = $('<a href="GameFrame(BucketBonanza).html">');
+				$(menuDiv).appendTo("body");
+				$(linkMain).appendTo(menuDiv);
+				$(linkRestart).appendTo(menuDiv);
+				$(pauseMenu).appendTo(menuDiv);
+				$(resume).appendTo(menuDiv);
+				$(mainMenu).appendTo(linkMain);
+				$(restart).appendTo(linkRestart);
+				$(setting).appendTo(menuDiv);
+				$("#menu").fadeToggle('slow','swing');
+				$("#pauseBackground").fadeToggle('slow','swing');
+				$("#resumeButton").fadeToggle('slow','swing');
+				$("#restartButton").fadeToggle('slow','swing');
+				$("#mainMenuButton").fadeToggle('slow','swing');
+				$("#settingsButton").fadeToggle('slow','swing');
+                $("#settingsButton").on('click',function(){
+                popupGame();
+                });
+				$(this).hide();
+				$("#resumeButton").on('click',function(){
+					$("#pauseBackground").fadeToggle('slow','swing');
+					$("#resumeButton").fadeToggle('slow','swing');
+					$("#pauseBackground").remove();
+					$("#resumeButton").remove();
+					$("#mainMenuButton").remove();
+					$("#restartButton").remove();
+					$("#settingsButton").remove();
+					$("#menu").remove();
+					$("#pauseIcon").show();
+                    gameBGM.play();
+				});
+			});
+            
+		});
+		
+		
+	</script>
 	
 </head>
-<body id="frame">
+	<body id="frame">
+	<button type="button" id="pauseIcon"></button>
 
 	<div class="container-fluid">
 
@@ -31,8 +95,11 @@
 	<div>
 		<p id="score">0</p>
 	</div>
-	
+
 	</div>
-	<button id="button2" onclick="popupGame()"></button> 
+
+
+</div> 
+
 </body>
 </html>

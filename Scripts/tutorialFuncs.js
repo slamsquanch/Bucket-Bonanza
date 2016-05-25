@@ -60,9 +60,8 @@ function tutorialDrop(objectNum) {
 	}
 	
     element.className = "fallingObject";
-    var coolObject = new Object(imgSrc, element, null);
-    document.body.appendChild(coolObject.element);
-    return coolObject;
+    document.body.appendChild(element);
+    return element;
 }
 
 function sequenceDrop() {

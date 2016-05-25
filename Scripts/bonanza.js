@@ -15,7 +15,7 @@ function bonanza() {
     setTimeout('newTarget();', 16501);
     setTimeout(function() { firstCatch = 1;
         bonanzaMusic.pause();
-        document.getElementById("bgm").muted = false;}, 16500);
+        gameBGM.unmute();}, 16500);
 }
 
 
@@ -50,7 +50,7 @@ function newTarget() {
 /* bonanza mode to run.      */
 /*****************************/
 function setUpBonanza() {
-    document.getElementById("bgm").muted = true;
+    gameBGM.mute();
     bonanzaMusic.play();
     endFirstCatch();
     displayTarget();

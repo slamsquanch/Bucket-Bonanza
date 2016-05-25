@@ -7,6 +7,7 @@ var score;
 var firstCatch;
 
 onload= function() {
+	var elm = document.body; 
 	var windowWidth = window.innerWidth;
 	if(windowWidth > 800){
 		largeBackround();
@@ -35,6 +36,11 @@ onload= function() {
 	
     // Pauses and plays the game when the pause icon is clicked
     pause.onclick=function() {
+		var resume = document.getElementById("resumeButton");
+		resume.onclick=function(){
+			timer = setInterval('move();', 25);
+			objectTimer = setInterval('createObject();', 1000);
+		}
 		if (timer == null) {
 			timer = setInterval('move();', 25);
 			objectTimer = setInterval('createObject();', 1000);
@@ -45,6 +51,13 @@ onload= function() {
 			objectTimer = null;
 		}
     }
+	var bucketDisable = document.querySelectorAll(".bucket");
+	elm.addEventListener('touchstart', catcher, true);
+	for(i = 0 ; i < 3; i++){
+		if(bucketDisable[i] != null){
+			bucketDisable[i].addEventListener('touchstart', catcher, true);
+		}
+	}
 }
 
 

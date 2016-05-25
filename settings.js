@@ -1,10 +1,10 @@
 function popup() {
     w2popup.open({
         title: 'Settings',
-        body: '<p align="center">Background Music</p>' +
-              '<div align="center"> <input type="button" onclick="titleBGM.muted = true" value="Mute" /></div>' +
+        body: '<p align="center" style="font-family:Comic sans MS, cursive, sans-serif;color: orange; font-size:200%">Background Music</p>' +
+              '<div align="center"> <input type="button" onclick="titleBGM.mute()" value="Mute" /></div>' +
               '<p></p>' +
-              '<div align="center"> <input type="button" onclick="titleBGM.muted = false" value="Unmute" /></div>'    
+              '<div align="center"> <input type="button" onclick="titleBGM.unmute()" value="Unmute" /></div>'    
     
     });
 }
@@ -12,14 +12,18 @@ function popup() {
 function popupGame() {
     w2popup.open({
         title: 'Settings',
-        body: '<p align="center">Background Music</p>' +
-              '<div align="center"> <input type="button" onclick="gameBGM.muted = true; bonanzaMusic.muted = true" value="Mute" /></div>' +
+        body: '<p></p>' +
+              '<p align="center" style="font-family:Comic sans MS, cursive, sans-serif;color: orange; font-size:200%">Background Music</p>' +
+              '<div align="center"> <input type="button" onclick="gameBGM.mute(); bonanzaMusic.mute()" value="Mute" /></div>' +
               '<p></p>' +
-              '<div align="center"> <input type="button" onclick="gameBGM.muted = false; bonanzaMusic.muted = false" value="Unmute" /></div>' +   
-              '<p align="center">Sound Effects</p>' +
-              '<div align="center"> <input type="button" onclick="shapeCorrect.muted = true; shapeWrong.muted = true; meowKitty.muted = true; bonanzaSound.muted = true" value="Mute" /></div>' +
+              '<div align="center"><input type="button" onclick="gameBGM.unmute(); bonanzaMusic.unmute()" value="Unmute" /></div>' +   
               '<p></p>' +
-              '<div align="center"> <input type="button" onclick="shapeCorrect.muted = false; shapeWrong.muted = false; meowKitty.muted = false; bonanzaSound.muted = false" value="Unmute" /></div>' 
+              '<p></p>' +
+              '<p align="center" style="font-family:Comic sans MS, cursive, sans-serif;color: orange; font-size:200%">Sound Effects</p>' +
+              '<p></p>' +
+              '<div align="center"> <input type="button" onclick="shapeCorrect.mute(); shapeWrong.mute(); meowKitty.mute(); bonanzaSound.mute()" value="Mute" /></div>' +
+              '<p></p>' +
+              '<div align="center"> <input type="button" onclick="shapeCorrect.unmute(); shapeWrong.unmute(); meowKitty.unmute(); bonanzaSound.unmute()" value="Unmute" /></div>' 
     
     });
 }

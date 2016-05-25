@@ -5,16 +5,6 @@
 /***********************************/
 
 
-/************************/
-/*Constructor for Object*/
-/************************/
-function Object(imgSrc, element, timer) {
-    this.imgSrc =imgSrc;
-    this.element= element;
-    this.myTimer = timer;
-}
-
-
 /******************************************/
 /* Returns the ID of the target shape.
    In case of a mixed target, will return
@@ -209,9 +199,8 @@ function createObject() {
 			break;
 		}
     element.className = "fallingObject";
-    var coolObject = new Object(imgSrc, element, null);
-    document.body.appendChild(coolObject.element);
-    return coolObject;
+    document.body.appendChild(element);
+    return element;
 }
 
 /********************************/

@@ -16,7 +16,6 @@ onload= function() {
     background();  //for the game sky
 	mittins();	//adds mittins
 	sideClouds(); //adds clouds
-	pauseIcon() // adds the pause icon
 	displayTargetText()// displays the word target
     bucketControls();	//sets up the buckets
 	objectTimer = setInterval('sequenceDrop();', 3500);
@@ -27,18 +26,6 @@ onload= function() {
 	setTarget(7);
 	displayTarget() // displays target
     speechBubble();	// displays speech bubble hint
-	var pause = document.querySelector(".pauseIcon");
 	sizeCheck();//adjusts everything to the size of the screen 
 	
-	pause.onclick = function() {
-		if (timer == null) {
-			timer = setInterval('move();', 25);
-			objectTimer = setInterval('sequenceDrop();', 3500);
-		} else {
-			clearInterval(timer);
-			timer = null;
-			clearInterval(objectTimer);
-			objectTimer = null;
-		}
-	}
 }

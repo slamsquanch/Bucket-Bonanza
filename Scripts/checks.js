@@ -91,6 +91,7 @@ function checkHit() {
 			((objectArray[i].shape == 22)))) {			
 				objectArray[i].parentNode.removeChild(objectArray[i]);
 				fishCatch();
+                fishSound.play();
 
 		//If the bucket catches a rainbow star
 		} else if (((parseInt(objectArray[i].style.top) > 65) &&
