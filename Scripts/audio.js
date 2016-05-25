@@ -3,6 +3,16 @@
 /*variables for audio     */
 /**************************/
 
+var titleBGM = new Howl({
+    urls: ["sounds/titlescreenBGM.mp3"],
+    loop: true,
+});
+
+var gameBGM = new Howl({
+    urls: ["sounds/BGM.mp3"],
+    loop: true,
+});
+
 var shapeCorrect = new Howl({
     urls: ["sounds/Correct.mp3"]
 });
@@ -31,12 +41,6 @@ var bonanzaMusic = new Howl({
     urls: ["sounds/Bonanza.mp3"]
 });
 
-var titleBGM = new Howl({
-    urls: ["sounds/titlescreenBGM.mp3"],
-    loop: true,
-});
-
-var gameBGM = new Howl({
-    urls: ["sounds/BGM.mp3"],
-    loop: true,
-});
+var fishSound = new Howl({
+    urls: ["sounds/lifeup.mp3"]
+})
