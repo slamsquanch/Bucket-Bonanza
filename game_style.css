@@ -198,6 +198,18 @@ img {
 	z-index: 1;
 }
 
+#prompt {
+	position: absolute;
+	text-align: center;
+	width: 100%;
+	color: white;
+	top: 35%;
+	font-family: "Comic Sans MS";
+	font-style: bold;
+	font-size: 24px;
+	z-index: 1;
+}
+
 #sky {
 	display: block;
 	width: 37%;
@@ -230,13 +242,13 @@ img {
 .fallingObject{
 	width:7%;
 }
-#LeftPlace{
+#LeftPlace, #leftHand{
 	width:17%;
 	height:20%;
 	position:absolute;
 	margin-left:31.6%;
 }
-#RightPlace{
+#RightPlace, #rightHand{
 	width:17%;
 	height:20%;
 	position:absolute;
@@ -301,13 +313,13 @@ body{
 		width:20%;
 		height:15%;
 	}
-	#LeftPlace{
+	#LeftPlace, #leftHand{
 		width:35%;
 		height:20%;
 		position:absolute;
 		margin-left:0%;
 	}
-	#RightPlace{
+	#RightPlace, #rightHand{
 		width:33%;
 		height:20%;
 		position:absolute;
