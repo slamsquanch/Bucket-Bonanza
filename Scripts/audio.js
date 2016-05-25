@@ -5,12 +5,12 @@
 
 var titleBGM = new Howl({
     urls: ["sounds/titlescreenBGM.mp3"],
-    loop: true,
+    loop: true
 });
 
 var gameBGM = new Howl({
     urls: ["sounds/BGM.mp3"],
-    loop: true,
+    loop: true
 });
 
 var shapeCorrect = new Howl({
@@ -47,4 +47,4 @@ var bonanzaMusic = new Howl({
 
 var fishSound = new Howl({
     urls: ["sounds/lifeup.mp3"]
-})
+});
