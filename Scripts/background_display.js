@@ -103,15 +103,23 @@ function mittins() {
 	/*When you click on the middle cat it will change the cat to the other cat*/
 	mittins.onclick = function(){
 		//COOKIE for Achievment "Good ol' Mittins"
-        setCookie("mittins", "unlocked", 365);
-        alert("Mittins cookie made");
-        
+		var mittinsCookie=getCookie("mittins");
+		if(mittinsCookie!=""){
+			
+		}else{
+			mittins.src = "graphics/achiveCat.png";
+			meowKitty.play();
+			setCookie("mittins", "unlocked", 365);	
+			alert("Mittins cookie made");
+        }
+		
 		if(mittins.getAttribute("src") == "graphics/MiddleCat.png"){
 			mittins.src = "graphics/originalCat.png";
 			meowKitty.play();
-		}/* else if(mittins.getAttribute("src") == "graphics/originalCat.png") {
-			
-		} */else{
+		}else if(mittins.getAttribute("src") == "graphics/originalCat.png") {
+			mittins.src = "graphics/achiveCat.png";
+			meowKitty.play();
+		}else{
 			mittins.src = "graphics/MiddleCat.png";
 			meowKitty2.play();
 		}

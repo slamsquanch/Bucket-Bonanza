@@ -45,7 +45,6 @@ function checkMittinsCookie() {
 	var mittins = document.getElementById("mittins")
     //mittinsCookie = "";
     if (mittinsCookie!="") {
-		window.alert("meowKitty");
 		if(mittins!=null){
 			mittins.src = "graphics/achiveCat.png";
 			meowKitty.play();
