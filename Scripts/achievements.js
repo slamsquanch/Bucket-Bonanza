@@ -45,10 +45,10 @@ function checkMittinsCookie() {
 	var mittins = document.getElementById("mittins")
     //mittinsCookie = "";
     if (mittinsCookie!="") {
-		if(mittins!=null){
+		/* if(mittins!=null){
 			mittins.src = "graphics/achiveCat.png";
 			meowKitty.play();
-		}
+		} */
         //mittinsCookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
         alert("Good old Mittins! " + mittinsCookie);
     } else {

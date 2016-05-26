@@ -85,6 +85,8 @@ function background() {
 /*Creates Mittins*/
 /****************/
 function mittins() {
+	var hundredCookie=getCookie("hundred");
+	var mittinsCookie=getCookie("mittins");
 	var mittins = document.createElement("img");
 	mittins.setAttribute("src", "graphics/MiddleCat.png");
 	mittins.style = "position:absolute; top:10%;width:15%;height:30%;";
@@ -97,33 +99,36 @@ function mittins() {
 	mittins.style.left = 0;
 	mittins.style.right = 0;
 	document.body.appendChild(mittins);
-	
-	var mittins = document.getElementById("mittins")
-	
-	/*When you click on the middle cat it will change the cat to the other cat*/
-	mittins.onclick = function(){
-		//COOKIE for Achievment "Good ol' Mittins"
-		var mittinsCookie=getCookie("mittins");
-		if(mittinsCookie!=""){
-			
-		}else{
-			mittins.src = "graphics/achiveCat.png";
-			meowKitty.play();
-			setCookie("mittins", "unlocked", 365);	
-			alert("Mittins cookie made");
-        }
-		
-		if(mittins.getAttribute("src") == "graphics/MiddleCat.png"){
-			mittins.src = "graphics/originalCat.png";
-			meowKitty.play();
-		}else if(mittins.getAttribute("src") == "graphics/originalCat.png") {
-			mittins.src = "graphics/achiveCat.png";
-			meowKitty.play();
-		}else{
-			mittins.src = "graphics/MiddleCat.png";
-			meowKitty2.play();
+	if(hundredCookie!=""){
+		mittins.setAttribute("src", "graphics/dogeCat.png");
+		document.body.appendChild(mittins);
+	}else if(mittinsCookie!=""){
+		mittins.src = "graphics/achiveCat.png";
+		meowKitty.play();
+	}else{
+		/*When you click on the middle cat it will change the cat to the other cat*/
+		mittins.onclick = function(){
+			var mittinsCookie=getCookie("mittins");
+			var mittins = document.getElementById("mittins")
+			if(mittinsCookie!=""){
+				
+			}else{
+				setCookie("mittins", "unlocked", 365);	
+				alert("Mittins cookie made"); 
+			}
+			if(mittins.getAttribute("src") == "graphics/MiddleCat.png"){
+				mittins.src = "graphics/originalCat.png";
+				meowKitty.play();
+			}/* else if(mittins.getAttribute("src") == "graphics/originalCat.png") {
+				mittins.src = "graphics/achiveCat.png";
+				meowKitty.play();
+			} */else{
+				mittins.src = "graphics/MiddleCat.png";
+				meowKitty2.play();
+			}
 		}
-	}		
+	}
+			
 }
 
 /*******************/
