@@ -25,7 +25,11 @@ function incrementLives() {
 
 //Brings up the game over screen
 function gameOver() {
-		window.location.href = "GameOver.html";
+	/*
+	Score transfer code altered from: http://www.codeproject.com/Questions/795191/Passing-JavaScript-data-values-between-HTML-pages
+	*/
+		var queryString = "?para" + score;
+		window.location.href = "GameOverScore.html" + queryString;
 }
 
 //Updates the score
