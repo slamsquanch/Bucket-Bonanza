@@ -13,7 +13,7 @@ Project overview:
 Our game is titled Bucket Bonanza.  The objective is to catch the appropriate shape that is falling from the sky.
 In the case of a shape with a mixed colour, such as green, the player will have to catch two shapes (such as blue
 and yellow to make green) to get a point.  Various other objects will also fall from the sky.  These include boots
-which decrements lives, fish that increment lives, and stars that activate bonanza mode.  Bonanza mode changes all
+which decrement lives, fish that increment lives, and stars that activate bonanza mode.  Bonanza mode changes all
 drops to stars, which increases your score.  The game ends when the player runs out of lives, which is capped at five.
 
 Code structure:
@@ -31,6 +31,7 @@ Technologies used:
  -JQuery and Bootstrap for screen responsiveness
  -Audacity and Reaper for recording audio
  -Howler.js to get our audio working with mobile
+ -Cookies for setting up achievements
  
 Issues and problems encountered:
 1) Getting our game compatible with all devices/resolutions.  We initially designed the game with only one resolution
