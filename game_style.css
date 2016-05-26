@@ -76,17 +76,6 @@ img {
 	margin-left:61.5%;
 }
 
-#button2 {
-	background-image: url('buttons/settingsIcon3.png');
-    position: absolute;
-	display: block;
-	/*margin-left: 53%;*/
-	width: 46px;
-	height: 46px;
-	top:1%;
-	margin-left:0%;
-}
-
 #titlePlay {
 	display: block;
 	margin-left: auto;
@@ -197,6 +186,18 @@ img {
 	z-index: 1;
 }
 
+#prompt {
+	position: absolute;
+	text-align: center;
+	width: 100%;
+	color: white;
+	top: 35%;
+	font-family: "Comic Sans MS";
+	font-style: bold;
+	font-size: 24px;
+	z-index: 1;
+}
+
 #sky {
 	display: block;
 	width: 37%;
@@ -229,13 +230,13 @@ img {
 .fallingObject{
 	width:7%;
 }
-#LeftPlace{
+#LeftPlace, #leftHand{
 	width:17%;
 	height:20%;
 	position:absolute;
 	margin-left:31.6%;
 }
-#RightPlace{
+#RightPlace, #rightHand{
 	width:17%;
 	height:20%;
 	position:absolute;
@@ -285,26 +286,18 @@ body{
 	background-size:100% 100%;
 	border:0;
 }
-
-
-/* #myModal .modal-dialog  {
-	width:37%;
-	height:95%;
-	position: absolute;
-	margin-left: auto;
-	margin-right: auto;
-	left: 0;
-	right: 0;
+#achive{
+	position:absolute;
+	background-color:transparent;
+	background-image:url("buttons/achiveIcon.png");
+	background-size:100% 100%;
+	margin-left:33%;
+	top:1%;
+	width:46px;
+	height:46px;
+	border:0;
+	z-index:2;
 }
-.modal-content{
-	position: absolute;
-	background-image:url('buttons/settingsIcon3.png');
-	top:10%;
-	margin-left: auto;
-	margin-right: auto;
-	left: 0;
-	right: 0;
-} */
 
 #menu{
 	display: none;
@@ -316,12 +309,14 @@ body{
 	left: 0;
 	right: 0;
 	overflow:hidden;
+	top:0;
 }
-#pauseBackground{
+#pauseBackground,#achiveBackground{
 	display: none;
 	width: 100%;
 	height: 100%;
 	position: absolute;
+	top:0;
 	margin-left: auto;
 	margin-right: auto;
 	left: 0;
@@ -369,6 +364,50 @@ body{
 	left: 0;
 	right: 0;
 }
+#returnAchive{
+	display: none;
+	z-index:2;
+	top:80%;
+	width:67%;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+}
+#firstAchive{
+	display: none;
+	z-index:2;
+	top:61%;
+	width:35%;
+	height:20%;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+}
+#secondAchive{
+	display: none;
+	z-index:2;
+	top:40%;
+	width:35%;
+	height:20%;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+}
+#thirdAchive{
+	display: none;
+	z-index:2;
+	top:19%;
+	width:35%;
+	height:20%;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+}
+
 
 @media(max-width:800px){
 	.targetShape{
@@ -391,13 +430,13 @@ body{
 		width:20%;
 		height:15%;
 	}
-	#LeftPlace{
+	#LeftPlace, #leftHand{
 		width:35%;
 		height:20%;
 		position:absolute;
 		margin-left:0%;
 	}
-	#RightPlace{
+	#RightPlace, #rightHand{
 		width:33%;
 		height:20%;
 		position:absolute;

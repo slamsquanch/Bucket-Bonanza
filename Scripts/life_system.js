@@ -23,24 +23,13 @@ function incrementLives() {
 		}
 }
 
+//Brings up the game over screen
+function gameOver() {
+		window.location.href = "GameOver.html";
+}
 
 //Updates the score
 function updateScore() {
 	score++;
 	document.getElementById("score").innerHTML = score;
-	if ((score % 2) == 0) {
-		increaseDropRate();
-	}
 }
-
-
-//Brings up the game over screen
-function gameOver() {
-		window.location.href = "GameOverScore.html";
-	if (score == 0) {
-		setCookie("stepOne", "unlocked", 365);
-	} else if (score >= 100) {
-		setCookie("hundred", "unlocked", 7300);
-	}
-}
-

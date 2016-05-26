@@ -23,7 +23,7 @@ function correctCatch() {
 /*****************************/
 function fishCatch() {
 	incrementLives();
-	shapeCorrect.play();
+	fishSound.play();
 }
 
 /*****************************/

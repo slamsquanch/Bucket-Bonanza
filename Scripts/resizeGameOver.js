@@ -34,7 +34,4 @@ window.onresize = function(){
 			largeBackround();
 		}
 		checkGameOver();
-        checkMittinsCookie();
-		checkStepOneCookie();
-		checkHundredCookie();
 	}
