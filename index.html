@@ -17,12 +17,28 @@
 		$(document).ready(function(){
 			$("#achive").click(function(){
 				$(this).hide();
+				var hundredCookie=getCookie("hundred");
+				var stepOneCookie=getCookie("stepOne");
+				var mittinsCookie=getCookie("mittins");
+				if(hundredCookie!=""){
+					var thirdAchive = $('<img src="graphics/wowIcon.png" id="thirdAchive">');
+				}else{
+					var thirdAchive = $('<img src="buttons/unknownAchive.png" id="thirdAchive">');
+				}
+				if(stepOneCookie!=""){
+					var secondAchive = $('<img src="graphics/stepOne.png" id="secondAchive">');
+				}else{
+					var secondAchive = $('<img src="buttons/unknownAchive.png" id="secondAchive">');
+				}
+				if(mittinsCookie!=""){
+					//true
+					var firstAchive = $('<img src="graphics/easterEgg.png" id="firstAchive">');
+				}else{
+					var firstAchive = $('<img src="buttons/unknownAchive.png" id="firstAchive">');
+				}
 				var menuDiv = $('<div id="menu">');
 				var achiveMenu = $('<img src="Screens/popupBackground.png" id="achiveBackground">');
 				var mainMenu = $('<img src="buttons/mainMenuButton.png" id="returnAchive">');
-				var firstAchive = $('<img src="buttons/unknownAchive.png" id="firstAchive">');
-				var secondAchive = $('<img src="buttons/unknownAchive.png" id="secondAchive">');
-				var thirdAchive = $('<img src="buttons/unknownAchive.png" id="thirdAchive">');
 				//var linkMain = $('<a href="index.html">');
 				$(menuDiv).appendTo("body");
 				$(achiveMenu).appendTo(menuDiv);
@@ -62,7 +78,7 @@
     <ul style="list-style-type: none;">
 		<li><img id="titleScreen" src="Screens/StartScreen.png" alt="TitleScreen"></img></li>
 		<li><a href="GameFrame(BucketBonanza).html"><img src="buttons/playButton.png" alt="Play" id="titlePlay"></img></a></li>
-		<li><a href="howto.html"><img src="buttons/howToButton.png" alt="howto" id="titleHowTo"
+		<li><a href="tutorial.html"><img src="buttons/howToButton.png" alt="howto" id="titleHowTo"
 		></img></a></li>
 		<li><a href="mySQLLeaderboardMM.php"><img src="buttons/leaderBoardButton.png" alt="leaderboard" id="titleLeaderboard"></img></a></li> 
 	</ul>
