@@ -4,6 +4,7 @@
 
 
 function checkTitle(){
+		var menu = document.getElementById("menu");
 		var windowWidth = window.innerWidth;
 		var windowHeight = window.innerHeight;
 		var titlePicture = document.getElementById("titleScreen");
@@ -15,6 +16,9 @@ function checkTitle(){
 			if(bigBackground!=null){
 				bigBackground.parentNode.removeChild(bigBackground);
 			}		
+			if(menu!=null){
+				menu.style.cssText="display:none;width:100%;height:100%;position:absolute;left:0;right:0;overflow:hidden;";
+			}
 			howToBut.style.cssText="display:block;margin-left:auto;margin-right:auto;top:55%;width:70%;height:12%;left:0;right0;";
 			playButton.style.cssText="display:block;margin-left:auto;margin-right:auto;top:40%;width:70%;height:12%;left:0;right0;";
 			leaderboardBut.style.cssText="display:block;margin-left:auto;margin-right:auto;top:70%;width:70%;height:12%;left:0;right0;";
