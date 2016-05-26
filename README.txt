@@ -30,6 +30,7 @@ Technologies used:
  -Sai and GIMP for image editing
  -JQuery and Bootstrap for screen responsiveness
  -Audacity and Reaper for recording audio
+ -Howler.js to get our audio working with mobile
  
 Issues and problems encountered:
 1) Getting our game compatible with all devices/resolutions.  We initially designed the game with only one resolution

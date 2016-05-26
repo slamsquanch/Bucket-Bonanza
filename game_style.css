@@ -410,6 +410,17 @@ body{
 		position:absolute;
 		margin-left:35%;
 	}
+	#prompt {
+		position: absolute;
+		text-align: center;
+		width: 100%;
+		color: white;
+		top: 36%;
+		font-family: "Comic Sans MS";
+		font-style: bold;
+		font-size: 16px;
+		z-index: 1;
+	}
 			
 	#button {
 		background-image: url('buttons/settingsIcon3.png');
