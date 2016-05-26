@@ -28,10 +28,3 @@ window.onresize = function(){
 			checkGameOver();
 		 }, 500);
 	}
-	onload = function(){
-		var windowWidth = window.innerWidth;
-		if(windowWidth > 800){
-			largeBackround();
-		}
-		checkGameOver();
-	}

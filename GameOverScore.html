@@ -1,28 +1,28 @@
 <html>
-<head>
-    <link rel="stylesheet" href="game_style.css"></link>
+	<head>
+		
+		<link rel="stylesheet" href="game_over.css"></link> 
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script type="text/javascript" src="Scripts/background_display.js"></script>
+		<script type="text/javascript" src="Scripts/resizeGameOver.js"></script>
+				<script type="text/javascript" src="Scripts/score_transfer.js"></script>
 
-	<script>
-	</script>
-
-</head>
-<body id="gameOverSubmit">
-	<div id="submitBox">
-		<form action="leaderboard.php" method="post">
+	</head>
+	<body>
+		<form action="mySQLLeaderboardGO.php" method="post" id = "form">
 			
-			<div class="container">
-				
-				<input type="text" name="name" placeholder="Your name" id="nameField" />
 			
-				<div>
-					<input type="submit" name="submit" value="" id="scoreSubmitBtn"/>
-					<!--<button type="submit" name="submit" value="Submit" id="scoreSubmitBtn"><img src="buttons/enterButton.png"
-						alt="Submit" id="submitScore"></img></button> -->
-				</div>
+			<ul style="list-style-type: none">
+				<li><input type="hidden" name="scoreOutput" value="" id="scoreOutput" /></li>
+				<li><div id="txtfield"><input type="submit" name="submit" value="" id="scoreSubmitBtn"/></div></li>
+				<li><img src="Screens/GameOverSubmit.png" alt="Game Over" id="gameOverScreen"></img></li>
+				<li><a href="index.html"><img src="buttons/mainMenuButton.png" alt="Exit" id="gameOverExit"></img></a></li> 
+				<li><a href="GameFrame(BucketBonanza).html"><img src="buttons/restartButton.png" alt="Restart" id="gameOverRestart"
+				></img></a></li>
+			</ul>
+			<div id="scoreGameOver">0</div>
 				
-			</div>
-
+			<input type="text" name="name" placeholder="Your name" id="nameFieldSubmit" />
 		</form>
-	</div>
-</body>
+	</body>
 </html>

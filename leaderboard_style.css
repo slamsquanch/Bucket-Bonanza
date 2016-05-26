@@ -1,0 +1,154 @@
+table, th, td {
+	position: relative;
+	text-align: center;
+	border: 2px solid #FFFFFF;
+	border-collapse: separate;
+	font-family: "Comic Sans MS";
+	font-size: 115%;
+	margin-left: auto;
+	margin-right:auto;
+	margin-top: 10%;
+	right:0;
+	left:0;
+	color: #FFFFFF;
+	z-index: 999;
+}
+
+thead {
+	position: relative;
+	font-style: bold;
+	font-size: 115%;
+	font-family: "Comic Sans MS";
+	z-index: 999;
+}
+
+
+h1 {
+	position: relative;
+	margin-left: 100px;
+	font-family: "Comic Sans MS";
+	color: #FFFFFF;
+	z-index: 999;
+}
+
+th, td {
+	position: relative;
+	background: #F0BB47;
+	z-index: 999;
+}
+
+img {
+	position: absolute;
+}
+
+#button {
+	background-image: url('buttons/settingsIcon3.png');
+    position: absolute;
+	display: block;
+	/*margin-left: 53%;*/
+	width: 46px;
+	height: 46px;
+	top:1%;
+	margin-left:61.5%;
+}
+
+#titlePlay {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	top: 80%;
+	width: 30%;
+	left: 0;
+	right: 0;
+}
+
+#titleRestart {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	top: 70%;
+	width: 30%;
+	left: 0;
+	right: 0;
+}
+
+#settingsExit {
+    position: relative;
+    left: 420px;
+    top: 5px;
+    height: 4%;
+    width: 4%;
+}
+
+#sky {
+	display: block;
+	width: 37%;
+	height: 95%;
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+}
+}
+#frame{
+	width:auto;
+	height:auto;
+}
+
+
+
+@media(max-width:800px){
+	
+	#titlePlay {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	top: 80%;
+	width: 30%;
+	left: 0;
+	right: 0;
+	height:15%;
+}
+
+	#button {
+		background-image: url('buttons/settingsIcon3.png');
+		background-repeat: no-repeat;
+		position: absolute;
+		display: block;
+		/*margin-left: 53%;*/
+		width: 46px;
+		height: 46px;
+		top:1%;
+		float:right;
+		right:5%;	
+	}
+	
+	table, th, td {
+		position: relative;
+		top: 20%;
+		text-align: center;
+		border: 1px solid #FFFFFF;
+		border-collapse: separate;
+		font-family: "Comic Sans MS";
+		font-size: 20px;
+		margin-left: auto;
+		margin-right:auto;
+		margin-top: 20%;
+		right:0;
+		left:0;
+		color: #FFFFFF;
+		z-index: 999;
+	}
+
+	thead {
+		position: relative;
+		font-style: bold;
+		font-size: 28px;
+		font-family: "Comic Sans MS";
+		z-index: 999;
+	}
+	
+}
+
+
