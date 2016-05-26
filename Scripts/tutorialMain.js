@@ -18,9 +18,10 @@ onload= function() {
 	sideClouds(); //adds clouds
 	displayTargetText()// displays the word target
     bucketControls();	//sets up the buckets
-	objectTimer = setInterval('sequenceDrop();', 3500);
+	setTimeout('removeKeyImages();', 5000);
+	objectTimer = setInterval('sequenceDrop();', 5000);
     timer = setInterval('move();', 25);
-	setTimeout(function() { instruction(stage); }, 4000);
+	setTimeout(function() { instruction(stage); }, 5500);
     var limitTimer = setInterval('checkLimits();', 1);
 	var bucketCheck = setInterval('checkHit();', 1);
 	setTarget(7); // Sets initial target to be a yellow square

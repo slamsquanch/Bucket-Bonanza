@@ -39,7 +39,8 @@ function sizeCheck(){
 		rightCloud.style.cssText="position:absolute; top:10%;width:40%;height:28%;margin-right:0px;float:right;right:0;";
 		leftCloud.style.cssText="position:absolute; top:10%;width:40%;height:30%;margin-left:0%;margin-right:auto;";
 		mittins.style.cssText="position:absolute;width:40%;height:30%;top:10%;margin-left:auto;margin-right:auto;right:0;left:0;";
-		background.style.cssText ="width:100%;height:100%;margin-left:0px;margin-right:0px;";	
+		background.style.cssText ="width:100%;height:100%;margin-left:0px;margin-right:0px;";
+		destroyText();
 	}
 	if(windowWidth > 800){
 		var bigBackground = document.getElementById("largeBackround");

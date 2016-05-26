@@ -12,6 +12,24 @@ img {
 }
 */
 
+#arrowKeys {
+	position: absolute;
+	width: 12%;
+	height: auto;
+	margin-left: 35%;
+	top: 45%;
+	z-index: 1;
+}
+
+#ADKeys {
+	position: absolute;
+	width: 12%;
+	height: auto;
+	margin-left: 55%;
+	top: 45%;
+	z-index: 1;
+}
+
 #titleScreen {
 	display: block;
 	width: 37%;
@@ -429,6 +447,9 @@ body{
 	.fallingObject{
 		width:20%;
 		height:15%;
+	}
+	.tutKeys {
+		display: none;
 	}
 	#LeftPlace, #leftHand{
 		width:35%;

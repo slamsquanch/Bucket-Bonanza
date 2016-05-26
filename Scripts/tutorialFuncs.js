@@ -283,3 +283,13 @@ function destroyText() {
 function prompt(message) {
 	document.getElementById("prompt").innerHTML = message;
 }
+
+function removeKeyImages() {
+	var images = document.querySelectorAll(".tutKeys");
+	
+	for (i = 0; i < images.length; i++) {
+		document.body.removeChild(images[i]);
+	}
+	
+	destroyText();
+}
