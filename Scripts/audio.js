@@ -21,6 +21,11 @@ var shapeWrong = new Howl({
     urls: ["sounds/Wrong.mp3"]
 });
 
+var fishSound = new Howl({
+    urls: ["sounds/lifeup.mp3"],
+    volume: 0.2
+});
+
 var pressButton = new Howl({
     urls: ["sounds/Button.mp3"]
 });
@@ -38,13 +43,10 @@ var meowKitty3 = new Howl({
 })
 
 var bonanzaSound = new Howl({
-    urls: ["sounds/BucketComplete.mp3"]
+    urls: ["sounds/BucketComplete.mp3"],
+    volume: 0.5
 });
 
 var bonanzaMusic = new Howl({
     urls: ["sounds/Bonanza.mp3"]
-});
-
-var fishSound = new Howl({
-    urls: ["sounds/lifeup.mp3"]
 });

@@ -14,7 +14,7 @@ function bonanza() {
     setTimeout(function() { bonanzaBool = 0; } , 15000); //Runs bonanza mode for x seconds
     setTimeout('newTarget();', 16501);
     setTimeout(function() { firstCatch = 1;
-        bonanzaMusic.stop();
+        bonanzaMusic.pause();
         gameBGM.unmute();}, 16500);
 }
 

@@ -114,22 +114,22 @@ function randomObject() {
 
 
 
-/***********************/
-/*returns a number that*/
-/*represents the three */
-/*lanes                */
-/***********************/
-function randomLane() {
-	var currentWidth=window.innerWidth;
-	if(currentWidth>800){
-		var lanes = ["32%", "47%", "60%"];
-		return lanes[Math.floor(Math.random() * 3)];
+	/***********************/
+	/*returns a number that*/
+	/*represents the three */
+	/*lanes                */
+	/***********************/
+	function randomLane() {
+		var currentWidth=window.innerWidth;
+		if(currentWidth>800){
+			var lanes = ["32%", "47%", "60%"];
+			return lanes[Math.floor(Math.random() * 3)];
+		}
+		else{
+			var lanes = ["5%", "40%", "78%"];
+			return lanes[Math.floor(Math.random() * 3)];
+		}
 	}
-	else{
-		var lanes = ["5%", "40%", "78%"];
-		return lanes[Math.floor(Math.random() * 3)];
-	}
-}
 
 /*************************/
 /*Creates a falling shape*/

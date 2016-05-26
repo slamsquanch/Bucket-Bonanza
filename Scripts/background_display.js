@@ -100,9 +100,14 @@ function mittins() {
 	
 	var mittins = document.getElementById("mittins")
 	
+	/* EASTER EGG */
 	/*When you click on the middle cat it will change the cat to the other cat*/
 	mittins.onclick = function(){
-		if(mittins.getAttribute("src") == "graphics/MiddleCat.png"){
+		//COOKIE for Achievment "Good ol' Mittins"
+        setCookie("mittins", "unlocked", 365);
+        alert("Mittins cookie made");
+        
+        if(mittins.getAttribute("src") == "graphics/MiddleCat.png"){
 			mittins.src = "graphics/originalCat.png";
 			meowKitty.play();
 		} else {
