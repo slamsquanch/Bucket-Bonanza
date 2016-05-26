@@ -28,12 +28,22 @@ function gameOver() {
 	/*
 	Score transfer code altered from: http://www.codeproject.com/Questions/795191/Passing-JavaScript-data-values-between-HTML-pages
 	*/
-		var queryString = "?para" + score;
-		window.location.href = "GameOverScore.html" + queryString;
+	
+	var queryString = "?para" + score;
+	window.location.href = "GameOverScore.html" + queryString;
+	
+	if (score == 0) {
+		setCookie("stepOne", "unlocked", 365);
+	} else if (score >= 100) {
+		setCookie("hundred", "unlocked", 7300);
+	}
 }
 
 //Updates the score
 function updateScore() {
 	score++;
 	document.getElementById("score").innerHTML = score;
+	if ((score % 2) == 0) {
+		increaseDropRate();
+	}
 }

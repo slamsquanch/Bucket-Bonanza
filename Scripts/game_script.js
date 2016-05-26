@@ -3,8 +3,10 @@
 /*******************************/
 var bonanzaBool;
 var lives;
-var score;
+var score = 99;
 var firstCatch;
+var shapeCreate = 1500;
+var dropPercent = 1;
 
 onload= function() {
 	var elm = document.body; 
@@ -31,7 +33,8 @@ onload= function() {
     speechBubble();	// displays speech bubble hint
 	var pause = document.querySelector(".pauseIcon");
 	sizeCheck();//adjusts everything to the size of the screen 
-	
+	checkMittinsCookie();
+	checkStepOneCookie();
 	
 	
     // Pauses and plays the game when the pause icon is clicked

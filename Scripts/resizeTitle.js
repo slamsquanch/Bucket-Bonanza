@@ -46,4 +46,7 @@ function checkTitle(){
 			largeBackround();
 		}
 		checkTitle();
+        checkMittinsCookie();
+		checkStepOneCookie();
+		checkHundredCookie();
 	}
