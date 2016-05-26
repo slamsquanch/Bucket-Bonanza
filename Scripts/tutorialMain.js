@@ -18,10 +18,17 @@ onload= function() {
 	sideClouds(); //adds clouds
 	displayTargetText()// displays the word target
     bucketControls();	//sets up the buckets
-	setTimeout('removeKeyImages();', 5000);
-	objectTimer = setInterval('sequenceDrop();', 5000);
+	
+	var windowWidth = window.innerWidth;
+	if(windowWidth < 800){
+		objectTimer = setInterval('sequenceDrop();', 2000);
+		setTimeout(function() { instruction(stage); }, 2500);
+	} else {
+		setTimeout('removeKeyImages();', 5000);
+		objectTimer = setInterval('sequenceDrop();', 5000);
+		setTimeout(function() { instruction(stage); }, 5500);
+	}
     timer = setInterval('move();', 25);
-	setTimeout(function() { instruction(stage); }, 5500);
     var limitTimer = setInterval('checkLimits();', 1);
 	var bucketCheck = setInterval('checkHit();', 1);
 	setTarget(7); // Sets initial target to be a yellow square
