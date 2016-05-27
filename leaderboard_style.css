@@ -58,6 +58,7 @@ img {
 	margin-right: auto;
 	top: 80%;
 	width: 30%;
+	height:15%;
 	left: 0;
 	right: 0;
 }
@@ -68,6 +69,7 @@ img {
 	margin-right: auto;
 	top: 70%;
 	width: 30%;
+	height:15%;
 	left: 0;
 	right: 0;
 }
@@ -100,12 +102,23 @@ img {
 
 @media(max-width:800px){
 	
-	#titlePlay {
+	#titleRestart {
 	display: block;
-	margin-left: auto;
+	margin-left: 50%;
 	margin-right: auto;
 	top: 80%;
-	width: 30%;
+	width: 40%;
+	height:15%;
+	left: 0;
+	right: 0;
+}
+	
+	#titlePlay {
+	display: block;
+	margin-left: 10%;
+	margin-right: auto;
+	top: 80%;
+	width: 40%;
 	left: 0;
 	right: 0;
 	height:15%;
@@ -131,7 +144,7 @@ img {
 		border: 1px solid #FFFFFF;
 		border-collapse: separate;
 		font-family: "Comic Sans MS";
-		font-size: 20px;
+		font-size: 115%;
 		margin-left: auto;
 		margin-right:auto;
 		margin-top: 20%;

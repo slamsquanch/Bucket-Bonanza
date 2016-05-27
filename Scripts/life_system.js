@@ -43,7 +43,15 @@ function gameOver() {
 function updateScore() {
 	score++;
 	document.getElementById("score").innerHTML = score;
-	if ((score % 2) == 0) {
+	
+	if ((score % 5) == 0)
 		increaseDropRate();
+	
+	if ((score % 10) == 0)
+		increaseShapeRate();
+	
+	if ((score % 12) == 0) {
+    objectTimer = setInterval('createObject();', (shapeCreate * 2));
 	}
+		
 }

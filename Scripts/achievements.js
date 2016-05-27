@@ -45,14 +45,14 @@ function checkMittinsCookie() {
 	var mittins = document.getElementById("mittins")
     //mittinsCookie = "";
     if (mittinsCookie!="") {
-		if(mittins!=null){
+		/* if(mittins!=null){
 			mittins.src = "graphics/achiveCat.png";
 			meowKitty.play();
-		}
+		} */
         //mittinsCookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
-        alert("Good old Mittins! " + mittinsCookie);
+     //   alert("Good old Mittins! " + mittinsCookie);
     } else {
-        alert("you have no Mittins cookies!");
+     //   alert("you have no Mittins cookies!");
     }
 }
 
@@ -66,13 +66,16 @@ function checkStepOneCookie() {
     var stepOneCookie=getCookie("stepOne");
     //stepOneCookie = "";
     if (stepOneCookie!="") {
+        return 1;
         //stepOneCookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
-        alert("Back to step 1! " + stepOneCookie);
+     //   alert("Back to step 1! " + stepOneCookie);
     } else {
-        alert("you have no step 1 cookies!");
+        return 0;
+     //   alert("you have no step 1 cookies!");
     }
 }
-
+//initializes the step on boolean as false for later jqueries 
+var globalStepOne = 0;
 
 /*********************************************/
 /*  Checks if a cookie is already set        */
@@ -85,8 +88,8 @@ function checkHundredCookie() {
     //hundredCookie = "";
     if (hundredCookie!="") {
         //hundredCookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
-        alert("Over 100! " + hundredCookie);
+     //   alert("Over 100! " + hundredCookie);
     } else {
-        alert("you have no 100 cookies!");
+      //  alert("you have no 100 cookies!");
     }
 }

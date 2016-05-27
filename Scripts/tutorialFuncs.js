@@ -284,10 +284,6 @@ function prompt(message) {
 	document.getElementById("prompt").innerHTML = message;
 }
 
-/*************************************/
-/* Removes the arrow key images and  */
-/* initial text prompt               */
-/*************************************/
 function removeKeyImages() {
 	var images = document.querySelectorAll(".tutKeys");
 	

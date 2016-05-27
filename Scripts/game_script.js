@@ -7,6 +7,7 @@ var score = 99;
 var firstCatch;
 var shapeCreate = 1500;
 var dropPercent = 1;
+var objectTimer;
 
 onload= function() {
 	var elm = document.body; 
@@ -24,7 +25,7 @@ onload= function() {
 	pauseIcon() // adds the pause icon
 	displayTargetText()// displays the word target
     bucketControls();	//sets up the buckets
-    var objectTimer = setInterval('createObject();', 1500);
+    objectTimer = setInterval('createObject();', shapeCreate);
     var timer = setInterval('move();', 25);
     var limitTimer = setInterval('checkLimits();', 1);
 	var bucketCheck = setInterval('checkHit();', 1);
@@ -42,11 +43,11 @@ onload= function() {
 		var resume = document.getElementById("resumeButton");
 		resume.onclick=function(){
 			timer = setInterval('move();', 25);
-			objectTimer = setInterval('createObject();', 1000);
+			objectTimer = setInterval('createObject();', shapeCreate);
 		}
 		if (timer == null) {
 			timer = setInterval('move();', 25);
-			objectTimer = setInterval('createObject();', 1000);
+			objectTimer = setInterval('createObject();', shapeCreate);
 		} else {
 			clearInterval(timer);
 			timer = null;

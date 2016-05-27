@@ -66,7 +66,12 @@ function bucketControls() {
     document.body.appendChild(bucketRight);
 
     /* Makes the Middle lane button/bucket placeholder*/
-    bucketMid.setAttribute("src", "graphics/Bucket.png");
+
+    if (checkStepOneCookie() == 0) {
+        bucketMid.setAttribute("src", "graphics/Bucket.png");
+    } else {
+        bucketMid.setAttribute("src", "graphics/Bucket2.png");
+    }
     bucketMid.setAttribute("alt", "Transparent button-mid");
     bucketMid.setAttribute("id", "MidPlace");
 	bucketMid.setAttribute("class", "bucket");
@@ -103,7 +108,11 @@ function setMidBucket(){
 	var mid = document.getElementById("MidPlace");
 	var left = document.getElementById("LeftPlace");
 	var right = document.getElementById("RightPlace");
-	mid.src="graphics/Bucket.png";
+	if (checkStepOneCookie() == 0) {
+		mid.src = "graphics/Bucket.png";
+	} else {
+		mid.src = "graphics/Bucket2.png";
+	}
     left.src="graphics/invisible_bucket.png";
     right.src="graphics/invisible_bucket.png";
 	left.location = 0;
@@ -120,9 +129,18 @@ function setLeftBucket(){
 	var mid = document.getElementById("MidPlace");
 	var left = document.getElementById("LeftPlace");
 	var right = document.getElementById("RightPlace");
-	left.src="graphics/Bucket_Left.png";
+	if (checkStepOneCookie() == 0) {
+		left.src="graphics/Bucket_Left.png";
+	} else {
+		left.src = "graphics/Bucket2_Left.png";
+	}
+
 	if(windowWidth<800){
-		left.src="graphics/Bucket.png";
+		if (checkStepOneCookie() == 0) {
+			left.src = "graphics/Bucket.png";
+		} else {
+			left.src = "graphics/Bucket2.png";
+		}
 	}
     right.src="graphics/invisible_bucket.png";
     mid.src="graphics/invisible_bucket.png";
@@ -139,7 +157,12 @@ function setRightBucket(){
 	var mid = document.getElementById("MidPlace");
 	var left = document.getElementById("LeftPlace");
 	var right = document.getElementById("RightPlace");
-	right.src="graphics/Bucket_Right.png";
+	if (checkStepOneCookie() == 0) {
+		right.src="graphics/Bucket_Right.png";
+	} else {
+		right.src="graphics/Bucket2_Right.png";
+	}
+
     left.src="graphics/invisible_bucket.png";
     mid.src="graphics/invisible_bucket.png";
 	left.location = 0;
