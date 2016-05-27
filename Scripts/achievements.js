@@ -74,7 +74,8 @@ function checkStepOneCookie() {
      //   alert("you have no step 1 cookies!");
     }
 }
-
+//initializes the step on boolean as false for later jqueries 
+var globalStepOne = 0;
 
 /*********************************************/
 /*  Checks if a cookie is already set        */

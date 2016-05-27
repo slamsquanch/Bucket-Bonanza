@@ -1,13 +1,45 @@
 <html>
 	<head>
 		
+		<link rel="stylesheet" href="game_style	.css"></link> 
 		<link rel="stylesheet" href="game_over.css"></link> 
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<script type="text/javascript" src="Scripts/background_display.js"></script>
 		<script type="text/javascript" src="Scripts/resizeGameOverScore.js"></script>
 		<script type="text/javascript" src="Scripts/resizeGameOver.js"></script>
 		<script type="text/javascript" src="Scripts/score_transfer.js"></script>
-
+		<script type="text/javascript" src="Scripts/achievements.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+		<script>
+			function closeFun(){
+				$("#achivePopup").slideToggle('slow','swing');
+				$("#achiveIcon").slideToggle('fast','swing');				
+				setTimeout(clearFun, 1000);			
+			}
+			function clearFun(){
+				$("#achivePopup").remove();
+				$("#achiveIcon").remove();
+			
+			}
+			//source code:http://stackoverflow.com/questions/1345722/calling-jquery-function-from-javascript
+			function myFun(){
+				var achivePopup = $('<div id="achivePopup">');
+				var achiveIcon = $('<img src="graphics/stepOne.png" id="achiveIcon">');
+				$(achivePopup).appendTo("body");
+				$(achiveIcon).appendTo(achivePopup);
+				$("#achivePopup").slideToggle('slow','swing');
+				$("#achiveIcon").slideToggle('fast','swing');
+				setTimeout(closeFun, 2000);
+			}
+			$(document).ready(function(){
+				var stepOneCookie=getCookie("stepOne");
+				if(stepOneCookie!="" && globalStepOne == 0){
+					globalStepOne = globalStepOne + 1 ;
+					setTimeout(myFun, 1000);		
+				}else{
+				}
+			});
+		</script>
 	</head>
 	<body>
 		<form action="mySQLLeaderboardGO.php" method="post" id = "form">
