@@ -42,3 +42,7 @@ pushed broken coded and deleted entire functions by mistake.
 Furthermore, our hosting website does not support MongoDB, therefore database must be redone in MySQL.
 4) Implementing audio.  We had not previously used audio when coding in JavaScript/HTMl, so it was a bit of a learning 
 curve.  Also, there are issues getting the sound to play on mobile devices.
+5) Getting our final game ready.  There were a lot of bugs that we encountered last minute and it was a bit of a rush
+to get them finished.
+6) Learning to use local storage and cookies.  None of us knew initially how either one works so it took us a bit of 
+time to learn how to use them.
