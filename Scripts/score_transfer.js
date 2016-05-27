@@ -20,5 +20,5 @@ window.onload = function() {
 		if(windowWidth > 800){
 			largeBackround();
 		}
-		checkTitle();
+		checkGameOverScore();
 }
