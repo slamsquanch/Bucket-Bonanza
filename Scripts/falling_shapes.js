@@ -210,7 +210,7 @@ function move() {
     var objectArray = document.querySelectorAll(".fallingObject");
     for (var i = 0; i < objectArray.length; i++) {
 		//window.alert("init:" + parseInt(objectArray[i].style.top));
-		objectArray[i].style.top = parseInt(objectArray[i].style.top) + 1 + "%";
+		objectArray[i].style.top = parseInt(objectArray[i].style.top) + dropPercent + "%";
 	   //objectArray[i].style.top = objectArray[i].myHeight++ + "%";
 	   //window.alert("after:" +parseInt(objectArray[i].style.top));
 	   //objectArray[i].style.margin-top = "600px";

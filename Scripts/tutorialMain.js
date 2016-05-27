@@ -2,6 +2,7 @@ var num = 0; // Used to drop objects in order
 var objectTimer; // Timer that drops objects
 var timer; // Timer that moves objects
 var stage; // Stage of the tutorial
+var dropPercent = 1;
 
 onload= function() {
 	var windowWidth = window.innerWidth;
@@ -29,6 +30,7 @@ onload= function() {
 		setTimeout(function() { instruction(stage); }, 5500);
 	}
     timer = setInterval('move();', 25);
+    var limitTimer = setInterval('checkLimits();', 1);
     var limitTimer = setInterval('checkLimits();', 1);
 	var bucketCheck = setInterval('checkHit();', 1);
 	setTarget(7); // Sets initial target to be a yellow square

@@ -41,9 +41,8 @@ function checkTitle(){
 		 }, 500);
 	}
 	onload = function(){
-		var bigBackground = document.getElementById("largeBackround");
 		var windowWidth = window.innerWidth;
-		if(windowWidth > 800 && bigBackground == null){
+		if(windowWidth > 800){
 			largeBackround();
 		}
 		checkTitle();

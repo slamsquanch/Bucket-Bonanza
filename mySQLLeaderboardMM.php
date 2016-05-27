@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="stylesheet" type="text/css" href="http://w2ui.com/src/w2ui-1.4.2.min.css" />
+    <script type="text/javascript" src="settings.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/howler/1.1.29/howler.min.js"></script>
+    <script type="text/javascript" src="Scripts/audio.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="http://w2ui.com/src/w2ui-1.4.3.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 	<script type="text/javascript" src="Scripts/background_display.js"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<script type="text/javascript" src="Scripts/resizeLeaderboardMM.js"></script>
-    <link rel="stylesheet" type="text/css" href="http://w2ui.com/src/w2ui-1.4.2.min.css" />
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-    <script type="text/javascript" src="settings.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script type="text/javascript" src="http://w2ui.com/src/w2ui-1.4.3.min.js"></script>
     <link rel="stylesheet" href="leaderboard_style.css"></link>
 </head>
 <?php
@@ -67,13 +69,13 @@
 </script>
 <body>
 
-<audio loop autoplay id="bgm" src="sounds/titlescreenBGM.mp3" type ="audio/mpeg"></audio>
+    <script>titleBGM.play();</script>
 		
-		<ul style="list-style-type: none;">
-			<li><img id="titleScreen" src="Screens/leaderboard.png" alt="TitleScreen"></img></li>
-			<li><a href="index.html"><img src="buttons/backtomenu.png" alt="Play" id="titlePlay"></img></a></li>
-		</ul>
+	<ul style="list-style-type: none;">
+		<li><img id="titleScreen" src="Screens/leaderboard.png" alt="TitleScreen"></img></li>
+		<li><a href="index.html"><img src="buttons/backtomenu.png" alt="Play" id="titlePlay"></img></a></li>
+	</ul>
 
-		<button id="button" onclick="popup()"></button>
+    <button id="button" onclick="popup()"></button>
 </body>
 </html> 
