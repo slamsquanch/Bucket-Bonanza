@@ -29,10 +29,24 @@
 	$playerName = $_POST["name"];
 	$playerScore = $_POST["scoreOutput"];
 	
+	/*
+	 * VERY bad idea, vulnerable to SQL Injection:
+	 * https://www.exploit-db.com/docs/33253.pdf
+	 * https://www.youtube.com/watch?v=_jKylhJtPmI
 	mysqli_query($db, 
 		"INSERT INTO `leaderboard` (`Name`, `Score`) VALUES ('$playerName', '$playerScore')")
 		or die (mysqli_error($db));
-	
+	*/
+	if($stmt = $db->prepare("INSERT INTO leaderboard (Name, Score) VALUES (?,?)")) {
+		$stmt->bind_param("ss", $playerName, $playerScore);
+		$stmt->execute();
+		$stmt->close();
+	}
+	else {
+		echo '<script language="javascript">';
+		echo 'alert("Error with db statement")';
+		echo '</script>';
+	}
 	
 	/*
 	Code for query syntax of MySql from Jason's lectures on PHP
